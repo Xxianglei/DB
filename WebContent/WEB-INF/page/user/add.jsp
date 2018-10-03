@@ -24,7 +24,7 @@
   
   <body>
     <div class="x-body">
-        <form class="layui-form" method="GET" id="deptForm"  action="${ctx}/user/add">
+        <form class="layui-form" method="GET" id="deptForm"  action="${ctx}/user/add2">
     
           <div class="layui-form-item">
               <label for="username" class="layui-form-label">

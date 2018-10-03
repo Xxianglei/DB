@@ -99,8 +99,8 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/user/add",method = RequestMethod.GET)
-	public String add(Model model,HttpServletRequest request) {
+	@RequestMapping(value = "/user/add2",method = RequestMethod.GET)
+	public String add2(Model model,HttpServletRequest request) {
 		String loginname=(String) request.getParameter("loginname");
 		String username=(String) request.getParameter("username");
 		String password=(String) request.getParameter("password");
@@ -110,9 +110,14 @@ public class UserController {
 			System.out.println("添加成功");	
 			System.out.println("添加人员" + loginname + username + password);
 		
-			return "/user/add";
-		
+			
+		}
+		return "/user/add";
 	
 	}
-	
+	@RequestMapping(value = "/user/add",method = RequestMethod.GET)
+	public String add(Model model,HttpServletRequest request) {	
+			return "/user/add";
+	}
+
 }
