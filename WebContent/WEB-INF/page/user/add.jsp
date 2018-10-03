@@ -25,7 +25,7 @@
   <body>
     <div class="x-body">
         <form class="layui-form" method="POST" id="deptForm"  action="${ctx}/user/add">
-        <input type="hidden" name="id" id="id" value="${job.id }" >
+       <%--  <input type="hidden" name="id" id="id" value="${job.id }" > --%>
           <div class="layui-form-item">
               <label for="username" class="layui-form-label">
                   <span class="x-red">*</span>登录名
@@ -51,7 +51,7 @@
                   <span class="x-red">*</span>密码
               </label>
               <div class="layui-input-inline">
-                  <input type="text" id="password" name="password" required="" lay-verify="required"
+                  <input type="password" id="password" name="password" required="" lay-verify="required"
                   autocomplete="off" class="layui-input" value="${job.password }">
               </div>
              

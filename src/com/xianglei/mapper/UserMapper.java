@@ -15,4 +15,11 @@ public interface UserMapper {
 	// 超级用户登录
 	User get_login(String loginname,String password);
 
+	// 默认查询
+	List<User> get_UserList();
+	// 模糊查询
+	List<User> get_UserLikeList(String content);
+
+	void addUser(String loginname,String username,String password);
+
 }
