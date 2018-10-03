@@ -99,23 +99,20 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/user/add")
-	public String add(Model model,  String loginname,
-			String username,  String password,HttpServletRequest request) {
-	   loginname=(String) request.getAttribute("loginname");
-	   username=(String) request.getAttribute("username");
-	   password=(String) request.getAttribute("password");
+	@RequestMapping(value = "/user/add",method = RequestMethod.GET)
+	public String add(Model model,HttpServletRequest request) {
+		String loginname=(String) request.getParameter("loginname");
+		String username=(String) request.getParameter("username");
+		String password=(String) request.getParameter("password");
 		
 		if (loginname != null && loginname != null && loginname != null) {
 			Userservice.addUser(loginname, username, password);
 			System.out.println("添加成功");	
 			System.out.println("添加人员" + loginname + username + password);
-			return "/user/list";			
-		} else {
-			System.out.println("添加人员" + loginname + username + password);
+		
 			return "/user/add";
-		}
+		
 	
 	}
-
+	
 }

@@ -24,15 +24,15 @@
   
   <body>
     <div class="x-body">
-        <form class="layui-form" method="POST" id="deptForm"  action="${ctx}/user/add">
-       <%--  <input type="hidden" name="id" id="id" value="${job.id }" > --%>
+        <form class="layui-form" method="GET" id="deptForm"  action="${ctx}/user/add">
+    
           <div class="layui-form-item">
               <label for="username" class="layui-form-label">
                   <span class="x-red">*</span>登录名
               </label>
               <div class="layui-input-inline">
                   <input type="text" id="loginname" name="loginname" required="" lay-verify="required"
-                  autocomplete="off" class="layui-input" value="${job.loginname }">
+                  autocomplete="off" class="layui-input" >
               </div>
              
           </div>
@@ -42,7 +42,7 @@
               </label>
               <div class="layui-input-inline">
                   <input type="text" id="username" name="username" required="" lay-verify="required"
-                  autocomplete="off" class="layui-input" value="${job.username }">
+                  autocomplete="off" class="layui-input" >
               </div>
              
           </div>
@@ -52,7 +52,7 @@
               </label>
               <div class="layui-input-inline">
                   <input type="password" id="password" name="password" required="" lay-verify="required"
-                  autocomplete="off" class="layui-input" value="${job.password }">
+                  autocomplete="off" class="layui-input">
               </div>
              
           </div>
