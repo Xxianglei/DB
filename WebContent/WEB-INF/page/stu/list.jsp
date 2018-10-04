@@ -28,12 +28,13 @@
 
 <body>
 	<div class="x-nav">
-		<span class="layui-breadcrumb"> <a href="">首页</a> <a> <cite>员工列表</cite></a>
+		<span class="layui-breadcrumb"> <a href="">首页</a> <a> <cite>人员列表</cite></a>
 		</span> <a class="layui-btn layui-btn-small"
 			style="line-height: 1.6em; margin-top: 3px; float: right"
 			href="${ctx }/employee/list" title="刷新"> <i class="layui-icon"
 			style="line-height: 30px">ဂ</i></a>
 	</div>
+
 	<div class="x-body">
 		<div class="layui-row" style="" align="center">
 			<form class="layui-form layui-col-md12 x-so" method="get"
@@ -54,7 +55,7 @@
       </xblock> --%>
 
 
-		<table class="layui-table">
+		<table class="layui-table" lay-size="sm">
 			<thead>
 				<tr>
 					<th>
@@ -63,32 +64,17 @@
 							<i class="layui-icon">&#xe605;</i>
 						</div>
 					</th>
-					<th>ID</th>
-					<th>头像</th>
+					<th>序号</th>
 					<th>姓名</th>
 					<th>等级</th>
-					<th>昵称</th>
 					<th>性别</th>
 					<th>专业</th>
-					<th>期望薪水</th>
 					<th>学习方向</th>
 					<th>学号</th>
-					<th>QQ</th>
-					<th>手机号码</th>
-					<th>邮箱</th>
-					<th>生日</th>
 					<th>竞赛</th>
 					<th>技能</th>
 					<th>爱好</th>
-					<th>是否参加学生</th>
-					<th>是否是班干部</th>
-					<th>是否打算考研</th>
-					<th>工作室名称</th>
-					<th>联系地址</th>
-					<th>建档日期</th>
 					<th>简介</th>
-					<th>备注</th>
-					<!-- <th>状态</th> -->
 					<th>操作</th>
 			</thead>
 			<tbody>
@@ -101,45 +87,28 @@
 							</div>
 						</td>
 						<td>${dept.id }</td>
-						<td>${dept.photo }</td>
 						<td>${dept.name }</td>
 						<td>${dept.level }</td>
-						<td>${dept.nick_name }</td>
 						<td>${dept.sex }</td>
 						<td>${dept.major_id }</td>
-						<td>${dept.salary }</td>
 						<td>${dept.job_id }</td>
-						<td>${dept.stu_num }</td>
-						<td>${dept.qq_num }</td>
-						<td>${dept.phone }</td>
-						<td>${dept.email }</td>
-						<td>${dept.birthday }</td>
 						<td>${dept.race }</td>
 						<td>${dept.speciality }</td>
-						<td>${dept.hobby }</td>
-						<td>${dept.student_union}</td>
-						<td>${dept.cadre }</td>
-						<td>${dept.graduate_student }</td>
 						<td>${dept.space}</td>
-						<td>${dept.address }</td>
-						<td>${dept.create_date }</td>
 						<td>${dept.resume }</td>
 						<td>${dept.remark }</td>
 
 
 
-						<!--  <td class="td-status">
-              <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td> -->
+
 						<td class="td-manage">
-							<!--  <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                <i class="layui-icon">&#xe601;</i>
-              </a> --> <%-- <a title="编辑"  onclick="x_admin_show('编辑','${ctx}/job/add?id=${dept.id }');" href="javascript:;"> --%>
-							<a title="编辑" href="${ctx}/employee/add?id=${dept.id }"> <i
-								class="layui-icon">&#xe642;</i>
-						</a> <a title="删除" onclick="member_del(this,'${dept.id }')"
-							href="javascript:;"> <i class="layui-icon">&#xe640;</i>
-						</a>
-						</td>
+						<a title="详细" onclick="x_admin_show('详细','${ctx}/job/details?id=${dept.id }');"href="javascript:;"> 
+							<i class="layui-icon">&#xe60a;</i>
+							<a title="编辑" href="${ctx}/employee/add?id=${dept.id }"> 
+							<i class="layui-icon">&#xe642;</i>
+							</a> <a title="删除" onclick="member_del(this,'${dept.id }')"href="javascript:;"> 
+							<i class="layui-icon">&#xe640;</i>
+							</a></td>
 					</tr>
 
 				</c:forEach>
