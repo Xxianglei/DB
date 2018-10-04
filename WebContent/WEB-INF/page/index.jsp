@@ -74,20 +74,20 @@
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe723;</i>
-                    <cite>部门管理</cite>
+                    <cite>专业管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="${ctx }/dept/list">
+                        <a _href="${ctx }/major/list">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>部门列表</cite>
+                            <cite>专业列表</cite>
                         </a>
                     </li >
                     <li>
-                        <a _href="${ctx }/dept/add">
+                        <a _href="${ctx }/major/add">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>添加部门</cite>
+                            <cite>添加专业</cite>
                         </a>
                     </li >
                 </ul>

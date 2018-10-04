@@ -24,14 +24,14 @@
   
   <body>
     <div class="x-body">
-        <form class="layui-form" method="POST" id="deptForm"  action="${ctx}/dept/add">
+        <form class="layui-form" method="POST" id="deptForm"  action="${ctx}/major/add">
         <input type="hidden" name="id" id="id" value="${dept.id }" >
           <div class="layui-form-item">
               <label for="username" class="layui-form-label">
-                  <span class="x-red">*</span>部门名称
+                  <span class="x-red">*</span>专业名称
               </label>
               <div class="layui-input-inline">
-                  <input type="text" id="name" name="name" required="" lay-verify="required"
+                  <input type="text" id="major" name="major" required="" lay-verify="required"
                   autocomplete="off" class="layui-input" value="${dept.name }">
               </div>
              

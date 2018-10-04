@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xianglei.mapper.MajorMapper">
+
+	<resultMap type="com.xianglei.pojo.Major" id="MajorMap">
+		<result property="id" column="id" />
+		<result property="major" column="major" />
+		<result property="remark" column="remark" />
+	</resultMap>
+	<select id="get_majorlist" resultMap="MajorMap">
+		SELECT
+		`id`,
+		`major`,
+		`remark`
+		FROM
+		`major_inf`
+	</select>
+	<select id="get_majorLikelist" parameterType="String"
+		resultMap="MajorMap">
+		SELECT
+		`id`,
+		`major`,
+		`remark`
+		FROM
+		`major_inf`
+		where major like
+		'%${_parameter}%'
+		<!-- 惊了 -->
+	</select>
+	<insert id="add_major">
+		INSERT INTO `major_inf` ( `major`, `remark`)
+		VALUES
+		(#{0}, #{1}) ;
+	</insert>
+	
+	<update id="update_Major">
+		UPDATE
+		`major_inf`
+		SET
+		`major` = #{1} ,
+		`remark` = #{2} 
+		 WHERE `id` = #{0};
+	</update>
+
+</mapper>

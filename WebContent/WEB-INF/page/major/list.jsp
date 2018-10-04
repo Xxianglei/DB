@@ -5,7 +5,7 @@
   
   <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.0</title>
+    <title>数据库工作室</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -35,11 +35,11 @@
     </div>
     <div class="x-body">
       <div class="layui-row" style="" align="center">
-        <form class="layui-form layui-col-md12 x-so" method="get" action="${ctx }/dept/list">
+        <form class="layui-form layui-col-md12 x-so" method="get" action="${ctx }/major/list">
           <!-- <input class="layui-input" placeholder="开始日" name="start" id="start">
           <input class="layui-input" placeholder="截止日" name="end" id="end"> -->
           <input type="text" name="content" style="width:50%;"  placeholder="请输入查找内容" autocomplete="off" class="layui-input">
-          <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+          <button class="layui-btn"  lay-submit="" lay-filter="get_majorlist"><i class="layui-icon">&#xe615;</i></button>
         </form>
       </div>
       <%-- <xblock>
@@ -56,8 +56,8 @@
               <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
             </th>
             <th>ID</th>
-            <th>部门名称</th>
-            <th>详细信息</th>
+            <th>专业名称</th>
+            <th>专业信息</th>
          <!-- <th>状态</th> -->
             <th>操作</th>
         </thead>
@@ -68,7 +68,7 @@
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
             </td>
             <td>${dept.id}</td>
-            <td>${dept.name }</td>
+            <td>${dept.major }</td>
             <td>${dept.remark }</td>
             
            <!--  <td class="td-status">
@@ -77,7 +77,7 @@
              <!--  <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
                 <i class="layui-icon">&#xe601;</i>
               </a> -->
-              <a title="编辑"  onclick="x_admin_show('编辑','${ctx}/dept/add?id=${dept.id }');" href="javascript:;">
+              <a title="编辑"  onclick="x_admin_show('编辑','${ctx}/major/add2?id=${dept.id }');" href="javascript:;">
              
                 <i class="layui-icon">&#xe642;</i>
               </a>

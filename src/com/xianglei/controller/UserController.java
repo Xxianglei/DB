@@ -119,7 +119,7 @@ public class UserController {
 		if (tag) {
 			Userservice.update_user(this.id, loginname, username, password);
 			// 重定向到list
-
+		
 		}
 		return "redirect:/user/list";
 
