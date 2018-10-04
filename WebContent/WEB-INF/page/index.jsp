@@ -95,20 +95,20 @@
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe723;</i>
-                    <cite>职位管理</cite>
+                    <cite>学习方向</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
                         <a _href="${ctx }/job/list">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>职位列表</cite>
+                            <cite>方向列表</cite>
                         </a>
                     </li >
                      <li>
                         <a _href="${ctx }/job/add">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>添加职位</cite>
+                            <cite>添加方向</cite>
                         </a>
                     </li >
                 </ul>
@@ -117,20 +117,20 @@
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe726;</i>
-                    <cite>员工管理</cite>
+                    <cite>人员管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="${ctx }/employee/list">
+                        <a _href="${ctx }/stu/list">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>员工列表</cite>
+                            <cite>人员列表</cite>
                         </a>
                     </li >
                     <li>
-                        <a _href="${ctx }/employee/add">
+                        <a _href="${ctx }/stu/add">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>添加员工</cite>
+                            <cite>添加人员</cite>
                         </a>
                     </li >
                 </ul>

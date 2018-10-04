@@ -5,7 +5,7 @@
   
   <head>
     <meta charset="UTF-8">
-    <title>职位信息</title>
+    <title>学习方向</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -55,7 +55,7 @@
               <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
             </th>
             <th>ID</th>
-            <th>职位</th>
+            <th>方向</th>
             <th>信息</th>
             <th>操作</th>
         </thead>
@@ -76,7 +76,7 @@
                 <i class="layui-icon">&#xe601;</i>
               </a> -->
               <%-- <a title="编辑"  onclick="x_admin_show('编辑','${ctx}/job/add?id=${dept.id }');" href="javascript:;"> --%>
-              <a title="编辑"  href="${ctx}/job/add?id=${dept.id }">
+              <a title="编辑"  href="${ctx}/job/add2?id=${dept.id }">
                 <i class="layui-icon">&#xe642;</i>
               </a>
               <a title="删除" onclick="member_del(this,'${dept.id }')" href="javascript:;">

@@ -96,5 +96,13 @@ public class MajorController {
 			mv.setViewName("/major/add");
 		return mv;
 	}
+	@RequestMapping(value="/major/delete")
+	public void delete_Major(Integer id){
+		System.out.println(id);
+		if(id!=null){
+			majorService.delete_Major(id);
+		}
+	}
+	
 
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xianglei.mapper.JobMapper">
+
+	<resultMap type="com.xianglei.pojo.Job" id="JobMap">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="remark" column="remark" />
+	</resultMap>
+	<select id="get_Joblist" resultMap="JobMap">
+		SELECT
+		`id`,
+		`name`,
+		`remark`
+		FROM
+		`job_inf`
+	</select>
+	<select id="get_majorLikelist" parameterType="String"
+		resultMap="JobMap">
+		SELECT
+		`id`,
+		`name`,
+		`remark`
+		FROM
+		`job_inf`
+		WHERE NAME LIKE '%${_parameter}%'
+	</select>
+	<insert id="insert_JobInfo">
+
+		INSERT INTO `job_inf` ( `name`, `remark`)
+		VALUES
+		( #{0}, #{1}) ;
+
+	</insert>
+
+	<update id="update_JobInfo">
+		UPDATE
+		`job_inf`
+		SET
+		`name` = #{1},
+		`remark` = #{2}
+		WHERE `id` = #{0} ;
+
+
+	</update>
+	<delete id="delete_JobInfo" parameterType="Integer">
+		DELETE
+		FROM
+		`job_inf`
+		WHERE `id` = #{id};
+
+	</delete>
+</mapper>

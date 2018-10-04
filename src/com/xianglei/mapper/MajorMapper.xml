@@ -43,5 +43,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		`remark` = #{2} 
 		 WHERE `id` = #{0};
 	</update>
-
+<delete id="delete_Major" parameterType="Integer">
+DELETE 
+FROM
+ `major_inf` 
+WHERE `id` = #{id}; 
+</delete>
 </mapper>

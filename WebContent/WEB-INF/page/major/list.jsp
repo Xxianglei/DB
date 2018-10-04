@@ -150,7 +150,7 @@
           layer.confirm('确认要删除吗？',function(index){
               //发异步删除数据
               //等以后再使用异步，这里先使用
-              $.get("${ctx}/dept/delete?id="+id);
+              $.get("${ctx}/major/delete?id="+id);
               $(obj).parents("tr").remove();
               layer.msg('已删除!',{icon:1,time:1000});
           });

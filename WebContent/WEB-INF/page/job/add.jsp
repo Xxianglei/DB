@@ -5,7 +5,7 @@
   
   <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.0</title>
+    <title>数据库工作室</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -25,10 +25,10 @@
   <body>
     <div class="x-body">
         <form class="layui-form" method="POST" id="deptForm"  action="${ctx}/job/add">
-        <input type="hidden" name="id" id="id" value="${job.id }" >
+       <%--  <input type="hidden" name="id" id="id" value="${job.id }" > --%>
           <div class="layui-form-item">
               <label for="username" class="layui-form-label">
-                  <span class="x-red">*</span>职位名称
+                  <span class="x-red">*</span>学习方向
               </label>
               <div class="layui-input-inline">
                   <input type="text" id="name" name="name" required="" lay-verify="required"

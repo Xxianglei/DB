@@ -43,5 +43,12 @@ public class MajorServiceimpl implements MajorService {
 		
 		majorMapper.update_Major(id,major,remark);
 	}
+	/**
+	 * 删除专业
+	 */
+	public void delete_Major(Integer id) {
+		
+		majorMapper.delete_Major(id);
+	}
 
 }

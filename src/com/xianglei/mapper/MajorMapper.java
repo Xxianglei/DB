@@ -28,6 +28,8 @@ public interface MajorMapper {
 
 	void update_Major(Integer id, String major, String remark);
 
+	void delete_Major(Integer id);
+
 	
 
 }
