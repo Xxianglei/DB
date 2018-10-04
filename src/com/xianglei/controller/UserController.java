@@ -27,6 +27,7 @@ public class UserController {
 	@Autowired
 	private UserService Userservice;
 	Integer id = 0;
+	boolean tag=false;
 
 	/**
 	 * ssm搭建测试
@@ -106,7 +107,7 @@ public class UserController {
 		String username = (String) request.getParameter("username");
 		String password = (String) request.getParameter("password");
 
-		if (loginname != null && loginname != null && loginname != null && id == 0) {
+		if (loginname != null && loginname != null && loginname != null && tag!=true) {
 			Userservice.addUser(loginname, username, password);
 
 			System.out.println("添加人员" + loginname + username + password);
@@ -115,7 +116,7 @@ public class UserController {
 		/**
 		 * 更新管理员信息
 		 */
-		if (this.id != 0) {
+		if (tag) {
 			Userservice.update_user(this.id, loginname, username, password);
 			// 重定向到list
 
@@ -161,6 +162,7 @@ public class UserController {
 	public ModelAndView update_user(ModelAndView mv, Integer id) {
 
 		this.id = id;
+		tag=true;
 		if (id != null)
 			mv.setViewName("/user/add");
 		return mv;
