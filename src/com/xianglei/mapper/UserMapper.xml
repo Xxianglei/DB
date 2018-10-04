@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="status" column="status" />
 		<result property="create_date" column="create_date" />
 	</resultMap>
-	
+
 	<select id="get_UserList" resultMap="userMap">
 		SELECT
 		`id`,
@@ -37,7 +37,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM
 		`user_inf`
 	</select>
-	
+
 	<select id="get_UserLikeList" parameterType="String"
 		resultMap="userMap">
 		SELECT
@@ -54,9 +54,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	</select>
-	
+
 	<!-- 添加管理员 -->
-	<insert id="addUser" >
-	insert into `user_inf` (loginname,username,password) values(#{0},#{1},#{2})
+	<insert id="addUser">
+		insert into `user_inf` (loginname,username,password)
+		values(#{0},#{1},#{2})
 	</insert>
+
+	<delete id="delete_Info" parameterType="Integer">
+		DELETE
+		FROM
+		`user_inf`
+		WHERE `id` = #{id}
+	</delete>
+
+	<update id="update_user">
+		UPDATE
+		`user_inf`
+		SET
+		`loginname` = #{1},
+		`password` = #{3},
+		`username` = #{2}
+		 WHERE `id` = #{0};
+	</update>
 </mapper>

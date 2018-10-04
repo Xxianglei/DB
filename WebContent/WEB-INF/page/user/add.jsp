@@ -5,7 +5,7 @@
   
   <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.0</title>
+    <title>数据库工作室</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -91,7 +91,7 @@
         	  
             console.log(data);
             //发异步，把数据提交给php
-            layer.alert("增加成功", {icon: 6},function () {
+            layer.alert("操作成功", {icon: 6},function () {
             	document.getElementById('deptForm').submit();
                 // 获得frame索引
                 var index = parent.layer.getFrameIndex(window.name);

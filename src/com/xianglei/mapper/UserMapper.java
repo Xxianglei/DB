@@ -22,4 +22,8 @@ public interface UserMapper {
 
 	void addUser(String loginname,String username,String password);
 
+	void delete_Info(Integer id);
+
+	void update_user(Integer id, String loginname, String username, String password);
+
 }

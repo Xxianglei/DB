@@ -48,5 +48,20 @@ public class UserServiceimpl  implements UserService{
 		userMapper.addUser(loginname,username,password);
 	
 	}
+	/**
+	 *  删除管理员
+	 */
+	public void delete_UserInfo(Integer id) {
+		userMapper.delete_Info(id);
+		
+	}
+	/**
+	 *   更新管理员信息
+	 */
+
+	public void update_user(Integer id, String loginname, String username, String password) {
+		userMapper.update_user(id,loginname,username,password);
+		
+	}
 
 }

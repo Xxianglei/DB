@@ -12,4 +12,10 @@ public interface UserService {
 	List<User> get_UserLikeList(String content);
 
 	void addUser(String loginname,String username,String password);
+
+	void delete_UserInfo(Integer id);
+
+	void update_user(Integer id, String loginname, String username, String password);
+
+
 }

@@ -81,10 +81,8 @@
 						<td>${dept.username }</td>
 						<td>${dept.create_date }</td>
 
-						<!--  <td class="td-status">
-              <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td> -->
 						<td class="td-manage"><a title="编辑"
-							href="${ctx}/notice/add?id=${dept.id }"> <i
+							href="${ctx}/user/update?id=${dept.id }"> <i
 								class="layui-icon">&#xe642;</i>
 						</a> <a title="删除" onclick="member_del(this,'${dept.id }')"
 							href="javascript:;"> <i class="layui-icon">&#xe640;</i>
