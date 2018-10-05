@@ -16,14 +16,12 @@
 <link rel="stylesheet" href="${ctx}/public/css/xadmin.css">
 <script type="text/javascript"
 	src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="${ctx}/public/lib/layui/layui.js"
-	charset="utf-8"></script>
+
 <script type="text/javascript" src="${ctx}/public/js/xadmin.js"></script>
-<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
-<!--[if lt IE 9]>
-      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+<link rel="stylesheet" href="${ctx }/public/lib/layui/css/layui.css"
+	media="all">
+<!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 
 <body>
@@ -31,14 +29,14 @@
 		<span class="layui-breadcrumb"> <a href="">首页</a> <a> <cite>人员列表</cite></a>
 		</span> <a class="layui-btn layui-btn-small"
 			style="line-height: 1.6em; margin-top: 3px; float: right"
-			href="${ctx }/employee/list" title="刷新"> <i class="layui-icon"
+			href="${ctx }/stu/list" title="刷新"> <i class="layui-icon"
 			style="line-height: 30px">ဂ</i></a>
 	</div>
 
 	<div class="x-body">
 		<div class="layui-row" style="" align="center">
-			<form class="layui-form layui-col-md12 x-so" method="get"
-				action="${ctx }/employee/list">
+			<form class="layui-form layui-col-md12 x-so" method="get" action="#">
+				<%-- "${ctx }/stu/findall" --%>
 				<!-- <input class="layui-input" placeholder="开始日" name="start" id="start">
           <input class="layui-input" placeholder="截止日" name="end" id="end"> -->
 				<input type="text" name="content" style="width: 50%;"
@@ -48,168 +46,99 @@
 				</button>
 			</form>
 		</div>
-		<%-- <xblock>
- <!--        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button> -->
-        <button class="layui-btn" onclick="x_admin_show('添加用户','${ctx}/dept/add')"><i class="layui-icon"></i>添加</button>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
-      </xblock> --%>
 
-
-		<table class="layui-table" lay-size="sm">
-			<thead>
-				<tr>
-					<th>
-						<div class="layui-unselect header layui-form-checkbox"
-							lay-skin="primary">
-							<i class="layui-icon">&#xe605;</i>
-						</div>
-					</th>
-					<th>序号</th>
-					<th>姓名</th>
-					<th>等级</th>
-					<th>性别</th>
-					<th>专业</th>
-					<th>学习方向</th>
-					<th>学号</th>
-					<th>竞赛</th>
-					<th>技能</th>
-					<th>爱好</th>
-					<th>简介</th>
-					<th>操作</th>
-			</thead>
-			<tbody>
-				<c:forEach items="${requestScope.list}" var="dept" varStatus="stat">
-					<tr>
-						<td>
-							<div class="layui-unselect layui-form-checkbox"
-								lay-skin="primary" data-id='2'>
-								<i class="layui-icon">&#xe605;</i>
-							</div>
-						</td>
-						<td>${dept.id }</td>
-						<td>${dept.name }</td>
-						<td>${dept.level }</td>
-						<td>${dept.sex }</td>
-						<td>${dept.major_id }</td>
-						<td>${dept.job_id }</td>
-						<td>${dept.race }</td>
-						<td>${dept.speciality }</td>
-						<td>${dept.space}</td>
-						<td>${dept.resume }</td>
-						<td>${dept.remark }</td>
-
-
-
-
-						<td class="td-manage">
-						<a title="详细" onclick="x_admin_show('详细','${ctx}/job/details?id=${dept.id }');"href="javascript:;"> 
-							<i class="layui-icon">&#xe60a;</i>
-							<a title="编辑" href="${ctx}/employee/add?id=${dept.id }"> 
-							<i class="layui-icon">&#xe642;</i>
-							</a> <a title="删除" onclick="member_del(this,'${dept.id }')"href="javascript:;"> 
-							<i class="layui-icon">&#xe640;</i>
-							</a></td>
-					</tr>
-
-				</c:forEach>
-
-
-
-
-			</tbody>
-		</table>
-		<div class="page">
-			<div>
-				<a class="prev" href="">&lt;&lt;</a> <a class="num" href="">1</a> <span
-					class="current">2</span> <a class="num" href="">3</a> <a
-					class="num" href="">489</a> <a class="next" href="">&gt;&gt;</a>
-			</div>
+		<!--  -->
+		<div class="layui-btn-group demoTable">
+			<button class="layui-btn" data-type="getCheckData">获取选中行数据</button>
+			<button class="layui-btn" data-type="getCheckLength">获取选中数目</button>
+			<button class="layui-btn" data-type="isAll">验证是否全选</button>
 		</div>
 
-	</div>
-	<script>
-		layui.use('laydate', function() {
-			var laydate = layui.laydate;
+		<table class="layui-table"
+			lay-data="{width: 1500, height:'full-200', url:'http://localhost:8080/people/stu/findall', page:true, id:'idTest'  }"
+			lay-filter="demo">
+			<thead>
+				<tr>
+					<th lay-data="{type:'checkbox', fixed: 'left'}"></th>
+					<th lay-data="{field:'id', width:80 ,sort: true, fixed: true}">ID</th>
+					<th lay-data="{field:'name', width:80}">用户名</th>
+					<th lay-data="{field:'level', , width:80 sort: true}">等级</th>
+					<th lay-data="{field:'sex',sort: true,width:80}">性别</th>
+					<th lay-data="{field:'major_id',sort: true}">专业</th>
+					<th lay-data="{field:'job_id', sort: true}">学习方向</th>
+					<th lay-data="{field:'speciality',sort: true}">特长</th>
+					<th lay-data="{field:'space',sort: true}">工作室</th>
+					<th lay-data="{field:'race',  sort: true}">竞赛</th>
+					<th lay-data="{field:'resume'}">简介</th>
+					<th lay-data="{field:'remark', width:80}">备注</th>
+					<th
+						lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}">操作</th>
+				</tr>
+			</thead>
+		</table>
+		<!--  -->
+		<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail" href="${ctx }/stu/check"  >查看</a>
+  <a class="layui-btn layui-btn-xs" lay-event="edit" href="${ctx }/stu/edit" >编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" href="${ctx }/stu/del" >删除</a>
 
-			//执行一个laydate实例
-			laydate.render({
-				elem : '#start' //指定元素
-			});
+</script>
+		<script src="${ctx }/public/lib/layui/layui.js" charset="utf-8"></script>
+		<script>
+			layui
+					.use(
+							'table',
+							function() {
+								var table = layui.table;
+								//监听表格复选框选择
+								table.on('checkbox(demo)', function(obj) {
+									console.log(obj)
+								});
+								//监听工具条
+								table.on('tool(demo)', function(obj) {
+									var data = obj.data;
+									if (obj.event === 'detail') {
+										layer.msg('ID：' + data.id + ' 的查看操作');
+									} else if (obj.event === 'del') {
+										layer.confirm('真的删除行么',
+												function(index) {
+													obj.del();
+													layer.close(index);
+												});
+									} else if (obj.event === 'edit') {
+										layer.alert('编辑行：<br>'
+												+ JSON.stringify(data))
+									}
+								});
 
-			//执行一个laydate实例
-			laydate.render({
-				elem : '#end' //指定元素
-			});
-		});
+								var $ = layui.$, active = {
+									getCheckData : function() { //获取选中数据
+										var checkStatus = table
+												.checkStatus('idTest'), data = checkStatus.data;
+										layer.alert(JSON.stringify(data));
+									},
+									getCheckLength : function() { //获取选中数目
+										var checkStatus = table
+												.checkStatus('idTest'), data = checkStatus.data;
+										layer.msg('选中了：' + data.length + ' 个');
+									},
+									isAll : function() { //验证是否全选
+										var checkStatus = table
+												.checkStatus('idTest');
+										layer.msg(checkStatus.isAll ? '全选'
+												: '未全选')
+									}
+								};
 
-		/*用户-停用*/
-		function member_stop(obj, id) {
-			layer.confirm('确认要停用吗？', function(index) {
-
-				if ($(obj).attr('title') == '启用') {
-
-					//发异步把用户状态进行更改
-					$(obj).attr('title', '停用')
-					$(obj).find('i').html('&#xe62f;');
-
-					$(obj).parents("tr").find(".td-status").find('span')
-							.addClass('layui-btn-disabled').html('已停用');
-					layer.msg('已停用!', {
-						icon : 5,
-						time : 1000
-					});
-
-				} else {
-					$(obj).attr('title', '启用')
-					$(obj).find('i').html('&#xe601;');
-
-					$(obj).parents("tr").find(".td-status").find('span')
-							.removeClass('layui-btn-disabled').html('已启用');
-					layer.msg('已启用!', {
-						icon : 5,
-						time : 1000
-					});
-				}
-
-			});
-		}
-
-		/*用户-删除*/
-		function member_del(obj, id) {
-			layer.confirm('确认要删除吗？', function(index) {
-				//发异步删除数据
-				//等以后再使用异步，这里先使用
-				$.get("${ctx}/employee/delete?id=" + id);
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!', {
-					icon : 1,
-					time : 1000
-				});
-			});
-		}
-
-		function delAll(argument) {
-
-			var data = tableCheck.getData();
-
-			layer.confirm('确认要删除吗？' + data, function(index) {
-				//捉到所有被选中的，发异步进行删除
-				layer.msg('删除成功', {
-					icon : 1
-				});
-				$(".layui-form-checked").not('.header').parents('tr').remove();
-			});
-		}
-	</script>
-	<script>
-		var _hmt = _hmt || [];
-		(function() {
-			var hm = document.createElement("script");
-			hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(hm, s);
-		})();
-	</script>
+								$('.demoTable .layui-btn').on(
+										'click',
+										function() {
+											var type = $(this).data('type');
+											active[type] ? active[type]
+													.call(this) : '';
+										});
+							});
+		</script>
 </body>
 
 </html>

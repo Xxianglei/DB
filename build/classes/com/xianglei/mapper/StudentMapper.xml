@@ -3,37 +3,51 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xianglei.mapper.StudentMapper">
-<resultMap type="com.xianglei.pojo.Student" id="stuMap">
-<result property="id" column="id" />
-<result property="salary" column="salary" />
-<result property="major_id" column="major_id" />
-<result property="job_id" column="job_id" />
-<result property="name" column="name" />
-<result property="address" column="address" />
-<result property="phone" column="phone" />
-<result property="qq_num" column="qq_num" />
-<result property="email" column="email" />
-<result property="sex" column="sex" />
-<result property="birthday" column="birthday" />
-<result property="race" column="race" />
-<result property="speciality" column="speciality" />
-<result property="hobby" column="hobby" />
-<result property="remark" column="remark" />
-<result property="create_date" column="create_date" />
-<result property="resume" column="resume" />
-<result property="student_union" column="student_union" />
-<result property="cadre" column="cadre" />
-<result property="graduate_student" column="graduate_student" />
-<result property="space" column="space" />
-<result property="nick_name" column="nick_name" />
-<result property="stu_num" column="stu_num" />
-<result property="photo" column="photo" />
-<result property="level" column="level" />
-</resultMap>
-<select id="get_Stulist" resultMap="stuMap">
-SELECT 
-  *
-FROM
- `employee_inf` 
-</select>
+	<resultMap type="com.xianglei.pojo.Student" id="stuMap">
+		<result property="id" column="id" />
+		<result property="salary" column="salary" />
+		<result property="major_id" column="major_id" />
+		<result property="job_id" column="job_id" />
+		<result property="name" column="name" />
+		<result property="address" column="address" />
+		<result property="phone" column="phone" />
+		<result property="qq_num" column="qq_num" />
+		<result property="email" column="email" />
+		<result property="sex" column="sex" />
+		<result property="birthday" column="birthday" />
+		<result property="race" column="race" />
+		<result property="speciality" column="speciality" />
+		<result property="hobby" column="hobby" />
+		<result property="remark" column="remark" />
+		<result property="create_date" column="create_date" />
+		<result property="resume" column="resume" />
+		<result property="student_union" column="student_union" />
+		<result property="cadre" column="cadre" />
+		<result property="graduate_student" column="graduate_student" />
+		<result property="space" column="space" />
+		<result property="nick_name" column="nick_name" />
+		<result property="stu_num" column="stu_num" />
+		<result property="photo" column="photo" />
+		<result property="level" column="level" />
+	</resultMap>
+		
+	<select id="get_Stulist" resultMap="stuMap" >
+		SELECT
+		*
+		FROM
+		`employee_inf`
+        where name like '%${_parameter}%'
+	</select>
+
+	<select id="findAllPage" resultMap="stuMap">
+		SELECT
+		*
+		FROM
+		`employee_inf`
+		LIMIT #{0},#{1}
+
+	</select>
+	<select id="count" resultType="int">
+		select count(*) from `employee_inf`
+	</select>
 </mapper>

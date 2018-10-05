@@ -2815,7 +2815,7 @@ a cite {
 
 .layui-table-view .layui-table {
 	position: relative;
-	width: 80%;
+	width: auto;
 	margin: 0
 }
 
