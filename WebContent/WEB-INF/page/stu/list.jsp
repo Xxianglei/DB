@@ -55,7 +55,7 @@
 		</div>
 
 		<table class="layui-table"
-			lay-data="{width: 1500, height:'full-200', url:'http://localhost:8080/people/stu/findall', page:true, id:'idTest'  }"
+			lay-data="{ height:'full-200', url:'http://localhost:8080/people/stu/findall', page:true, id:'idTest'  }"
 			lay-filter="demo">
 			<thead>
 				<tr>
@@ -78,9 +78,9 @@
 		</table>
 		<!--  -->
 		<script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail" href="${ctx }/stu/check"  >查看</a>
-  <a class="layui-btn layui-btn-xs" lay-event="edit" href="${ctx }/stu/edit" >编辑</a>
-  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" href="${ctx }/stu/del" >删除</a>
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail"  >查看</a>
+  <a class="layui-btn layui-btn-xs" lay-event="edit"  >编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"  >删除</a>
 
 </script>
 		<script src="${ctx }/public/lib/layui/layui.js" charset="utf-8"></script>
@@ -98,16 +98,45 @@
 								table.on('tool(demo)', function(obj) {
 									var data = obj.data;
 									if (obj.event === 'detail') {
-										layer.msg('ID：' + data.id + ' 的查看操作');
+										layer.msg('ID：' + data.id+'<br>'+
+												'姓名：' + data.name+'<br>'+
+												'学号：' + data.stu_num+'<br>'+
+												'昵称：' + data.nick_name+'<br>'+
+												'专业：' + data.major_id+'<br>'+
+												'等级：' + data.level+'<br>'+
+												'性别：' + data.sex+'<br>'+
+												'Email：' + data.email+'<br>'+
+												'QQ：' + data.qq_num+'<br>'+
+												'手机：' + data.phone+'<br>'+
+												'生日：' + data.birthday+'<br>'+
+												'专长：' + data.speciality+'<br>'+
+												'爱好：' + data.hobby+'<br>'+
+												'竞赛：' + data.race+'<br>'+
+												'学生会：' + data.student_union+'<br>'+
+												'班干部：' + data.cadre+'<br>'+
+												'考研：' + data.graduate_student+'<br>'+
+												'联系地址：' + data.address+'<br>'+
+												'学习方向：' + data.job_id+'<br>'+
+												'工作室：' + data.space+'<br>'+
+												'期望薪资：' + data.salary+'<br>'+
+												'创建时间：' + data.create_date+'<br>'+
+												'简述：' + data.resume+'<br>'+
+												'备注：' + data.remark+'<br>'
+												
+										);
 									} else if (obj.event === 'del') {
 										layer.confirm('真的删除行么',
 												function(index) {
+											location.href="${ctx }/stu/del?data="+data.id;
 													obj.del();
+													
 													layer.close(index);
 												});
 									} else if (obj.event === 'edit') {
-										layer.alert('编辑行：<br>'
-												+ JSON.stringify(data))
+										location.href="${ctx }/stu/edit?data="+data.id+"&tag=1";
+									/* 	layer.alert('编辑行：<br>'
+												
+												+ JSON.stringify(data)) */
 									}
 								});
 

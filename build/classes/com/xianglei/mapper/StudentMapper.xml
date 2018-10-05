@@ -30,13 +30,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="photo" column="photo" />
 		<result property="level" column="level" />
 	</resultMap>
-		
-	<select id="get_Stulist" resultMap="stuMap" >
+
+	<select id="get_Stulist" resultMap="stuMap">
 		SELECT
 		*
 		FROM
 		`employee_inf`
-        where name like '%${_parameter}%'
+		where name like '%${_parameter}%'
 	</select>
 
 	<select id="findAllPage" resultMap="stuMap">
@@ -48,6 +48,105 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	</select>
 	<select id="count" resultType="int">
-		select count(*) from `employee_inf`
+		select count(*) from
+		`employee_inf`
 	</select>
+
+	<insert id="add_Stu">
+		INSERT INTO `employee_inf` (
+		`salary`,
+		`major_id`,
+		`job_id`,
+		`name`,
+		`address`,
+		`phone`,
+		`qq_num`,
+		`email`,
+		`sex`,
+		`birthday`,
+		`race`,
+		`speciality`,
+		`hobby`,
+		`remark`,
+		`create_date`,
+		`resume`,
+		`student_union`,
+		`cadre`,
+		`graduate_student`,
+		`space`,
+		`nick_name`,
+		`stu_num`,
+		`level`
+		)
+
+
+		VALUES
+		(
+		#{0},
+		#{22},
+		#{21},
+		#{1},
+		#{2},
+		#{3},
+		#{4},
+		#{5},
+		#{6},
+		#{7},
+		#{8},
+		#{9},
+		#{10},
+		#{11},
+		#{12},
+		#{13},
+		#{14},
+		#{15},
+		#{16},
+		#{17},
+		#{18},
+		#{19},
+		#{20}
+
+		) ;
+
+
+	</insert>
+	<update id="edit_stu" >
+		UPDATE
+		`employee_inf`
+		SET
+		`salary` = #{0}
+		`major_id` = #{22},
+		`job_id` = #{21}',
+		`name` = #{1},
+		`address` = #{2},
+		`phone` = #{3},
+		`qq_num` = #{4},
+		`email` = #{5},
+		`sex` = #{6},
+		`birthday` = #{7},
+		`race` = #{8},
+		`speciality` = #{9},
+		`hobby` = #{10},
+		`remark` = #{11},
+		`create_date` = #{12},
+		`resume` = #{13},
+		`student_union` = #{14},
+		`cadre` = #{15},
+		`graduate_student` = #{16},
+		`space` = #{17},
+		`nick_name` = #{18},
+		`stu_num` = #{19},
+		`level` = #{20}
+		WHERE `id` = #{id} ;
+
+	</update>
+	<delete id="del_stu" parameterType="Integer">
+		DELETE
+		FROM
+		`employee_inf`
+		WHERE `id` = #{del_id} ;
+
+
+	</delete>
+
 </mapper>

@@ -3,8 +3,8 @@ package com.xianglei.pojo;
 public class StudentList {
 
 	 private int id;
-	 private int major_id;
-	 private int job_id;
+	 private String major_id;
+	 private String job_id;
 	 private String name;
 	 private String sex;
 	 private String race;
@@ -19,16 +19,16 @@ public class StudentList {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getMajor_id() {
+	public String getMajor_id() {
 		return major_id;
 	}
-	public void setMajor_id(int major_id) {
+	public void setMajor_id(String major_id) {
 		this.major_id = major_id;
 	}
-	public int getJob_id() {
+	public String getJob_id() {
 		return job_id;
 	}
-	public void setJob_id(int job_id) {
+	public void setJob_id(String job_id) {
 		this.job_id = job_id;
 	}
 	public String getName() {

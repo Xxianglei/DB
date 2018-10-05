@@ -13,4 +13,16 @@ public interface StudentService {
 
 	int count();
 
+	void add_Stu(int salary, String name, String address, String phone, String qq_num, String email, String sex,
+			String birthday, String race, String speciality, String hobby, String remark, String create_date,
+			String resume, String student_union, String cadre, String graduate_student, String space, String nick_name,
+			String stu_num, String level,String job_id,String major_id);
+
+	void edit_stu(int salary, String name, String address, String phone, String qq_num, String email, String sex,
+			String birthday, String race, String speciality, String hobby, String remark, String create_date,
+			String resume, String student_union, String cadre, String graduate_student, String space, String nick_name,
+			String stu_num, String level, String job_id, String major_id,int id);
+
+	void del_stu(int del_id);
+
 }
