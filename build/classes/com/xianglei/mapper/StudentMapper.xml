@@ -114,9 +114,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		UPDATE
 		`employee_inf`
 		SET
-		`salary` = #{0}
+		`salary` = #{0},
 		`major_id` = #{22},
-		`job_id` = #{21}',
+		`job_id` = #{21},
 		`name` = #{1},
 		`address` = #{2},
 		`phone` = #{3},
@@ -137,7 +137,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		`nick_name` = #{18},
 		`stu_num` = #{19},
 		`level` = #{20}
-		WHERE `id` = #{id} ;
+		WHERE `id` = #{23} ;
 
 	</update>
 	<delete id="del_stu" parameterType="Integer">
