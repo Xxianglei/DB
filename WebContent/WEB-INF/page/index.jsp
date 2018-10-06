@@ -6,7 +6,7 @@
 <html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>	
-	<title>后台登录</title>
+	<title>数据库工作室</title>
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="${ctx}/public/logo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="${ctx}/public/css/font.css">
 	<link rel="stylesheet" href="${ctx}/public/css/xadmin.css">
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="${ctx}/public/js/jquery.min.js"></script>
     <script src="${ctx}/public/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="${ctx}/public/js/xadmin.js"></script>
 
@@ -30,10 +30,10 @@
         
         <ul class="layui-nav right" lay-filter="">
           <li class="layui-nav-item">
-            <a href="javascript:;">admin</a>
+            <a href="javascript:;"> ${sessionScope.name}</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-              <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
-              <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
+              <dd><a onclick="x_admin_show('个人信息','')">个人信息</a></dd>
+              <dd><a onclick="x_admin_show('切换帐号','')">切换帐号</a></dd>
               <dd><a href="${ctx }/user/logout">退出</a></dd>
             </dl>
           </li>

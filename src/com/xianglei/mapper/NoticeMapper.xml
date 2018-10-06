@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xianglei.mapper.NoticeMapper">
+
+	<resultMap type="com.xianglei.pojo.Notice" id="noticeMap">
+
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="create_date" column="create_date" />
+		<result property="user_id" column="user_id" />
+	</resultMap>
+	<select id="get_Noticelist" resultMap="noticeMap">
+		SELECT
+		*
+		FROM
+		`notice_inf`
+	</select>
+
+	<select id="get_NoticeLikelist" resultMap="noticeMap"
+		parameterType="String">
+		SELECT
+		*
+		FROM
+		`notice_inf`
+		where
+		title like '%${_parameter}%'
+	</select>
+
+	<insert id="add_Notice">
+
+		INSERT INTO `notice_inf` (
+
+		`title`,
+		`content`,
+		`create_date`,
+		`user_id`
+		)
+		VALUES
+		(
+
+		#{0},
+		#{1},
+		#{2},
+		#{3}
+		) ;
+
+	</insert>
+	<update id="update_Notice">
+		UPDATE
+		`notice_inf`
+		SET
+		`title` = #{0},
+		`content` = #{1},
+		`create_date` = #{2}
+		WHERE `id` = #{3} ;
+
+	</update>
+	<delete id="del_Notice" parameterType="Integer">
+		DELETE
+		FROM
+		`notice_inf`
+		WHERE `id` = #{id} ;
+	</delete>
+</mapper>

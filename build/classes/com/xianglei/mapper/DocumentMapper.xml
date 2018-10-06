@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xianglei.mapper.DocumentMapper">
+	<resultMap type="com.xianglei.pojo.Document" id="docMap">
+		<result property="id" column="id" />
+		<result property="filename" column="filename" />
+		<result property="size" column="size" />
+		<result property="create_date" column="create_date" />
+		<result property="uploader" column="uploader" />
+	</resultMap>
+
+	<insert id="upload">
+		INSERT INTO `document_inf` (
+		`filename`,
+		`size`,
+		`create_date`,
+		`uploader`
+		)
+		VALUES
+		(
+		#{0},
+		#{1},
+		#{2},
+		#{3}
+		) ;
+
+	</insert>
+
+	<select id="get_DocumentList" resultMap="docMap">
+		SELECT
+		*
+		FROM
+		`document_inf`
+
+	</select>
+
+	<delete id="del_Document" parameterType="Integer">
+		DELETE
+		FROM
+		`document_inf`
+		WHERE `id` = #{id} ;
+	</delete>
+	
+	<select id="get_DocumentLikeList" parameterType="String" resultMap="docMap">
+	SELECT
+		*
+		FROM
+		`document_inf`
+		where filename like '%${_parameter}%'
+	</select>
+</mapper>

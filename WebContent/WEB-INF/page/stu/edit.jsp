@@ -77,6 +77,7 @@
 				</div>
 			</div>
 			<div />
+				<p>.</p>
 			<div class="layui-inline">
 				<label class="layui-form-label"><span></span> 等级</label>
 				<div class="layui-input-inline">
@@ -141,6 +142,7 @@
 				</div>
 			</div>
 			<div />
+				<p>.</p>
 			<div class="layui-form-item">
 				<label for="phone" class="layui-form-label"><span></span> 特长 </label>
 				<div class="layui-input-inline">
@@ -230,6 +232,7 @@
 				</div>
 			</div>
 			<div />
+				<p>.</p>
 			<div class="layui-inline">
 				<label class="layui-form-label"> <span class="x-red">*</span>工作室
 				</label>
@@ -241,6 +244,7 @@
 				</div>
 			</div>
 			<div />
+				<p>.</p>
 			<div class="layui-form-item">
 				<label for="phone" class="layui-form-label"><span></span> 期望薪资 </label>
 				<div class="layui-input-inline">
@@ -257,6 +261,7 @@
 				</div>
 			</div>
 			<div />
+				<p>.</p>
 			<div class="layui-form-item layui-form-text">
 				<label class="layui-form-label"><span></span> 简述</label>
 				<div class="layui-input-block">

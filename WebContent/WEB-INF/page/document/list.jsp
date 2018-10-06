@@ -29,7 +29,6 @@
         <a>
           <cite>文档信息</cite></a>
       </span>
-            <button class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:innert;margin-left:75%;;"  lay-submit="" lay-filter="sreach"><i class="layui-icon"></i>增加</button>
       
       <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="${ctx }/document/list" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
@@ -57,9 +56,9 @@
               <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
             </th>
             <th>ID</th>
-            <th>标题</th>
-            <th>描述</th>
-            <th>发布日期</th>
+            <th>文件名</th>
+            <th>文件大小(kb)</th>
+            <th>上传日期</th>
             <th>发布用户</th>
             <th>操作</th>
         </thead>
@@ -70,10 +69,10 @@
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
             </td>
             <td>${dept.id}</td>
-            <td>${dept.title }</td>
-            <td>${dept.remark }</td>
+            <td>${dept.filename }</td>
+            <td>${dept.size }</td>
             <td>${dept.create_date }</td>
-            <td>${dept.user.name }</td>
+            <td>${dept.uploader }</td>
             
            <!--  <td class="td-status">
               <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td> -->
@@ -82,8 +81,8 @@
                 <i class="layui-icon">&#xe601;</i>
               </a> -->
               <%-- <a title="编辑"  onclick="x_admin_show('编辑','${ctx}/job/add?id=${dept.id }');" href="javascript:;"> --%>
-              <a title="编辑"  href="${ctx}/document/add?id=${dept.id }">
-                <i class="layui-icon">&#xe642;</i>
+              <a title="下载"  href="${ctx}/document/download/?filename=${dept.filename }">
+                <i class="layui-icon">&#xe601;</i>
               </a>
               <a title="删除" onclick="member_del(this,'${dept.id }')" href="javascript:;">
                 <i class="layui-icon">&#xe640;</i>

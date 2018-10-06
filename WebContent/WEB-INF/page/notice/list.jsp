@@ -29,7 +29,7 @@
         <a>
           <cite>公告信息</cite></a>
       </span>
-      <button type="button" onclick="location.href='${ctx}/document/add'" class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:innert;margin-left:75%;;"  ><i class="layui-icon"></i>增加</button>
+      <button type="button" onclick="location.href='${ctx}/notice/add'" class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:innert;margin-left:75%;;"  ><i class="layui-icon"></i>增加</button>
       <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="${ctx }/notice/list" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
     </div>
@@ -42,13 +42,8 @@
           <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
         </form>
       </div>
-      <%-- <xblock>
- <!--        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button> -->
-        <button class="layui-btn" onclick="x_admin_show('添加用户','${ctx}/dept/add')"><i class="layui-icon"></i>添加</button>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
-      </xblock> --%>
+
      
-      
       <table class="layui-table">
         <thead>
           <tr>
@@ -71,17 +66,10 @@
             <td>${dept.id}</td>
             <td>${dept.title }</td>
             <td>${dept.content }</td>
-            <td>${dept.create_date }</td>
-            <td>${dept.user.name }</td>
-            
-           <!--  <td class="td-status">
-              <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td> -->
+            <td>${dept.create_date }</td>         
+            <td>管理员</td>
             <td class="td-manage">
-             <!--  <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                <i class="layui-icon">&#xe601;</i>
-              </a> -->
-              <%-- <a title="编辑"  onclick="x_admin_show('编辑','${ctx}/job/add?id=${dept.id }');" href="javascript:;"> --%>
-              <a title="编辑"  href="${ctx}/notice/add?id=${dept.id }">
+              <a title="编辑"  href="${ctx}/notice/update?id=${dept.id }&tag=1">
                 <i class="layui-icon">&#xe642;</i>
               </a>
               <a title="删除" onclick="member_del(this,'${dept.id }')" href="javascript:;">

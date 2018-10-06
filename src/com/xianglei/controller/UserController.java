@@ -63,6 +63,7 @@ public class UserController {
 		if (user != null) {
 			// 将用户保存到Session当中
 			session.setAttribute(Constants.USER_SESSION, user);
+			session.setAttribute("name", loginname);
 			// 客户端跳转到main页面
 			return "index";
 
