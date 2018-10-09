@@ -34,7 +34,8 @@
 	<!-- 切面 -->
 	<aop:config>
 		<aop:advisor advice-ref="txAdvice"
-			pointcut="execution(* com.itheima.crm.service.*.*(..))" />
+			pointcut="execution(* com.xianglei.service.*.*(..))" />
 	</aop:config>
+	
 
 </beans>

@@ -170,7 +170,7 @@ public class UserController {
 	}
 
 	/**
-	 * 退出啊登录
+	  * 退出啊登录
 	 */
 	@RequestMapping(value = "/user/logout", method = RequestMethod.GET)
 	public String logout(Model model,HttpServletRequest request) {
@@ -182,4 +182,5 @@ public class UserController {
 		return "loginForm";
 		
 	}
+	
 }
