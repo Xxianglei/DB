@@ -35,10 +35,10 @@ public class UserController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("test")
+	@RequestMapping("welcomedb")
 	public String test(Model model) {
-		model.addAttribute("msg", "Hello SSM");
-		return "test";
+		
+		return "database";
 	}
 
 	/**

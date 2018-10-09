@@ -29,6 +29,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="stu_num" column="stu_num" />
 		<result property="photo" column="photo" />
 		<result property="level" column="level" />
+			<result property="password" column="password" />
+		<result property="login_num" column="login_num" />
 	</resultMap>
 
 	<select id="get_Stulist" resultMap="stuMap">

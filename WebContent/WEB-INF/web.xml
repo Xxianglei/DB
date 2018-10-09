@@ -37,6 +37,7 @@
   <servlet-mapping>
     <servlet-name>springmvc</servlet-name>
     <url-pattern>/</url-pattern>
+         <url-pattern>*.html</url-pattern>
   </servlet-mapping>
   
   
@@ -60,6 +61,7 @@
     <jsp-property-group>
     	 <!-- 配置拦截所有的jsp页面  -->
       <url-pattern>*.jsp</url-pattern>
+ 
        <!-- 可以使用el表达式  -->
       <el-ignored>false</el-ignored>
       <!-- 不能在页面使用java脚本 -->
