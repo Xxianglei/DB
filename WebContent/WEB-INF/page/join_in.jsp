@@ -143,7 +143,7 @@
 					</div>
 					<div class="container">
 						<form class="layui-form" method="POST" id="deptForm"
-							action="${ctx}/stu/add2">
+							action="${ctx}/student/join_in">
 
 							<div class="layui-form">
 
