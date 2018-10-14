@@ -50,10 +50,12 @@
 			<mvc:mapping path="/*" />
 			<!-- 设置不拦截地址 -->
 			<mvc:exclude-mapping path="/welcomedb" />
-			<mvc:exclude-mapping path="/download.html" />
-			<mvc:exclude-mapping path="/database.html" />
-			<mvc:exclude-mapping path="/log_in.html" />
-			<mvc:exclude-mapping path="/join_in.html" />
+			<mvc:exclude-mapping path="/download" />
+			<mvc:exclude-mapping path="/database" />
+			<mvc:exclude-mapping path="/log_in" />
+			<mvc:exclude-mapping path="/join_in" />
+			<mvc:exclude-mapping path="/report"/>
+			<mvc:exclude-mapping path="/Ulog_in"/>
 			<!-- 自定义判断用户权限的拦截类 -->
 
 			<bean class="com.xianglei.interceptor.AuthorizedInterceptor" />

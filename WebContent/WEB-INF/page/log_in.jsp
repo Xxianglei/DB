@@ -24,19 +24,19 @@
 				<nav>
 					<ul>
 						<li>
-							<a href="database.html"><b>首页</b></a>
+							<a href="welcomedb"><b>首页</b></a>
 						</li>
 						<li>
-							<a href="#"><b>公告</b></a>
+							<a href="report"><b>公告</b></a>
 						</li>
 						<li>
-							<a href="download.html"><b>资源下载</b></a>
+							<a href="download"><b>资源下载</b></a>
 						</li>
 						<li>
-							<a href="join_in.html" data-hover="加入我们"> <b>加入我们</b></a>
+							<a href="join_in" data-hover="加入我们"> <b>加入我们</b></a>
 						</li>
 						<li>
-							<a href="login.html"> <b>登录*注册</b></a>
+							<a href="login"> <b>登录*注册</b></a>
 						</li>
 					</ul>
 				</nav>
@@ -65,9 +65,10 @@
 					<div class="login-box">
 
 						<div class="login_form">
-							<form action="" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0" />
+							<form action="${ctx}/Ulog_in" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0" />
 								<input type="hidden" name="to" value="log" />
 								<div class="uinArea" id="uinArea">
+								<div align="center"><font color="red">${requestScope.msg}</font> </div>
 									<label class="input-tips" for="u" > <font size="2">帐号：</font></label>
 									<div class="inputOuter" id="uArea">
 

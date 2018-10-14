@@ -35,19 +35,19 @@
 				<nav>
 					<ul>
 						<li>
-							<a href="database.html"><b>首页</b></a>
+							<a href="welcomedb"><b>首页</b></a>
 						</li>
 						<li>
-							<a href="#"><b>公告</b></a>
+							<a href="report"><b>公告</b></a>
 						</li>
 						<li>
-							<a href="download.html"><b>资源下载</b></a>
+							<a href="download"><b>资源下载</b></a>
 						</li>
 						<li>
-							<a href="join_in.html" data-hover="加入我们"> <b>加入我们</b></a>
+							<a href="join_in" data-hover="加入我们"> <b>加入我们</b></a>
 						</li>
 						<li>
-							<a href="log_in.html"> <b>登录*注册</b></a>
+							<a href="log_in"> <b>登录*注册</b></a>
 						</li>
 					</ul>
 				</nav>
@@ -65,7 +65,7 @@
 
 					<button  class="layui-btn layui-btn-normal layui-btn-radius" style="width:180px;height:58px ">
 						<divalign="center">
-						<a href="join_in.html" target="_self" ><font size="4" face="宋体" color="white">&emsp;<strong>加入我们</strong></font></a>
+						<a href="join_in" target="_self" ><font size="4" face="宋体" color="white">&emsp;<strong>加入我们</strong></font></a>
 						<i class="layui-icon ">&#xe602;</i>
 						</div>
 					</button>

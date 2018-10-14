@@ -35,11 +35,7 @@ public class UserController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("welcomedb")
-	public String test(Model model) {
-		
-		return "database";
-	}
+	
 
 	/**
 	 * 超级用户登录

@@ -37,15 +37,15 @@
 				</div>
 				<nav>
 					<ul>
-						<li><a href="database.html"><b><font color="#666666">首页</font></b></a>
+						<li><a href="welcomedb"><b><font color="#666666">首页</font></b></a>
 						</li>
-						<li><a href="#recent"><b><font color="#666666">活动</font></b></a>
+						<li><a href="report"><b><font color="#666666">公告</font></b></a>
 						</li>
-						<li><a href="download.html"><b><font color="#666666">资源下载</font></b></a>
+						<li><a href="download"><b><font color="#666666">资源下载</font></b></a>
 						</li>
-						<li><a href="join_in.html" data-hover="联系"> <b><font
+						<li><a href="join_in" data-hover="联系"> <b><font
 									color="#666666">加入我们</font></b></a></li>
-						<li><a href="log_in.html"> <b><font color="#666666">登录*注册</font></b></a>
+						<li><a href="log_in"> <b><font color="#666666">登录*注册</font></b></a>
 						</li>
 					</ul>
 				</nav>
@@ -327,7 +327,7 @@
 											</td>
 											<td>
 												<div class="layui-upload">
-													<button type="button" class="layui-btn" id="test1">上传图片</button>
+													<button type="button" class="layui-btn" id="test1">上传图片(图片须为学号)</button>
 													<div class="layui-upload-list"></div>
 												</div>
 											</td>
@@ -428,6 +428,11 @@
 										<br />
 										<br />
 										<tr align="center">
+										<td colspan="7">
+										   <font color="red">${requestScope.msg}</font>
+										</td>
+										</tr>
+										<tr align="center">
 
 											<td colspan="7" rowspan="5">
 												<div class="layui-form-item">
@@ -437,6 +442,7 @@
 											</td>
 
 										</tr>
+										
 
 									</tbody>
 								</table>
@@ -538,7 +544,7 @@
 								var uploadInst = upload
 										.render({
 											elem : '#test1',
-											url : '/upload/',
+											url : 'http://localhost:8080/people/sign/upload/',
 											before : function(obj) {
 												//预读本地文件示例，不支持ie8
 												obj.preview(function(index,
@@ -580,7 +586,7 @@
 						<div class="col-md-12">
 							<div class="site-info">
 								<p>
-									©2018 <a href="index.html" target="_blank">数据库工作室提供技术支持</a>
+									©2018 <a href="database.html" target="_blank">数据库工作室提供技术支持</a>
 								</p>
 							</div>
 						</div>

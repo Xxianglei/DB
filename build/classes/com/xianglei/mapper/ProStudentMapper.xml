@@ -3,4 +3,87 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xianglei.mapper.ProStudentMapper">
+	<resultMap type="com.xianglei.pojo.Notice" id="noticeMap">
+
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="create_date" column="create_date" />
+		<result property="user_id" column="user_id" />
+	</resultMap>
+	<!-- 由于是多参数那么就不能使用parameterType， 改用#｛index｝是第几个就用第几个的索引，索引从0开始 -->
+	<select id="get_login" resultType="com.xianglei.pojo.User">
+		SELECT
+		*
+		FROM
+		`user_inf`
+		where
+		loginname = #{0}
+		AND
+		password = #{1}
+	</select>
+
+	<insert id="add_Sign">
+
+		INSERT INTO `sign_up` (
+
+		`salary`,
+		`major_id`,
+		`job_id`,
+		`name`,
+		`address`,
+		`phone`,
+		`qq_num`,
+		`sex`,
+		`birthday`,
+		`race`,
+
+		`hobby`,
+		`create_date`,
+		`resume`,
+		`student_union`,
+		`cadre`,
+		`graduate_student`,
+		`space`,
+		`stu_num`
+
+		)
+		VALUES
+		(
+
+		#{0},
+		#{16},
+		#{17},
+		#{1},
+		#{2},
+		#{3},
+		#{4},
+		#{5},
+		#{6},
+		#{7},
+		#{8},
+		#{9},
+		#{10},
+		#{11},
+		#{12},
+		#{13},
+		#{14},
+		#{15}
+
+
+		) ;
+
+	</insert>
+	<insert id="upload_Photo">
+		INSERT INTO `photo` ( `src`)
+		VALUES
+		( #{0}) ;
+
+	</insert>
+	<select id="find_Report" resultMap="noticeMap">
+		SELECT
+		*
+		FROM
+		`notice_inf`
+	</select>
 </mapper>
