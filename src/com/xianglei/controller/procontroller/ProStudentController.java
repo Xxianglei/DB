@@ -214,9 +214,8 @@ public class ProStudentController {
 
 	@RequestMapping(value = "logout", method = RequestMethod.GET)
 	public String logout(Model model, HttpServletRequest request) {
-
-		if (request.getSession() != null) {
-			HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
+		if (session.getAttribute("name") != null) {		
 			session.invalidate();
 			System.out.println("session已经关闭" + session.getId());
 		}

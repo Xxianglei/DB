@@ -80,7 +80,7 @@ ${ sessionScope.name } </c:if>
 		<div class="breadcrumb-box">
 			<div class="am-container">
 				<ol class="am-breadcrumb">
-					<li><a href="database.html"><h3>首页</h3></a></li>
+					<li><a href="database"><h3>首页</h3></a></li>
 					<li class="am-active">DataBase News</li>
 				</ol>
 			</div>
@@ -98,10 +98,11 @@ ${ sessionScope.name } </c:if>
 						<div class="layui-row layui-col-space15">
 
 							<div class="layui-col-md12">
+							
 								<div class="layui-card">
 									<c:forEach items="${requestScope.list}" var="news"
 										varStatus="stat">
-										<ul class="layui-timeline" style="margin-left: 10px;">
+										<ul class="layui-timeline" style="margin-left: 20px;padding: 20px 10px 20px 0px;">
 
 											<li class="layui-timeline-item"><i
 												class="layui-icon layui-timeline-axis"></i>
@@ -120,9 +121,9 @@ ${ sessionScope.name } </c:if>
 															style="font-size: 30px; color: #1E9FFF;"></i>
 													</p> -->
 												</div></li>
-									</c:forEach>
+									
 									</ul>
-
+</c:forEach>
 
 
 								</div>
