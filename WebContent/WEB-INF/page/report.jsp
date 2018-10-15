@@ -26,29 +26,47 @@
 </head>
 
 <body bgcolor="#FFFFFF" style="height: 100%; padding-bottom: 50px;">
-	<div>
-		<header>
-			<div class="container">
-				<div id="logo">
-					<font color="#666666"> DataBase </font>
+	<div align="right"  >
+			
+			<ul class="layui-nav" style="height:90px;">
+					<div id="logo">
+					DataBase
 				</div>
-				<nav>
-					<ul>
-						<li><a href="welcomedb"><b><font color="#666666">首页</font></b></a>
-						</li>
-						<li><a href="report"><b><font color="#666666">活动</font></b></a>
-						</li>
-						<li><a href="download"><b><font color="#666666">资源下载</font></b></a>
-						</li>
-						<li><a href="join_in" data-hover="联系"> <b><font
-									color="#666666">加入我们</font></b></a></li>
-						<li><a href="login"> <b><font color="#666666">登录*注册</font></b></a>
-						</li>
-					</ul>
-				</nav>
-		</header>
-	</div>
-	<div style="margin-top: 85px;">
+				<li  class="layui-nav-item">
+					<a href="databse"><b>首页</b></a>
+				</li>
+				<li  class="layui-nav-item">
+					<a href="report"><b>公告</b></a>
+				</li>
+				<li  class="layui-nav-item">
+					<a href="download"><b>资源下载</b></a>
+				</li>
+				<li  class="layui-nav-item">
+					<a href="join_in" data-hover="加入我们"> <b>加入我们</b></a>
+				</li>
+				<li class="layui-nav-item" lay-unselect="">
+					<a href="log_in">
+					
+					 <c:if test="${ sessionScope.name!=null }">
+<img src="//t.cn/RCzsdCq" class="layui-nav-img">
+${ sessionScope.name } </c:if>
+					  <c:if test="${ sessionScope.name==null }">登录*注册 </c:if>
+					</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="javascript:;">个人中心</a>
+						</dd>
+						<dd>
+							<a href="javascript:;">修改信息</a>
+						</dd>
+						<dd>
+							<a href="logout">退出登录</a>
+						</dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	<div style="margin-top: 25px;">
 		<hr />
 	</div>
 
@@ -148,6 +166,18 @@
 	<script src="assets/js/main.js"></script>
 	<script src="${ctx}/public/assets/js/jquery-2.1.0.js" charset="utf-8"></script>
 	<script src="${ctx}/public/assets/js/amazeui.js" charset="utf-8"></script>
+	<script src="${ctx}/public/layui/layui.js" charset="utf-8"></script>
+	<script>
+layui.use('element', function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+</script>
 </body>
 
 </html>

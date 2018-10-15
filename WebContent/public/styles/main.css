@@ -3,7 +3,7 @@ body,ul {
 }
 
 ul,ul li {
-	display: inline
+	/*display: inline*/
 }
 
 #department ul,footer {
@@ -168,7 +168,7 @@ header {
 	height: 80px;
 	width: 100%;
 	line-height: 80px;
-	color: #000000;
+	color: #009CDA;
 	
 }
 
@@ -195,8 +195,8 @@ header nav a {
 }
 
 #logo {
-	color: #ccc;
-	font-size: 36px;
+	color: #96A6AD;
+	font-size: 40px;
 	font-weight: 100;
 	left: 5%
 }

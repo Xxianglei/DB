@@ -17,4 +17,8 @@ public interface ProStudentMapper {
 
 	User get_login(String loginname, String password);
 
+	void regUser(String loginname, String password, String create_time);
+
+	User get_User(String loginname);
+
 }

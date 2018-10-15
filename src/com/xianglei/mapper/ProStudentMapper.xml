@@ -22,7 +22,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		AND
 		password = #{1}
 	</select>
+	<select id="get_User" resultType="com.xianglei.pojo.User">
+		SELECT
+		*
+		FROM
+		`user_inf`
+		where
+		loginname = #{0}
 
+	</select>
 	<insert id="add_Sign">
 
 		INSERT INTO `sign_up` (
@@ -86,4 +94,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM
 		`notice_inf`
 	</select>
+
+	<insert id="regUser">
+		INSERT INTO `user_inf` (
+		`loginname`,
+		`password`,
+		`createdate`
+
+		)
+		VALUES
+		(
+
+		#{0},
+		#{1},
+		#{2}
+
+		) ;
+	</insert>
 </mapper>

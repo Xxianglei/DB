@@ -34,5 +34,13 @@ ProStudentMapper mapper;
 		// TODO Auto-generated method stub
 		return mapper.get_login(loginname,password);
 	}
+	public void regUser(String loginname, String password, String create_time) {
+		mapper.regUser(loginname,password,create_time);
+		
+	}
+	public User get_User(String loginname) {
+		// TODO Auto-generated method stub
+		return mapper.get_User(loginname);
+	}
 
 }

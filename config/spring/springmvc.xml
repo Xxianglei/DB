@@ -53,8 +53,10 @@
 			<mvc:exclude-mapping path="/download" />
 			<mvc:exclude-mapping path="/database" />
 			<mvc:exclude-mapping path="/log_in" />
+			<mvc:exclude-mapping path="/logout" />
 			<mvc:exclude-mapping path="/join_in" />
 			<mvc:exclude-mapping path="/report"/>
+			<mvc:exclude-mapping path="/regUser"/>			
 			<mvc:exclude-mapping path="/Ulog_in"/>
 			<!-- 自定义判断用户权限的拦截类 -->
 
