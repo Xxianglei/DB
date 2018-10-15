@@ -38,11 +38,11 @@
 			<li class="layui-nav-item"><a href="join_in" data-hover="加入我们">
 					<b>加入我们</b>
 			</a></li>
-			<li class="layui-nav-item" lay-unselect=""><a href="log_in">
+			<li class="layui-nav-item" lay-unselect="">
 					<c:if test="${ sessionScope.name!=null }">
 						<img src="//t.cn/RCzsdCq" class="layui-nav-img">
-${ sessionScope.name } </c:if> <c:if test="${ sessionScope.name==null }">登录*注册 </c:if>
-			</a>
+${ sessionScope.name } </c:if> <c:if test="${ sessionScope.name==null }"><a href="log_in">登录*注册 	</a></c:if>
+		
 				<dl class="layui-nav-child">
 					<dd>
 						<a href="javascript:;">个人中心</a>

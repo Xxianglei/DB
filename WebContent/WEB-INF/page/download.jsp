@@ -42,10 +42,10 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 					<a href="join_in" data-hover="加入我们"> <b>加入我们</b></a>
 				</li>
 				<li class="layui-nav-item" lay-unselect="">
-					<a href="log_in"><img src="//t.cn/RCzsdCq" class="layui-nav-img">
-					 <c:if test="${ sessionScope.name!=null }">${ sessionScope.name } </c:if>
-					  <c:if test="${ sessionScope.name==null }">登录*注册 </c:if>
-					</a>
+					<c:if test="${ sessionScope.name!=null }">
+						<img src="//t.cn/RCzsdCq" class="layui-nav-img">
+${ sessionScope.name } </c:if> <c:if test="${ sessionScope.name==null }"><a href="log_in">登录*注册 	</a></c:if>
+		
 					<dl class="layui-nav-child">
 						<dd>
 							<a href="javascript:;">个人中心</a>
@@ -67,7 +67,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 		<section id="faq" class="section faq" style="margin-top: 100px;">
 			<div class="container">
 				<div class="nav breadcrumb">
-					<a href="/">关于工作室</a> / <a href="">资源下载</a>
+					<a href="database">工作室</a> / <a href="">资源下载</a>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
