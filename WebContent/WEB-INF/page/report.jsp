@@ -33,7 +33,7 @@
 					DataBase
 				</div>
 				<li  class="layui-nav-item">
-					<a href="databse"><b>首页</b></a>
+					<a href="database"><b>首页</b></a>
 				</li>
 				<li  class="layui-nav-item">
 					<a href="report"><b>公告</b></a>

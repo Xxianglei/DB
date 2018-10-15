@@ -68,10 +68,10 @@ ${ sessionScope.name } </c:if> <c:if test="${ sessionScope.name==null }"><a href
 			</div>
 
 			<div style="margin-top: 100px;" align="center">
-
 				<button class="layui-btn layui-btn-normal layui-btn-radius"
 					style="width: 180px; height: 58px">
-					<divalign="center"> <a href="join_in" target="_self"><font
+					<div align="center"> 
+					<a href="join_in" target="_self"><font
 						size="4" face="宋体" color="white">&emsp;<strong>加入我们</strong></font></a>
 					<i class="layui-icon ">&#xe602;</i>
 			</div>
