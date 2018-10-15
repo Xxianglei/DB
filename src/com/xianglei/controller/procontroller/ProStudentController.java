@@ -180,7 +180,7 @@ public class ProStudentController {
 			User user = service.get_login(loginname, password);
 			System.out.println("user对象" + user.toString());
 			// 将用户保存到Session当中
-			// session  默认时间30分钟
+			// session 默认时间30分钟
 			session.setAttribute(Constants.USER_SESSION, user);
 			session.setAttribute("name", loginname);
 			// 客户端跳转到main页面
@@ -203,24 +203,25 @@ public class ProStudentController {
 		String password = request.getParameter("passwd2");
 		if (service.get_User(loginname) != null) {
 			model.addAttribute("msgr", "您已注册,请登录!");
-		}
-		else {
-		String create_time = new GetDate().backDate();
-		service.regUser(loginname, password, create_time);
-		model.addAttribute("msgr", "注册成功,请登录!");
+		} else {
+			String create_time = new GetDate().backDate();
+			service.regUser(loginname, password, create_time);
+			model.addAttribute("msgr", "注册成功,请登录!");
 		}
 		return "log_in";
 
 	}
-	@RequestMapping(value = "logout", method = RequestMethod.GET)
-	public String logout(Model model,HttpServletRequest request) {
 
-		HttpSession session = request.getSession();
-		session.invalidate();
-		System.out.println("session已经关闭"+session.getId());
-		
-		return "database";
-		
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	public String logout(Model model, HttpServletRequest request) {
+
+		if (request.getSession() != null) {
+			HttpSession session = request.getSession();
+			session.invalidate();
+			System.out.println("session已经关闭" + session.getId());
+		}
+		return "redirect:database";
+
 	}
 
 }
