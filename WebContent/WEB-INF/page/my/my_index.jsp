@@ -89,20 +89,20 @@ ${ sessionScope.name }
 		</div>
 		<div class="details">
 			<h3>专业:</h3>
-			<p>软件工程</p>
+			<p>${user.major_id}</p>
 			<h3>工作室</h3>
 			<p>
-				<a href="database">数据库工作室</a>
+				<a href="database">${user.space}</a>
 			</p>
 
 			<h3>学习方向</h3>
-			<p>大数据开发</p>
+			<p>${user.job_id}</p>
 			<h3>期望薪资</h3>
-			<p>8000rmb</p>
+			<p>${user.salary}RMB</p>
 			<h3>特长技术</h3>
-			<p>JAVA</p>
+			<p>${user.speciality}</p>
 			<h3>个性签名</h3>
-			<p>我是一个牛人</p>
+			<p>${user.resume}</p>
 
 
 		</div>

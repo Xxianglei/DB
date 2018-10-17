@@ -52,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 	<div align="right">
-
+         
 		<ul class="layui-nav " style="height: 90px;">
 			<div id="logo">DataBase</div>
 			<li class="layui-nav-item"><a href="database"><b>首页</b></a></li>
@@ -61,7 +61,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li class="layui-nav-item"><a href="join_in" data-hover="加入我们">
 					<b>加入我们</b>
 			</a></li>
-			
 			<li class="layui-nav-item" lay-unselect=""><c:if
 					test="${ sessionScope.name!=null }">
 					<img src="//t.cn/RCzsdCq" class="layui-nav-img">
@@ -85,25 +84,25 @@ ${ sessionScope.name }
 	<!-- header -->
 	<div class="col-sm-3 col-md-2 sidebar">
 		<div class="sidebar_top">
-			<h1>USER NAME</h1>
+			<h1>${user.name}</h1>
 			<img src="${ctx}/public/images/avt.png" alt="头像" />
 		</div>
 		<div class="details">
 			<h3>专业:</h3>
-			<p>软件工程</p>
+			<p>${user.major_id}</p>
 			<h3>工作室</h3>
 			<p>
-				<a href="database">数据库工作室</a>
+				<a href="database">${user.space}</a>
 			</p>
 
 			<h3>学习方向</h3>
-			<p>大数据开发</p>
+			<p>${user.job_id}</p>
 			<h3>期望薪资</h3>
-			<p>8000rmb</p>
+			<p>${user.salary}RMB</p>
 			<h3>特长技术</h3>
-			<p>JAVA</p>
+			<p>${user.speciality}</p>
 			<h3>个性签名</h3>
-			<p>我是一个牛人</p>
+			<p>${user.resume}</p>
 
 
 		</div>
