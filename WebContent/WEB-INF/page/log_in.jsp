@@ -27,34 +27,34 @@
 					DataBase
 				</div>
 				<li  class="layui-nav-item">
-					<a href="database"><b>首页</b></a>
+					<a href="${ctx}/pro/database"><b>首页</b></a>
 				</li>
 				<li  class="layui-nav-item">
-					<a href="report"><b>公告</b></a>
+					<a href="${ctx}/pro/report"><b>公告</b></a>
 				</li>
 				<li  class="layui-nav-item">
-					<a href="download"><b>资源下载</b></a>
+					<a href="${ctx}/pro/download"><b>资源下载</b></a>
 				</li>
 				<li  class="layui-nav-item">
-					<a href="join_in" data-hover="加入我们"> <b>加入我们</b></a>
+					<a href="${ctx}/pro/join_in" data-hover="加入我们"> <b>加入我们</b></a>
 				</li>
 				<li class="layui-nav-item" lay-unselect="">
 								 <c:if test="${ sessionScope.name!=null }">
 <img src="//t.cn/RCzsdCq" class="layui-nav-img">
-${ sessionScope.name } </c:if>
-					  <c:if test="${ sessionScope.name==null }">	<a href="log_in">	登录*注册 	</a></c:if>
+${ sessionScope.name } <dl class="layui-nav-child">
+						<dd>
+							<a href="${ctx}/pro/center">个人中心</a>
+						</dd>
+						<dd>
+							<a href="${ctx}/pro/center_edit">修改信息</a>
+						</dd>
+						<dd>
+							<a href="${ctx}/pro/logout">退出登录</a>
+						</dd>
+					</dl></c:if>
+					  <c:if test="${ sessionScope.name==null }">	<a href="${ctx}/pro/log_in">	登录*注册 	</a></c:if>
 				
-					<dl class="layui-nav-child">
-						<dd>
-							<a href="javascript:;">个人中心</a>
-						</dd>
-						<dd>
-							<a href="javascript:;">修改信息</a>
-						</dd>
-						<dd>
-							<a href="logout">退出登录</a>
-						</dd>
-					</dl>
+					
 				</li>
 			</ul>
 		</div>
@@ -90,7 +90,7 @@ ${ sessionScope.name } </c:if>
 				<div class="login-box">
 
 					<div class="login_form">
-						<form action="${ctx}/Ulog_in" name="loginform"
+						<form action="${ctx}/pro/Ulog_in" name="loginform"
 							accept-charset="utf-8" id="login_form" class="loginForm"
 							method="post">
 							<input type="hidden" name="did" value="0" /> <input
@@ -132,7 +132,7 @@ ${ sessionScope.name } </c:if>
 
 			<div class="web_login">
 				<form name="form2" id="regUser" accept-charset="utf-8"
-					action="${ctx}/regUser" method="post">
+					action="${ctx}/pro/regUser" method="post">
 					<input type="hidden" name="to" value="reg" /> <input type="hidden"
 						name="did" value="0" />
 					<ul class="reg_form" id="reg-ul">

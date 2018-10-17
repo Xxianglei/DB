@@ -32,28 +32,32 @@
 
 		<ul class="layui-nav " style="height: 90px;">
 			<div id="logo">DataBase</div>
-			<li class="layui-nav-item"><a href="database"><b>首页</b></a></li>
-			<li class="layui-nav-item"><a href="report"><b>公告</b></a></li>
-			<li class="layui-nav-item"><a href="download"><b>资源下载</b></a></li>
-			<li class="layui-nav-item"><a href="join_in" data-hover="加入我们">
+			<li class="layui-nav-item"><a href="${ctx}/pro/database"><b>首页</b></a></li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a></li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/download"><b>资源下载</b></a></li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/join_in" data-hover="加入我们">
 					<b>加入我们</b>
 			</a></li>
-			<li class="layui-nav-item" lay-unselect="">
-					<c:if test="${ sessionScope.name!=null }">
-						<img src="//t.cn/RCzsdCq" class="layui-nav-img">
-${ sessionScope.name } </c:if> <c:if test="${ sessionScope.name==null }"><a href="log_in">登录*注册 	</a></c:if>
-		
-				<dl class="layui-nav-child">
-					<dd>
-						<a href="javascript:;">个人中心</a>
-					</dd>
-					<dd>
-						<a href="javascript:;">修改信息</a>
-					</dd>
-					<dd>
-						<a href="logout">退出登录</a>
-					</dd>
-				</dl></li>
+			<li class="layui-nav-item" lay-unselect=""><c:if
+					test="${ sessionScope.name!=null }">
+					<img src="//t.cn/RCzsdCq" class="layui-nav-img">
+${ sessionScope.name }
+	<dl class="layui-nav-child">
+						<dd>
+							<a href="${ctx}/pro/center">个人中心</a>
+						</dd>
+						<dd>
+							<a href="${ctx}/pro/center_edit">修改信息</a>
+						</dd>
+						<dd>
+							<a href="${ctx}/pro/logout">退出登录</a>
+						</dd>
+					</dl>
+				</c:if> <c:if test="${ sessionScope.name==null }">
+					<a href="${ctx}/pro/log_in">登录*注册 </a>
+
+
+				</c:if></li>
 		</ul>
 	</div>
 	<section id="hero">
@@ -70,14 +74,14 @@ ${ sessionScope.name } </c:if> <c:if test="${ sessionScope.name==null }"><a href
 			<div style="margin-top: 100px;" align="center">
 				<button class="layui-btn layui-btn-normal layui-btn-radius"
 					style="width: 180px; height: 58px">
-					<div align="center"> 
-					<a href="join_in" target="_self"><font
-						size="4" face="宋体" color="white">&emsp;<strong>加入我们</strong></font></a>
-					<i class="layui-icon ">&#xe602;</i>
-			</div>
-			</button>
+					<div align="center">
+						<a href="/pro/join_in" target="_self"><font size="4" face="宋体"
+							color="white">&emsp;<strong>加入我们</strong></font></a> <i
+							class="layui-icon ">&#xe602;</i>
+					</div>
+				</button>
 
-		</div>
+			</div>
 
 		</div>
 
@@ -204,24 +208,19 @@ ${ sessionScope.name } </c:if> <c:if test="${ sessionScope.name==null }"><a href
 	<footer>
 		<div id="footer-content" class=" container">
 			<nav>
-				<ul>
-					<li><a href="database.html">首页</a></li>
-					<li><a href="#">公告</a></li>
-					<li><a href="download.html">资源下载</a></li>
-					<li><a href="join_in.html" data-hover="联系">加入我们</a></li>
-					<li><a href="log_in.html">登录*注册</a></li>
-				</ul>
+				<div>
+					<font class="#d6d6d6">数据库工作室期待你的加入 !</font>
+				</div>
 			</nav>
 			<hr />
-			<br /> <br /> <br />
-			<div>
-				<font class="#d6d6d6">数据库工作室期待你的加入 !</font>
-			</div>
+			<br />
+
 			<p class="copyright">
 				技术支持<i class="icon-heart"></i> 北华大学计算机学院数据库工作室 &copy; 2018
 			</p>
 			<div id="github">
-				<i></i> <a>北华大学</a> • <a>数据库工作室</a>
+				<i></i> <a><font color="white">北华大学</font></a> • <a><font
+					color="white">数据库工作室</font></a>
 			</div>
 		</div>
 		<div id="contact">
@@ -229,10 +228,10 @@ ${ sessionScope.name } </c:if> <c:if test="${ sessionScope.name==null }"><a href
 			<ul>
 				<li><i class="icon-mail icon-footer"></i>Email: <a
 					href="https://mail.qq.com/" target="_blank"
-					style="text-decoration: none;"> <font color="#FFFFFF">1767925069@qq.com</font>
+					style="text-decoration: none;"> <font color="white">1767925069@qq.com</font>
 				</a></li>
-				<li><i class="icon-weibo icon-footer"></i>QQ群： <a>874380953
-						(数据库2018纳新交流群)</a></li>
+				<li><i class="icon-weibo icon-footer"></i>QQ群： <a><font
+						color="white">874380953 (数据库2018纳新交流群)</font></a></li>
 				<li><i class="icon-wechat icon-footer"></i>QQ群二维码</li>
 				<li><img id="wechat-qr"
 					src="${ctx}/public/images/IMG_20180904_210956.jpg" width="150px"

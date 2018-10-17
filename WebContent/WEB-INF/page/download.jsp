@@ -30,33 +30,33 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 					DataBase
 				</div>
 				<li  class="layui-nav-item">
-					<a href="database"><b>首页</b></a>
+					<a href="${ctx}/pro/database"><b>首页</b></a>
 				</li>
 				<li  class="layui-nav-item">
-					<a href="report"><b>公告</b></a>
+					<a href="${ctx}/pro/report"><b>公告</b></a>
 				</li>
 				<li  class="layui-nav-item">
-					<a href="download"><b>资源下载</b></a>
+					<a href="${ctx}/pro/download"><b>资源下载</b></a>
 				</li>
 				<li  class="layui-nav-item">
-					<a href="join_in" data-hover="加入我们"> <b>加入我们</b></a>
+					<a href="${ctx}/pro/join_in" data-hover="加入我们"> <b>加入我们</b></a>
 				</li>
 				<li class="layui-nav-item" lay-unselect="">
 					<c:if test="${ sessionScope.name!=null }">
 						<img src="//t.cn/RCzsdCq" class="layui-nav-img">
-${ sessionScope.name } </c:if> <c:if test="${ sessionScope.name==null }"><a href="log_in">登录*注册 	</a></c:if>
+${ sessionScope.name }<dl class="layui-nav-child">
+						<dd>
+							<a href="${ctx}/pro/center">个人中心</a>
+						</dd>
+						<dd>
+							<a href="${ctx}/pro/center_edit">修改信息</a>
+						</dd>
+						<dd>
+							<a href="${ctx}/pro/logout">退出登录</a>
+						</dd>
+					</dl> </c:if> <c:if test="${ sessionScope.name==null }"><a href="${ctx}/pro/log_in">登录*注册 	</a></c:if>
 		
-					<dl class="layui-nav-child">
-						<dd>
-							<a href="javascript:;">个人中心</a>
-						</dd>
-						<dd>
-							<a href="javascript:;">修改信息</a>
-						</dd>
-						<dd>
-							<a href="logout">退出登录</a>
-						</dd>
-					</dl>
+					
 				</li>
 			</ul>
 		</div>
@@ -67,7 +67,7 @@ ${ sessionScope.name } </c:if> <c:if test="${ sessionScope.name==null }"><a href
 		<section id="faq" class="section faq" style="margin-top: 100px;">
 			<div class="container">
 				<div class="nav breadcrumb">
-					<a href="database">工作室</a> / <a href="">资源下载</a>
+					<a href="${ctx}/pro/database">工作室</a> / <a href="">资源下载</a>
 				</div>
 				<div class="row">
 					<div class="col-md-12">

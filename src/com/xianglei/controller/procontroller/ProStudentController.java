@@ -61,7 +61,7 @@ public class ProStudentController {
 	private String stu_num;
 	private String photo;
 
-	@RequestMapping("/student/join_in")
+	@RequestMapping("/pro/join_us")
 	public String add_Sign(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		salary = Integer.valueOf(request.getParameter("salary"));
@@ -101,7 +101,7 @@ public class ProStudentController {
 
 	}
 
-	@RequestMapping("/sign/upload")
+	@RequestMapping("/pro/upload")
 	@ResponseBody
 	public JSONObject upload_Document(Model model, MultipartFile file) {
 		// 图片新名字
@@ -130,7 +130,7 @@ public class ProStudentController {
 		return resObj;
 	}
 
-	@RequestMapping("report")
+	@RequestMapping("/pro/report")
 	public String report(Model model) {
 
 		List<Notice> list = service.find_Report();
@@ -141,34 +141,40 @@ public class ProStudentController {
 
 	}
 
-	@RequestMapping("welcomedb")
+	@RequestMapping("/pro/database")
 	public String welcomedb(Model model) {
 
 		return "database";
 	}
 
-	@RequestMapping("download")
+	@RequestMapping("/pro/download")
 	public String download(Model model) {
 
 		return "download";
 
 	}
+	@RequestMapping("/pro/center")
+	public String center(Model model) {
 
-	@RequestMapping("join_in")
+		return "my/my_index";
+
+	}
+
+	@RequestMapping("/pro/join_in")
 	public String join_in(Model model) {
 
 		return "join_in";
 
 	}
 
-	@RequestMapping("log_in")
+	@RequestMapping("/pro/log_in")
 	public String log_in(Model model) {
 
 		return "log_in";
 
 	}
 
-	@RequestMapping("Ulog_in")
+	@RequestMapping("/pro/Ulog_in")
 	public String login(@RequestParam(value = "username", required = false) String loginname,
 			@RequestParam(value = "password", required = false) String password, HttpSession session, Model mv) {
 		// 调用业务逻辑组件判断用户是否可以登录
@@ -196,7 +202,7 @@ public class ProStudentController {
 
 	}
 
-	@RequestMapping("regUser")
+	@RequestMapping("/pro/regUser")
 	public String regUser(Model model, HttpServletRequest request, HttpServletResponse response) {
 
 		String loginname = request.getParameter("user");
@@ -212,7 +218,7 @@ public class ProStudentController {
 
 	}
 
-	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/pro/logout", method = RequestMethod.GET)
 	public String logout(Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("name") != null) {		
