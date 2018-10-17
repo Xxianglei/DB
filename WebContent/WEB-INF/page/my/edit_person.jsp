@@ -122,8 +122,7 @@ ${ sessionScope.name }
 					<li><a class="play-icon popup-with-zoom-anim"
 						href="#small-dialog"><span class="glyphicon glyphicon-picture"
 							aria-hidden="true"></span>账号设置</a></li>
-<li><a class="play-icon popup-with-zoom-anim"
-						href="#small-dialog"><span class="glyphicon glyphicon-picture"
+<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><span class="glyphicon glyphicon-picture"
 							aria-hidden="true"></span>我的评估</a></li>
 					<script>
 						$(document).ready(function() {
