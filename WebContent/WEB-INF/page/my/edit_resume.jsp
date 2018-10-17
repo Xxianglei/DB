@@ -5,8 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Curriculum Vitae a Personal Category Flat Bootstarp
-	Responsive Website Template | Home :: w3layouts</title>
+<title>数据库工作室</title>
 <link href="${ctx}/public/css/bootstrap.css" rel='stylesheet'
 	type='text/css' />
 <!-- jQuery (necessary JavaScript plugins) -->
@@ -20,9 +19,7 @@
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords"
-	content="Curriculum Vitae Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
 <script type="application/x-javascript">
 	
 	
