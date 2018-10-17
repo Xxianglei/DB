@@ -111,4 +111,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 		) ;
 	</insert>
+
+	<select id="get_Center" resultType="com.xianglei.pojo.Student"
+		parameterType="String">
+
+		SELECT
+		*
+		FROM
+		`employee_inf`
+		where login_num = #{0}
+	</select>
 </mapper>

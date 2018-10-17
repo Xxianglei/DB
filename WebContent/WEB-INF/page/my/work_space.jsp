@@ -28,7 +28,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 
 
@@ -46,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="${ctx}/public/styles/main.css" />
 <script src="${ctx}/public/js/jquery.magnific-popup.js"
 	type="text/javascript"></script>
-		<script src="${ctx}/public/layui/layui.js" charset="utf-8"></script>
+<script src="${ctx}/public/layui/layui.js" charset="utf-8"></script>
 </head>
 <body>
 	<div align="right">
@@ -114,16 +116,18 @@ ${ sessionScope.name }
 			<div class="details_header">
 				<ul>
 					<li><a href="index.html"><span
-							class="glyphicon glyphicon-file" aria-hidden="true"></span>个人主页</a></li>
+							class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-print"
-							aria-hidden="true"></span>我的简历</a></li>
+							aria-hidden="true"></span>编辑简历</a></li>
 					<li><a href="contact.html"><span
 							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
 					</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
 						href="#small-dialog"><span class="glyphicon glyphicon-picture"
 							aria-hidden="true"></span>账号设置</a></li>
-
+<li><a class="play-icon popup-with-zoom-anim"
+						href="#small-dialog"><span class="glyphicon glyphicon-picture"
+							aria-hidden="true"></span>我的评估</a></li>
 					<script>
 						$(document).ready(function() {
 							$('.popup-with-zoom-anim').magnificPopup({

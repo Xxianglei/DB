@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.xianglei.mapper.ProStudentMapper;
 import com.xianglei.pojo.Notice;
+import com.xianglei.pojo.Student;
 import com.xianglei.pojo.User;
 import com.xianglei.service.ProStudentService;
 @Service
@@ -41,6 +42,10 @@ ProStudentMapper mapper;
 	public User get_User(String loginname) {
 		// TODO Auto-generated method stub
 		return mapper.get_User(loginname);
+	}
+	public Student get_Center(String name) {
+		// TODO Auto-generated method stub
+		return mapper.get_Center(name);
 	}
 
 }

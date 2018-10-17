@@ -52,5 +52,6 @@ public class StudentServiceimpl implements StudentService {
 		studentMapper.del_stu(del_id);
 		
 	}
+	
 
 }

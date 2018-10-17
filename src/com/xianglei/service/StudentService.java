@@ -25,4 +25,5 @@ public interface StudentService {
 
 	void del_stu(int del_id);
 
+
 }

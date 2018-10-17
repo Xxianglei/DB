@@ -3,6 +3,7 @@ package com.xianglei.mapper;
 import java.util.List;
 
 import com.xianglei.pojo.Notice;
+import com.xianglei.pojo.Student;
 import com.xianglei.pojo.User;
 
 public interface ProStudentMapper {
@@ -20,5 +21,7 @@ public interface ProStudentMapper {
 	void regUser(String loginname, String password, String create_time);
 
 	User get_User(String loginname);
+	
+	Student get_Center(String name);
 
 }

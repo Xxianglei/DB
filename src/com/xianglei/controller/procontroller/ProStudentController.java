@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.xianglei.common.Constants;
 import com.xianglei.pojo.Notice;
+import com.xianglei.pojo.Student;
 import com.xianglei.pojo.User;
 import com.xianglei.service.ProStudentService;
 import com.xianglei.utils.GetDate;
@@ -33,6 +34,7 @@ public class ProStudentController {
 
 	@Autowired
 	ProStudentService service;
+	
 	/**
 	 * 获取表单存入数据库
 	 */
@@ -153,9 +155,17 @@ public class ProStudentController {
 		return "download";
 
 	}
-	@RequestMapping("/pro/center")
-	public String center(Model model) {
 
+	@RequestMapping("/pro/center")
+	public String center(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String name = (String) session.getAttribute("name");
+		
+		if (name != null) {
+			Student get_Center = service.get_Center(name);
+			model.addAttribute("user", get_Center);
+		}
+		
 		return "my/my_index";
 
 	}
@@ -221,7 +231,7 @@ public class ProStudentController {
 	@RequestMapping(value = "/pro/logout", method = RequestMethod.GET)
 	public String logout(Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		if (session.getAttribute("name") != null) {		
+		if (session.getAttribute("name") != null) {
 			session.invalidate();
 			System.out.println("session已经关闭" + session.getId());
 		}

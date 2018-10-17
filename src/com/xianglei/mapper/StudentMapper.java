@@ -26,4 +26,6 @@ public interface StudentMapper {
 
 	void del_stu(int del_id);
 
+
+
 }

@@ -28,7 +28,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 
 
@@ -46,17 +48,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="${ctx}/public/styles/main.css" />
 <script src="${ctx}/public/js/jquery.magnific-popup.js"
 	type="text/javascript"></script>
-		<script src="${ctx}/public/layui/layui.js" charset="utf-8"></script>
+<script src="${ctx}/public/layui/layui.js" charset="utf-8"></script>
 </head>
 <body>
 	<div align="right">
-
+         
 		<ul class="layui-nav " style="height: 90px;">
 			<div id="logo">DataBase</div>
-			<li class="layui-nav-item"><a href="/pro/database"><b>首页</b></a></li>
-			<li class="layui-nav-item"><a href="/pro/report"><b>公告</b></a></li>
-			<li class="layui-nav-item"><a href="/pro/download"><b>资源下载</b></a></li>
-			<li class="layui-nav-item"><a href="/pro/join_in" data-hover="加入我们">
+			<li class="layui-nav-item"><a href="database"><b>首页</b></a></li>
+			<li class="layui-nav-item"><a href="report"><b>公告</b></a></li>
+			<li class="layui-nav-item"><a href="download"><b>资源下载</b></a></li>
+			<li class="layui-nav-item"><a href="join_in" data-hover="加入我们">
 					<b>加入我们</b>
 			</a></li>
 			<li class="layui-nav-item" lay-unselect=""><c:if
@@ -65,24 +67,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 ${ sessionScope.name } 
 <dl class="layui-nav-child">
 						<dd>
-							<a href="/pro/center">个人中心</a>
+							<a href="center">个人中心</a>
 						</dd>
 						<dd>
-							<a href="/pro/center_edit">修改信息</a>
+							<a href="center_edit">修改信息</a>
 						</dd>
 						<dd>
-							<a href="/pro/logout">退出登录</a>
+							<a href="logout">退出登录</a>
 						</dd>
 					</dl>
 				</c:if> <c:if test="${ sessionScope.name==null }">
-					<a href="/pro/log_in">登录*注册 </a>
+					<a href="log_in">登录*注册 </a>
 				</c:if></li>
 		</ul>
 	</div>
 	<!-- header -->
 	<div class="col-sm-3 col-md-2 sidebar">
 		<div class="sidebar_top">
-			<h1>USER NAME</h1>
+			<h1>${user.name}</h1>
 			<img src="${ctx}/public/images/avt.png" alt="头像" />
 		</div>
 		<div class="details">
@@ -114,16 +116,18 @@ ${ sessionScope.name }
 			<div class="details_header">
 				<ul>
 					<li><a href="index.html"><span
-							class="glyphicon glyphicon-file" aria-hidden="true"></span>个人主页</a></li>
+							class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-print"
-							aria-hidden="true"></span>我的简历</a></li>
+							aria-hidden="true"></span>编辑简历</a></li>
 					<li><a href="contact.html"><span
 							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
 					</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
 						href="#small-dialog"><span class="glyphicon glyphicon-picture"
 							aria-hidden="true"></span>账号设置</a></li>
-
+<li><a class="play-icon popup-with-zoom-anim"
+						href="#small-dialog"><span class="glyphicon glyphicon-picture"
+							aria-hidden="true"></span>我的评估</a></li>
 					<script>
 						$(document).ready(function() {
 							$('.popup-with-zoom-anim').magnificPopup({
