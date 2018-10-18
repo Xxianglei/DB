@@ -10,4 +10,6 @@ import com.xianglei.service.SpaceService;
 public class SpaceServiceimpl implements SpaceService {
 	@Autowired
 	SpaceMapper spaceMapper;
+	
+	
 }

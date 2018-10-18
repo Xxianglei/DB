@@ -26,7 +26,11 @@
 	
 	
 	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+
 
 
 
@@ -49,13 +53,14 @@
 </head>
 <body>
 	<div align="right">
-         
+
 		<ul class="layui-nav " style="height: 90px;">
 			<div id="logo">DataBase</div>
-			<li class="layui-nav-item"><a href="database"><b>首页</b></a></li>
-			<li class="layui-nav-item"><a href="report"><b>公告</b></a></li>
-			<li class="layui-nav-item"><a href="download"><b>资源下载</b></a></li>
-			<li class="layui-nav-item"><a href="join_in" data-hover="加入我们">
+			<li class="layui-nav-item"><a href="${ctx}/pro/database"><b>首页</b></a></li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a></li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/news"><b>今日头条</b></a></li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/download"><b>资源下载</b></a></li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/join_in" data-hover="加入我们">
 					<b>加入我们</b>
 			</a></li>
 			<li class="layui-nav-item" lay-unselect=""><c:if
@@ -64,17 +69,17 @@
 ${ sessionScope.name } 
 <dl class="layui-nav-child">
 						<dd>
-							<a href="center">个人中心</a>
+							<a href="${ctx}/pro/center">个人中心</a>
 						</dd>
 						<dd>
-							<a href="center_edit">修改信息</a>
+							<a href="${ctx}/pro/center_edit">修改信息</a>
 						</dd>
 						<dd>
-							<a href="logout">退出登录</a>
+							<a href="${ctx}/pro/logout">退出登录</a>
 						</dd>
 					</dl>
 				</c:if> <c:if test="${ sessionScope.name==null }">
-					<a href="log_in">登录*注册 </a>
+					<a href="${ctx}/pro/log_in">登录*注册 </a>
 				</c:if></li>
 		</ul>
 	</div>
@@ -122,7 +127,7 @@ ${ sessionScope.name }
 					<li><a class="play-icon popup-with-zoom-anim"
 						href="#small-dialog"><span class="glyphicon glyphicon-picture"
 							aria-hidden="true"></span>账号设置</a></li>
-<li><a class="play-icon popup-with-zoom-anim"
+					<li><a class="play-icon popup-with-zoom-anim"
 						href="#small-dialog"><span class="glyphicon glyphicon-picture"
 							aria-hidden="true"></span>我的评估</a></li>
 					<script>

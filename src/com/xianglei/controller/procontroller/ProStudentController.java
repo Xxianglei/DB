@@ -155,6 +155,12 @@ public class ProStudentController {
 		return "download";
 
 	}
+	@RequestMapping("/pro/news")
+	public String news(Model model) {
+
+		return "news/news";
+
+	}
 
 	@RequestMapping("/pro/center")
 	public String center(Model model, HttpServletRequest request) {
