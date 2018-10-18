@@ -1,53 +1,60 @@
-.container{
-	width: 1350px !important;
-	margin-top:150px;
+.container {
+	width: 1500px !important;
+	margin-top: 150px;
 }
-body{
-	overflow-x:hidden;
+
+body {
+	overflow-x: hidden;
 	padding-top: 63px;
 }
 
 /* 模态框样式 */
-span.error{color:#C00; padding:0 6px;}
+span.error {
+	color: #C00;
+	padding: 0 6px;
+}
 
 /* 左边导航栏样式 */
-.left-nav{
-	width:  110px;
+.left-nav {
+	width: 110px;
 	height: 600px;
 	position: fixed;
 	margin-left: 30px;
-	font: 18px "PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","Helvetica Neue",Arial,sans-serif;
+	font: 18px "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+		"WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif;
 }
-.newsright
-{
-	
-	ft-nav{
-	width:  200px;
+
+.newsright {
+	right: 300px;
+	width: 300px;
 	height: 600px;
 	position: fixed;
 	margin-right: 30px;
-	font: 18px "PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","Helvetica Neue",Arial,sans-serif;
+	font: 18px "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+		"WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif;
 }
 
-span.list{
-	color:#444;
+span.list {
+	color: #444;
 }
-span.chose{
-	color:#fff;
+
+span.chose {
+	color: #fff;
 }
 
 /* 中间新闻样式 */
-img{
+img {
 	width: 160px;
 	height: 100px;
 }
 
-.headline{
-	word-wrap:break-word;
+.headline {
+	word-wrap: break-word;
 	width: 400px;
 	height: 80px;
 }
-.author{
+
+.author {
 	width: 400px;
 	height: 20px;
 }

@@ -192,11 +192,9 @@ ${ sessionScope.name }
 					</table>
 				</div>
 			</div>
-			<div class="col-xs-4 " style="background-color: chartreuse;">
-			
-			.col-md-1
-			
-			</div>
+			<div class="col-xs-4 newsright"  >
+
+				.col-md-1 .col-md-1 .col-md-1 .col-md-1</div>
 		</div>
 	</div>
 	<footer class="site-footer">
