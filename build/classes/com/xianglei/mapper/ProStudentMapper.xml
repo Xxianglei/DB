@@ -126,7 +126,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		`user_inf`
 		SET
 		`password` = #{2},
-		`username` = #{1}
+		`username` =
+		#{1}
 		WHERE `loginname` = #{0} ;
+	</update>
+	<update id="upload_Photo2" >
+		UPDATE
+	`employee_inf`
+		SET
+		`photo` = #{0}
+		WHERE `id` = 'id' ;
+
+
 	</update>
 </mapper>

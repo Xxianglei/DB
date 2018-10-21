@@ -67,7 +67,7 @@ ${ sessionScope.name }
 	<div class="col-sm-3 col-md-2 sidebar">
 		<div class="sidebar_top">
 			<h1>${user.name}</h1>
-			<img src="${ctx}/public/images/avt.png" alt="头像" />
+			<img src="//t.cn/RCzsdCq" alt="头像" />
 		</div>
 		<div class="details">
 			<h3>专业:</h3>

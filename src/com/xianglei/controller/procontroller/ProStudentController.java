@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -109,7 +110,7 @@ public class ProStudentController {
 
 	@RequestMapping("/pro/upload")
 	@ResponseBody
-	public JSONObject upload_Document(Model model, MultipartFile file) {
+	public JSONObject upload_Document(Model model, MultipartFile file,HttpServletRequest request) {
 		// 图片新名字
 		String name = UUID.randomUUID().toString();
 		// 图片原名字
@@ -122,8 +123,15 @@ public class ProStudentController {
 			// 存到本地磁盘
 			File pic = new File("F:\\WebWork\\photo\\" + file.getOriginalFilename());
 			// 保存图片到本地磁盘
-			file.transferTo(pic);
+			file.transferTo(pic);		
+			/*if(request.getParameter("tag")==null)*/
 			service.upload_Photo(file.getOriginalFilename());
+			/*else {
+				HttpSession session = request.getSession();
+				User user= (User) session.getAttribute(Constants.USER_SESSION);
+				
+				service.upload_Photo2(file.getOriginalFilename(),user.getLoginname());
+			}*/
 			resObj.put("msg", "ok");
 			resObj.put("code", "0");
 		} catch (IllegalStateException e) {

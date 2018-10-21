@@ -67,7 +67,7 @@ ${ sessionScope.name }
 	<div class="col-sm-3 col-md-2 sidebar">
 		<div class="sidebar_top">
 			<h1>${user.name}</h1>
-			<img src="${ctx}/public/images/avt.png" alt="头像" />
+			<img src="//t.cn/RCzsdCq" alt="头像" />
 		</div>
 		<div class="details">
 			<h3>专业:</h3>
@@ -381,7 +381,7 @@ ${ sessionScope.name }
 										</td>
 										<td>
 											<div class="layui-upload">
-												<button type="button" class="layui-btn" id="test1">上传图片(图片须为学号)</button>
+												<button type="button" class="layui-btn" id="test1">上传图片(图片名须为学号)</button>
 												<div class="layui-upload-list"></div>
 											</div>
 										</td>
@@ -620,7 +620,7 @@ ${ sessionScope.name }
 									var uploadInst = upload
 											.render({
 												elem : '#test1',
-												url : 'http://localhost:8080/people/pro/upload/',
+												url : 'http://localhost:8080/people/pro/upload/?tag=1',
 												before : function(obj) {
 													//预读本地文件示例，不支持ie8
 													obj.preview(function(index,

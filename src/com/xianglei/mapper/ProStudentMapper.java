@@ -26,4 +26,6 @@ public interface ProStudentMapper {
 
 	void edit_Mynum(String zhanghao, String name, String psw2);
 
+	void upload_Photo2(String originalFilename,String loginname);
+
 }
