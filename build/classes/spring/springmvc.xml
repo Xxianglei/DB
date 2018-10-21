@@ -71,6 +71,7 @@
 			<mvc:exclude-mapping path="/pro/Ulog_in"/> 
 			<mvc:exclude-mapping path="/pro/news"/> 
 			
+			
 		<!-- 自定义判断用户权限的拦截类 -->
 
 			<bean class="com.xianglei.interceptor.ProAuthorizedInterceptor" />

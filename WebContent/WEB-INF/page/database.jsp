@@ -36,8 +36,8 @@
 			<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a></li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/news"><b>今日头条</b></a></li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/download"><b>资源下载</b></a></li>
-			<li class="layui-nav-item"><a href="${ctx}/pro/join_in" data-hover="加入我们">
-					<b>加入我们</b>
+			<li class="layui-nav-item"><a href="${ctx}/pro/join_in"
+				data-hover="加入我们"> <b>加入我们</b>
 			</a></li>
 			<li class="layui-nav-item" lay-unselect=""><c:if
 					test="${ sessionScope.name!=null }">
@@ -61,6 +61,7 @@ ${ sessionScope.name }
 				</c:if></li>
 		</ul>
 	</div>
+
 	<section id="hero">
 		<div class="center">
 			<div class="container">
@@ -76,9 +77,9 @@ ${ sessionScope.name }
 				<button class="layui-btn layui-btn-normal layui-btn-radius"
 					style="width: 180px; height: 58px">
 					<div align="center">
-						<a href="/pro/join_in" target="_self"><font size="4" face="宋体"
-							color="white">&emsp;<strong>加入我们</strong></font></a> <i
-							class="layui-icon ">&#xe602;</i>
+						<a href="${ctx}/pro/join_in" target="_self">
+						<font size="4"face="宋体" color="white">&emsp;加入我们</font></a>
+						 <i class="layui-icon ">&#xe602;</i>
 					</div>
 				</button>
 
@@ -94,14 +95,14 @@ ${ sessionScope.name }
 		</div>
 	</section>
 	<section id="department">
-		<div class="container">
-			<h2>
+		<div class="container" >
+			<h2 >
 				<font size="6"><b>技术方向</b></font>
 			</h2>
-			<ul>
-				<li><span><img src="${ctx}/public/images/android.png"
+			<ul >
+				<li ><span><img src="${ctx}/public/images/android.png"
 						/ height="70" width="70"></span>
-					<h3>Android开发</h3>
+					<h3 >Android开发</h3>
 
 					<p>Android开发是指安卓平台上应用的制作,通常来讲的APP.在我们实验室你可以学习到安卓开发相关技术,本实验室拥有丰富的安卓技术书籍、视频资料,以及获得国家级奖项的安卓开发学长等高效资源.</p>
 					<p>在校期间你可以参与互联网+、大创、软件杯等国家级竞赛,还可以兼职为做一些小项目,来赚取一点零花钱.毕业后你可以靠自己的开发技术求得一份安卓开发的高薪工作.玩转安卓、玩转APP就来数据库吧!</p>
@@ -114,13 +115,13 @@ ${ sessionScope.name }
 						还等什么呢?想拥抱高薪就加入我们吧!</p></li>
 				<li><span><img src="${ctx}/public/images/web.png"
 						/ height="70" width="70"></span>
-					<h3>JavaWeb网站开发</h3>
+					<h3>JavaWeb开发</h3>
 					<p>JavaWeb网站开发,是一项致力于网站开发、后台开发的一个技术方向.本方向中你可以学习到基础的前端网页开发技术,HTML、CSS、JavaScript、JQuery...以及各大热门框架如Spring,SpringMVC,Mybatis...</p>
 					<p>想做一个自己的个人网站吗?想做一个管理系统吗?想做一个大型电商网站吗?来我们数据库学习,这些都是基本操作,javaweb开发也是我们实验室的老技术方向,几乎人人都会,各位大牛为你领路,所以你还在犹豫吗?</p>
 				</li>
 				<li><span><img src="${ctx}/public/images/pa.png"
 						/ height="70" width="70"></span>
-					<h3>Python全栈开发</h3>
+					<h3>Python开发</h3>
 					<p>Python语言的排名从去年开始就借助人工智能持续上升，现在它已经成为了第一名,学习他的重要性更为凸显.好玩!神奇!高薪!都是它的代名词,Python语言可以做什么?
 						爬虫、web开发、大数据分析、游戏...</p>
 					<p>

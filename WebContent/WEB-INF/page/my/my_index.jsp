@@ -119,7 +119,7 @@ ${ sessionScope.name }
 							class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-print"
 							aria-hidden="true"></span>编辑简历</a></li>
-					<li><a href="contact.html"><span
+					<li><a href="${ctx }/pro/mystudio"><span
 							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
 					</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
@@ -227,19 +227,7 @@ ${ sessionScope.name }
 
 		</div>
 	</div>
-	<footer class="site-footer">
-		<div class="container" align="center" style="width: 100%;">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="site-info">
-						<p>
-							©2018 <a href="database.html" target="_blank">数据库工作室提供技术支持</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	
 	<!---->
 	<script>
 		layui.use('element', function() {

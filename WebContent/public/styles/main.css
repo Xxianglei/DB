@@ -243,7 +243,7 @@ header nav a {
 	top: 0;
 	background: url(../images/For_Wes.jpg);
 	background-size: cover;
-	z-index: -1
+	z-index: -1;
 }
 
 #hero h1 {
@@ -407,15 +407,15 @@ header nav a {
 
 #department ul li h3:after,.zhs:after {
 	content: '';
-	left: 50%;
+	left: 20%;
 	top: 0px;
 	display: block
 }
 
 #department ul li h3:after {
 	position: relative;
-	-webkit-transform: translateX(-50%);
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-20%);
+	transform: translateX(-20%);
 	width: 100px;
 	height: 1px;
 	background: #6f6f6f;

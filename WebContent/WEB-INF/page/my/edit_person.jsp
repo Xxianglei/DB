@@ -117,7 +117,7 @@ ${ sessionScope.name }
 							class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-print"
 							aria-hidden="true"></span>编辑简历</a></li>
-					<li><a href="contact.html"><span
+					<li><a href="${ctx}/pro/mystudio"><span
 							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
 					</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"

@@ -3,4 +3,23 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xianglei.mapper.SpaceMapper">
+
+<resultMap type="com.xianglei.pojo.Job" id="JobList">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="remark" column="remark" />
+</resultMap>
+	<select id="get_Mystudio" resultType="com.xianglei.pojo.Space">
+		SELECT
+		*
+		FROM
+		`space`
+	</select>
+	<select id="get_Joblist" resultMap="JobList">
+	SELECT
+	*
+	FROM
+	`job_inf`
+
+	</select>
 </mapper>

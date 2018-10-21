@@ -21,10 +21,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.xianglei.common.Constants;
+import com.xianglei.pojo.Job;
 import com.xianglei.pojo.Notice;
+import com.xianglei.pojo.Space;
 import com.xianglei.pojo.Student;
 import com.xianglei.pojo.User;
 import com.xianglei.service.ProStudentService;
+import com.xianglei.service.SpaceService;
 import com.xianglei.utils.GetDate;
 
 import net.sf.json.JSONObject;
@@ -34,7 +37,8 @@ public class ProStudentController {
 
 	@Autowired
 	ProStudentService service;
-	
+	@Autowired
+	SpaceService service2;
 	/**
 	 * 获取表单存入数据库
 	 */
@@ -155,6 +159,7 @@ public class ProStudentController {
 		return "download";
 
 	}
+
 	@RequestMapping("/pro/news")
 	public String news(Model model) {
 
@@ -162,16 +167,27 @@ public class ProStudentController {
 
 	}
 
+	@RequestMapping("/pro/mystudio")
+	public String myStudio(Model model) {
+		Space space = service2.get_Mystudio();
+		model.addAttribute("list", space);
+		List<Job> job = service2.get_Joblist();
+		model.addAttribute("job_list", job);
+		return "my/work_space";
+
+	}
+
 	@RequestMapping("/pro/center")
-	public String center(Model model, HttpServletRequest request) {
-		HttpSession session = request.getSession();
+	public String center(Model model, HttpServletRequest request, HttpSession session) {
+		/**
+		 * 登陆后直接走session中拿值
+		 */
 		String name = (String) session.getAttribute("name");
-		
-		if (name != null) {
-			Student get_Center = service.get_Center(name);
-			model.addAttribute("user", get_Center);
-		}
-		
+
+		Student get_Center = (Student) session.getAttribute("user");
+
+		model.addAttribute("user", get_Center);
+
 		return "my/my_index";
 
 	}
@@ -205,6 +221,8 @@ public class ProStudentController {
 			// session 默认时间30分钟
 			session.setAttribute(Constants.USER_SESSION, user);
 			session.setAttribute("name", loginname);
+			Student get_Center = service.get_Center(loginname);
+			session.setAttribute("user", get_Center);
 			// 客户端跳转到main页面
 			return "redirect:database";
 

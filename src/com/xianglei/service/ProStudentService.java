@@ -3,6 +3,7 @@ package com.xianglei.service;
 import java.util.List;
 
 import com.xianglei.pojo.Notice;
+import com.xianglei.pojo.Space;
 import com.xianglei.pojo.Student;
 import com.xianglei.pojo.User;
 
@@ -23,5 +24,7 @@ public interface ProStudentService {
 	User get_User(String loginname);
 
 	Student get_Center(String name);
+
+	
 
 }
