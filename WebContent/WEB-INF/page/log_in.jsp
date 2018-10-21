@@ -46,9 +46,7 @@ ${ sessionScope.name } <dl class="layui-nav-child">
 						<dd>
 							<a href="${ctx}/pro/center">个人中心</a>
 						</dd>
-						<dd>
-							<a href="${ctx}/pro/center_edit">修改信息</a>
-						</dd>
+					
 						<dd>
 							<a href="${ctx}/pro/logout">退出登录</a>
 						</dd>

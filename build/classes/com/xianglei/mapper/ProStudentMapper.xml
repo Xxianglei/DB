@@ -121,4 +121,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		`employee_inf`
 		where login_num = #{0}
 	</select>
+	<update id="edit_Mynum">
+		UPDATE
+		`user_inf`
+		SET
+		`password` = #{2},
+		`username` = #{1}
+		WHERE `loginname` = #{0} ;
+	</update>
 </mapper>

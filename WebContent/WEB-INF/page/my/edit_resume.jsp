@@ -30,8 +30,7 @@
 	media="all">
 
 <link rel="stylesheet" href="${ctx}/public/styles/main.css" />
-<script src="${ctx}/public/js/jquery.magnific-popup.js"
-	type="text/javascript"></script>
+
 <script src="${ctx}/public/layui/layui.js" charset="utf-8"></script>
 </head>
 <body>
@@ -54,9 +53,7 @@ ${ sessionScope.name }
 						<dd>
 							<a href="${ctx}/pro/center">个人中心</a>
 						</dd>
-						<dd>
-							<a href="${ctx}/pro/center_edit">修改信息</a>
-						</dd>
+					
 						<dd>
 							<a href="${ctx}/pro/logout">退出登录</a>
 						</dd>
@@ -108,7 +105,7 @@ ${ sessionScope.name }
 							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
 					</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
-						href="${ctx}/pro/edit_num"><span class="glyphicon glyphicon-picture"
+						href="${ctx}/pro/edit_num1"><span class="glyphicon glyphicon-picture"
 							aria-hidden="true"></span>账号设置</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
 						href="#small-dialog"><span class="glyphicon glyphicon-picture"

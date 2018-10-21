@@ -45,9 +45,7 @@ ${ sessionScope.name }<dl class="layui-nav-child">
 						<dd>
 							<a href="${ctx}/pro/center">个人中心</a>
 						</dd>
-						<dd>
-							<a href="${ctx}/pro/center_edit">修改信息</a>
-						</dd>
+					
 						<dd>
 							<a href="${ctx}/pro/logout">退出登录</a>
 						</dd>
@@ -181,19 +179,7 @@ ${ sessionScope.name }<dl class="layui-nav-child">
 	</div>
 	<div>
 
-		<footer class="site-footer">
-			<div class="container" align="center">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="site-info">
-							<p>
-								©2018 <a href="database.html" target="_blank">数据库工作室提供技术支持</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+
 	</div>
 	<!-- script -->
 	<script src="${ctx}/public/bower_components/jquery/dist/jquery.min.js"></script>

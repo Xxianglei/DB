@@ -39,9 +39,7 @@ ${ sessionScope.name }
 							<dd>
 								<a href="${ctx}/pro/center">个人中心</a>
 							</dd>
-							<dd>
-								<a href="${ctx}/pro/center_edit">修改信息</a>
-							</dd>
+						
 							<dd>
 								<a href="${ctx}/pro/logout">退出登录</a>
 							</dd>
@@ -197,22 +195,21 @@ ${ sessionScope.name }
 				.col-md-1 .col-md-1 .col-md-1 .col-md-1</div>
 		</div>
 	</div>
-	<footer class="site-footer">
-		<div class="" align="center">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="site-info">
-						<p>
-							©2018 <a href="database.html" target="_blank">数据库工作室提供技术支持</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+
 	<script src="${ctx}/public/js/jquery-3.2.1.min.js"></script>
 	<script src="${ctx}/public/js/bootstrap.min.js"></script>
 	<script src="${ctx}/public/scripts/main.js"></script>
 	<script src="${ctx}/public/layui/layui.js" charset="utf-8"></script>
+	<script>
+		layui.use('element', function() {
+			var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+			//监听导航点击
+			element.on('nav(demo)', function(elem) {
+				//console.log(elem)
+				layer.msg(elem.text());
+			});
+		});
+	</script>
 </body>
 </html>

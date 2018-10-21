@@ -47,5 +47,9 @@ ProStudentMapper mapper;
 		// TODO Auto-generated method stub
 		return mapper.get_Center(name);
 	}
+	public void edit_Mynum(String zhanghao, String name, String psw2) {
+		mapper.edit_Mynum(zhanghao,name,psw2);
+		
+	}
 
 }

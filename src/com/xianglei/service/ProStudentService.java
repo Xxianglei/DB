@@ -25,6 +25,8 @@ public interface ProStudentService {
 
 	Student get_Center(String name);
 
+	void edit_Mynum(String zhanghao, String name, String psw2);
+
 	
 
 }

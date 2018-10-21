@@ -30,8 +30,7 @@
 	media="all">
 
 <link rel="stylesheet" href="${ctx}/public/styles/main.css" />
-<script src="${ctx}/public/js/jquery.magnific-popup.js"
-	type="text/javascript"></script>
+
 <script src="${ctx}/public/layui/layui.js" charset="utf-8"></script>
 </head>
 <body style="padding-bottom: 50px;">
@@ -54,9 +53,7 @@ ${ sessionScope.name }
 						<dd>
 							<a href="${ctx}/pro/center">个人中心</a>
 						</dd>
-						<dd>
-							<a href="${ctx}/pro/center_edit">修改信息</a>
-						</dd>
+					
 						<dd>
 							<a href="${ctx}/pro/logout">退出登录</a>
 						</dd>
@@ -79,7 +76,6 @@ ${ sessionScope.name }
 			<p>
 				<a href="database">${user.space}</a>
 			</p>
-
 			<h3>学习方向</h3>
 			<p>${user.job_id}</p>
 			<h3>期望薪资</h3>
@@ -102,14 +98,14 @@ ${ sessionScope.name }
 				<ul>
 					<li><a href="${ctx}/pro/center"><span
 							class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
-					<li><a href="${ctx}/pro/edit"><span class="glyphicon glyphicon-print"
-							aria-hidden="true"></span>编辑简历</a></li>
+					<li><a href="${ctx}/pro/edit"><span
+							class="glyphicon glyphicon-print" aria-hidden="true"></span>编辑简历</a></li>
 					<li><a href="${ctx }/pro/mystudio"><span
 							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
 					</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
-						href="${ctx}/pro/edit_num"><span class="glyphicon glyphicon-picture"
-							aria-hidden="true"></span>账号设置</a></li>
+						href="${ctx}/pro/edit_num1"><span
+							class="glyphicon glyphicon-picture" aria-hidden="true"></span>账号设置</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
 						href="#small-dialog"><span class="glyphicon glyphicon-picture"
 							aria-hidden="true"></span>我的评估</a></li>
@@ -131,9 +127,9 @@ ${ sessionScope.name }
 					</script>
 				</ul>
 			</div>
-			<div class="company" >
+			<div class="company">
 				<h3 class="clr1">参与学习工作室</h3>
-				<div class="company_details" style="margin-top:10px;">
+				<div class="company_details" style="margin-top: 10px;">
 					<h4>
 						${list.space } <span>JUNE 2006 - SINCE</span>
 					</h4>

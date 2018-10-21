@@ -26,47 +26,36 @@
 </head>
 
 <body bgcolor="#FFFFFF" style="height: 100%; padding-bottom: 50px;">
-	<div align="right"  >
-			
-			<ul class="layui-nav" style="height:90px;">
-					<div id="logo">
-					DataBase
-				</div>
-				<li  class="layui-nav-item">
-					<a href="${ctx}/pro/database"><b>首页</b></a>
-				</li>
-				<li  class="layui-nav-item">
-					<a href="${ctx}/pro/report"><b>公告</b></a>
-				</li>
-				<li class="layui-nav-item"><a href="${ctx}/pro/news"><b>今日头条</b></a></li>
-				<li  class="layui-nav-item">
-					<a href="${ctx}/pro/download"><b>资源下载</b></a>
-				</li>
-				<li  class="layui-nav-item">
-					<a href="${ctx}/pro/join_in" data-hover="加入我们"> <b>加入我们</b></a>
-				</li>
-				<li class="layui-nav-item" lay-unselect="">
-					
-					
-					 <c:if test="${ sessionScope.name!=null }">
-<img src="//t.cn/RCzsdCq" class="layui-nav-img">
+	<div align="right">
+
+		<ul class="layui-nav" style="height: 90px;">
+			<div id="logo">DataBase</div>
+			<li class="layui-nav-item"><a href="${ctx}/pro/database"><b>首页</b></a>
+			</li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a>
+			</li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/news"><b>今日头条</b></a></li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/download"><b>资源下载</b></a>
+			</li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/join_in"
+				data-hover="加入我们"> <b>加入我们</b></a></li>
+			<li class="layui-nav-item" lay-unselect=""><c:if
+					test="${ sessionScope.name!=null }">
+					<img src="//t.cn/RCzsdCq" class="layui-nav-img">
 ${ sessionScope.name } 	<dl class="layui-nav-child">
 						<dd>
 							<a href="${ctx}/pro/center">个人中心</a>
 						</dd>
-						<dd>
-							<a href="${ctx}/pro/center_edit">修改信息</a>
-						</dd>
+
 						<dd>
 							<a href="${ctx}/pro/logout">退出登录</a>
 						</dd>
-					</dl></c:if>
-					  <c:if test="${ sessionScope.name==null }"><a href="${ctx}/pro/log_in">登录*注册	</a> </c:if>
-				
-				
-				</li>
-			</ul>
-		</div>
+					</dl>
+				</c:if> <c:if test="${ sessionScope.name==null }">
+					<a href="${ctx}/pro/log_in">登录*注册 </a>
+				</c:if></li>
+		</ul>
+	</div>
 	<div style="margin-top: 25px;">
 		<hr />
 	</div>
@@ -99,11 +88,12 @@ ${ sessionScope.name } 	<dl class="layui-nav-child">
 						<div class="layui-row layui-col-space15">
 
 							<div class="layui-col-md12">
-							
+
 								<div class="layui-card">
 									<c:forEach items="${requestScope.list}" var="news"
 										varStatus="stat">
-										<ul class="layui-timeline" style="margin-left: 20px;padding: 20px 10px 20px 0px;">
+										<ul class="layui-timeline"
+											style="margin-left: 20px; padding: 20px 10px 20px 0px;">
 
 											<li class="layui-timeline-item"><i
 												class="layui-icon layui-timeline-axis"></i>
@@ -122,9 +112,9 @@ ${ sessionScope.name } 	<dl class="layui-nav-child">
 															style="font-size: 30px; color: #1E9FFF;"></i>
 													</p> -->
 												</div></li>
-									
-									</ul>
-</c:forEach>
+
+										</ul>
+									</c:forEach>
 
 
 								</div>
@@ -144,20 +134,7 @@ ${ sessionScope.name } 	<dl class="layui-nav-child">
 		</tr>
 
 	</table>
-	<footer
-		style="height: 60px; position: fixed; bottom: 0px; left: 0px; width: 100%;">
-		<div class="container" align="center">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="site-info">
-						<p>
-							©2018 <a href="database.html" target="_blank">数据库工作室提供技术支持</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+
 
 	<!-- script -->
 	<script src="${ctx}/public/bower_components/jquery/dist/jquery.min.js"></script>
@@ -170,16 +147,16 @@ ${ sessionScope.name } 	<dl class="layui-nav-child">
 	<script src="${ctx}/public/assets/js/amazeui.js" charset="utf-8"></script>
 	<script src="${ctx}/public/layui/layui.js" charset="utf-8"></script>
 	<script>
-layui.use('element', function(){
-  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
-  
-  //监听导航点击
-  element.on('nav(demo)', function(elem){
-    //console.log(elem)
-    layer.msg(elem.text());
-  });
-});
-</script>
+		layui.use('element', function() {
+			var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+			//监听导航点击
+			element.on('nav(demo)', function(elem) {
+				//console.log(elem)
+				layer.msg(elem.text());
+			});
+		});
+	</script>
 </body>
 
 </html>

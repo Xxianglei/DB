@@ -216,17 +216,37 @@ public class ProStudentController {
 		return "my/edit_resume";
 
 	}
+	@RequestMapping("/pro/edit_num1")
+	public String My_Num1(Model model) {
+
+		return "my/edit_person";
+
+	}
 	/**
 	 * 修改账号信息
 	 * @param model
 	 * @return
 	 */
 	@RequestMapping("/pro/edit_num")
-	public String My_Num(Model model) {
-
+	public String My_Num(Model model,HttpServletRequest request) {
+		String name=request.getParameter("name");
+		String psw=request.getParameter("password");
+		String psw2=request.getParameter("repassword");
+		HttpSession session = request.getSession();
+		User user= (User) session.getAttribute(Constants.USER_SESSION);
+		/*System.out.println(psw+psw2);*/
+		if(psw.equals(psw2)) {
+			model.addAttribute("msg", "您输入的密码不一致!");
+		}
+		else {
+			//编辑的时候添加昵称
+			service.edit_Mynum(user.getLoginname(),name,psw2);
+			return "redirect:my/my_index";
+		}
+   
 		return "my/edit_person";
-
 	}
+	
 	@RequestMapping("/pro/Ulog_in")
 	public String login(@RequestParam(value = "username", required = false) String loginname,
 			@RequestParam(value = "password", required = false) String password, HttpSession session, Model mv) {
@@ -242,7 +262,10 @@ public class ProStudentController {
 			// session 默认时间30分钟
 			
 			session.setAttribute(Constants.USER_SESSION, user);
-			session.setAttribute("name", loginname);
+			if( user.getUsername()!=null)
+			session.setAttribute("name", user.getUsername());
+			else
+			session.setAttribute("name", loginname);	
 			Student get_Center = service.get_Center(loginname);
 			session.setAttribute("user", get_Center);
 			// 客户端跳转到main页面
