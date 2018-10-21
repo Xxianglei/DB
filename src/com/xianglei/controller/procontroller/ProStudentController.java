@@ -196,7 +196,7 @@ public class ProStudentController {
 		Map<String, String> headers = new HashMap<String, String>();
 		headers.put("Authorization", "APPCODE " + appcode);
 		Map<String, String> querys = new HashMap<String, String>();
-		querys.put("type", "top");
+		querys.put("type", "");
 
 		try {
 			/**
@@ -209,6 +209,7 @@ public class ProStudentController {
 			 */
 			 response = HttpUtils.doGet(host, path, method, headers, querys);
 			System.out.println(response.toString());
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
