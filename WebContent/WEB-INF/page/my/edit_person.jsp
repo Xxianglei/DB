@@ -20,19 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<script type="application/x-javascript">
-	
-	
-	
-	
-	
-	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 
-
-
-
-
-</script>
 <link
 	href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700'
 	rel='stylesheet' type='text/css'>
@@ -49,15 +37,15 @@
 </head>
 <body>
 	<div align="right">
-         
+
 		<ul class="layui-nav " style="height: 90px;">
 			<div id="logo">DataBase</div>
 			<li class="layui-nav-item"><a href="${ctx}/pro/database"><b>首页</b></a></li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a></li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/news"><b>今日头条</b></a></li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/download"><b>资源下载</b></a></li>
-			<li class="layui-nav-item"><a href="${ctx}/pro/join_in" data-hover="加入我们">
-					<b>加入我们</b>
+			<li class="layui-nav-item"><a href="${ctx}/pro/join_in"
+				data-hover="加入我们"> <b>加入我们</b>
 			</a></li>
 			<li class="layui-nav-item" lay-unselect=""><c:if
 					test="${ sessionScope.name!=null }">
@@ -115,32 +103,14 @@ ${ sessionScope.name }
 				<ul>
 					<li><a href="${ctx}/pro/center"><span
 							class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
-					<li><a href="${ctx}/pro/edit"><span class="glyphicon glyphicon-print"
-							aria-hidden="true"></span>编辑简历</a></li>
+					<li><a href="${ctx}/pro/edit"><span
+							class="glyphicon glyphicon-print" aria-hidden="true"></span>编辑简历</a></li>
 					<li><a href="${ctx}/pro/mystudio"><span
-							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
-					</a></li>
-					<li><a class="play-icon popup-with-zoom-anim"
-						href="#small-dialog"><span class="glyphicon glyphicon-picture"
-							aria-hidden="true"></span>账号设置</a></li>
-<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><span class="glyphicon glyphicon-picture"
-							aria-hidden="true"></span>我的评估</a></li>
-					<script>
-						$(document).ready(function() {
-							$('.popup-with-zoom-anim').magnificPopup({
-								type : 'inline',
-								fixedContentPos : false,
-								fixedBgPos : true,
-								overflowY : 'auto',
-								closeBtnInside : true,
-								preloader : false,
-								midClick : true,
-								removalDelay : 300,
-								mainClass : 'my-mfp-zoom-in'
-							});
-
-						});
-					</script>
+							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室</a></li>
+					<li><a href="${ctx}/pro/edit_num"> <span
+							class="glyphicon glyphicon-file" aria-hidden="true"></span>账号设置</a></li>
+					<li><a href="${ctx}/pro/analysis"><span
+							class="glyphicon glyphicon-file" aria-hidden="true"></span>我的评估</a></li>
 				</ul>
 			</div>
 			<div class="company">
@@ -172,82 +142,32 @@ ${ sessionScope.name }
 						sed enim et tincidunt.</p>
 				</div>
 			</div>
-			<div class="skills">
-				<h3 class="clr2">Professional skills</h3>
-				<div class="skill_info">
-					<p>Duis egestas tortor metus, vitae venenatis tortor tristique
-						at. Pellentesque dignissim purus vitae enim blandit, sed tristique
-						enim malesuada. Maecenas dolor erat, volutpat a tellus eu, euismod
-						iaculis urna. Nulla dui purus, viverra viverra dolor non,
-						malesuada dictum purus.</p>
-				</div>
-				<div class="skill_list">
-					<div class="skill1">
-						<h4>Software</h4>
-						<ul>
-							<li>Photoshop</li>
-							<li>Flash</li>
-							<li>Dreemweeaver</li>
-							<li>In Design</li>
-						</ul>
-					</div>
-					<div class="skill2">
-						<h4>Languages</h4>
-						<ul>
-							<li>HTML/CSS</li>
-							<li>ActionScript</li>
-							<li>PHP</li>
-							<li>Ruby on Rais</li>
-						</ul>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<div class="education">
-				<h3 class="clr3">Education</h3>
-				<div class="education_details">
-					<h4>
-						University of Awesome<span>JANUARY 2004 - OCTOBER 2009 来源:<a
-							href="http://www.mycodes.net/" target="_blank">源码之家</a></span>
-					</h4>
-					<h6>MAJOR PHD</h6>
-					<p class="cmpny1">Nulla volutpat at est sed ultricies. In ac
-						sem consequat, posuere nulla varius, molestie lorem. Duis quis
-						nibh leo. Curabitur a quam eu mi convallis auctor nec id mauris.
-						Nullam mattis turpis eu turpis tincidunt, et pellentesque leo
-						imperdiet. Vivamus malesuada, sem laoreet dictum pulvinar, orci
-						lectus rhoncus sapien, ut consectetur augue nibh in neque. In
-						tincidunt sed enim et tincidunt.</p>
-				</div>
 
-			</div>
 
-		</div>
-	</div>
-	<footer class="site-footer">
-		<div class="container" align="center" style="width: 100%;">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="site-info">
-						<p>
-							©2018 <a href="database.html" target="_blank">数据库工作室提供技术支持</a>
-						</p>
+			<footer class="site-footer">
+				<div class="container" align="center" style="width: 100%;">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="site-info">
+								<p>
+									©2018 <a href="database.html" target="_blank">数据库工作室提供技术支持</a>
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</footer>
-	<!---->
-	<script>
-		layui.use('element', function() {
-			var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+			</footer>
+			<!---->
+			<script>
+				layui.use('element', function() {
+					var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
 
-			//监听导航点击
-			element.on('nav(demo)', function(elem) {
-				//console.log(elem)
-				layer.msg(elem.text());
-			});
-		});
-	</script>
+					//监听导航点击
+					element.on('nav(demo)', function(elem) {
+						//console.log(elem)
+						layer.msg(elem.text());
+					});
+				});
+			</script>
 </body>
 </html>

@@ -216,7 +216,17 @@ public class ProStudentController {
 		return "my/edit_resume";
 
 	}
+	/**
+	 * 修改账号信息
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/pro/edit_num")
+	public String My_Num(Model model) {
 
+		return "my/edit_person";
+
+	}
 	@RequestMapping("/pro/Ulog_in")
 	public String login(@RequestParam(value = "username", required = false) String loginname,
 			@RequestParam(value = "password", required = false) String password, HttpSession session, Model mv) {
