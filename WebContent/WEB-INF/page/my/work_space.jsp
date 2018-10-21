@@ -127,9 +127,9 @@ ${ sessionScope.name }
 		<div class="content">
 			<div class="details_header">
 				<ul>
-					<li><a href="index.html"><span
+					<li><a href="${ctx}/pro/center"><span
 							class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-print"
+					<li><a href="${ctx}/pro/edit"><span class="glyphicon glyphicon-print"
 							aria-hidden="true"></span>编辑简历</a></li>
 					<li><a href="${ctx }/pro/mystudio"><span
 							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
@@ -158,9 +158,9 @@ ${ sessionScope.name }
 					</script>
 				</ul>
 			</div>
-			<div class="company">
+			<div class="company" >
 				<h3 class="clr1">参与学习工作室</h3>
-				<div class="company_details">
+				<div class="company_details" style="margin-top:10px;">
 					<h4>
 						${list.space } <span>JUNE 2006 - SINCE</span>
 					</h4>

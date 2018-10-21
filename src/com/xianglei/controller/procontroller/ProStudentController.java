@@ -205,6 +205,17 @@ public class ProStudentController {
 		return "log_in";
 
 	}
+ /**
+   *  编辑个人简历信息
+  * @param model
+  * @return
+  */
+	@RequestMapping("/pro/edit")
+	public String My_edit(Model model) {
+
+		return "my/edit_resume";
+
+	}
 
 	@RequestMapping("/pro/Ulog_in")
 	public String login(@RequestParam(value = "username", required = false) String loginname,
@@ -219,6 +230,7 @@ public class ProStudentController {
 			System.out.println("user对象" + user.toString());
 			// 将用户保存到Session当中
 			// session 默认时间30分钟
+			
 			session.setAttribute(Constants.USER_SESSION, user);
 			session.setAttribute("name", loginname);
 			Student get_Center = service.get_Center(loginname);

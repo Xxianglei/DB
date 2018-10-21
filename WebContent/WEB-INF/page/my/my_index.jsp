@@ -115,9 +115,9 @@ ${ sessionScope.name }
 		<div class="content">
 			<div class="details_header">
 				<ul>
-					<li><a href="index.html"><span
+					<li><a href="${ctx}/pro/center"><span
 							class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-print"
+					<li><a href="${ctx}/pro/edit"><span class="glyphicon glyphicon-print"
 							aria-hidden="true"></span>编辑简历</a></li>
 					<li><a href="${ctx }/pro/mystudio"><span
 							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
@@ -210,8 +210,8 @@ ${ sessionScope.name }
 				<h3 class="clr3">Education</h3>
 				<div class="education_details">
 					<h4>
-						University of Awesome<span>JANUARY 2004 - OCTOBER 2009 来源:<a
-							href="http://www.mycodes.net/" target="_blank">源码之家</a></span>
+						<!-- University of Awesome<span>JANUARY 2004 - OCTOBER 2009 来源:<a
+							href="http://www.mycodes.net/" target="_blank">源码之家</a></span> -->
 					</h4>
 					<h6>MAJOR PHD</h6>
 					<p class="cmpny1">Nulla volutpat at est sed ultricies. In ac
