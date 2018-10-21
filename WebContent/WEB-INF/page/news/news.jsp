@@ -39,7 +39,7 @@ ${ sessionScope.name }
 							<dd>
 								<a href="${ctx}/pro/center">个人中心</a>
 							</dd>
-						
+
 							<dd>
 								<a href="${ctx}/pro/logout">退出登录</a>
 							</dd>
@@ -52,15 +52,33 @@ ${ sessionScope.name }
 			</ul>
 		</div>
 	</nav>
+<script type="text/javascript">
+//1. 创建xmlhttprequest 对象
+var request = ajaxFunction();
 
+//2. 发送请求
+request.open("GET" ,"${ctx}/pro/get_news/" ,true );
+
+//3. 获取响应数据 注册监听的意思。  一会准备的状态发生了改变，那么就执行 = 号右边的方法
+request.onreadystatechange = function(){
+
+    //前半段表示 已经能够正常处理。  再判断状态码是否是200
+    if(request.readyState == 4 && request.status == 200){
+        //弹出响应的信息
+        alert(request.responseText);
+    }
+}
+request.send();
+
+</script>
 
 	<!-- 主内容 -->
-	<div class="container">
-		<div class="row">
+	<div class="container" >
+		<div class="row" >
 			<div class="col-xs-2">
 				<div class="left-nav text-center">
 					<ul class="nav nav-pills nav-stacked">
-						<li role="presentation" class="active"><a href="#"><span
+						<li role="presentation" class="active"><a href="${ctx}/pro/get_news/" onclick="get()"><span
 								class="chose">推荐</span></a></li>
 						<li role="presentation"><a href="#"><span class="list">热点</span></a></li>
 						<li role="presentation"><a href="#"><span class="list">搞笑</span></a></li>
@@ -190,9 +208,19 @@ ${ sessionScope.name }
 					</table>
 				</div>
 			</div>
-			<div class="col-xs-4 newsright"  >
+			<div class="col-xs-4 newsright">
+				<div class="panel panel-danger" style="height:350px;">
 
-				.col-md-1 .col-md-1 .col-md-1 .col-md-1</div>
+					<div class="panel-footer">猜你喜欢</div>
+					<div class="panel-body">Panel footer</div>
+				</div>
+				<div class="panel panel-info" style="height:350px;">
+
+					<div class="panel-footer">大家都在看</div>
+					<div class="panel-body">Panel footer</div>
+				</div>
+
+			</div>
 		</div>
 	</div>
 

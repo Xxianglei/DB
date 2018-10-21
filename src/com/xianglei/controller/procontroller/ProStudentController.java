@@ -3,13 +3,16 @@ package com.xianglei.controller.procontroller;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.http.HttpResponse;
 import org.json.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -30,6 +33,7 @@ import com.xianglei.pojo.User;
 import com.xianglei.service.ProStudentService;
 import com.xianglei.service.SpaceService;
 import com.xianglei.utils.GetDate;
+import com.xianglei.utils.HttpUtils;
 
 import net.sf.json.JSONObject;
 
@@ -110,7 +114,7 @@ public class ProStudentController {
 
 	@RequestMapping("/pro/upload")
 	@ResponseBody
-	public JSONObject upload_Document(Model model, MultipartFile file,HttpServletRequest request) {
+	public JSONObject upload_Document(Model model, MultipartFile file, HttpServletRequest request) {
 		// 图片新名字
 		String name = UUID.randomUUID().toString();
 		// 图片原名字
@@ -123,15 +127,15 @@ public class ProStudentController {
 			// 存到本地磁盘
 			File pic = new File("F:\\WebWork\\photo\\" + file.getOriginalFilename());
 			// 保存图片到本地磁盘
-			file.transferTo(pic);		
-			/*if(request.getParameter("tag")==null)*/
+			file.transferTo(pic);
+			/* if(request.getParameter("tag")==null) */
 			service.upload_Photo(file.getOriginalFilename());
-			/*else {
-				HttpSession session = request.getSession();
-				User user= (User) session.getAttribute(Constants.USER_SESSION);
-				
-				service.upload_Photo2(file.getOriginalFilename(),user.getLoginname());
-			}*/
+			/*
+			 * else { HttpSession session = request.getSession(); User user= (User)
+			 * session.getAttribute(Constants.USER_SESSION);
+			 * 
+			 * service.upload_Photo2(file.getOriginalFilename(),user.getLoginname()); }
+			 */
 			resObj.put("msg", "ok");
 			resObj.put("code", "0");
 		} catch (IllegalStateException e) {
@@ -175,6 +179,44 @@ public class ProStudentController {
 
 	}
 
+	/**
+	 * 获取新闻数据
+	 * 
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/pro/get_news")
+	@ResponseBody
+	public String get_News(Model model) {
+		String host = "http://toutiao-ali.juheapi.com";
+		String path = "/toutiao/index";
+		String method = "GET";
+		HttpResponse response = null;
+		String appcode = "d0d27a3fd502488bb2e6dddfe86e2b8b";
+		Map<String, String> headers = new HashMap<String, String>();
+		headers.put("Authorization", "APPCODE " + appcode);
+		Map<String, String> querys = new HashMap<String, String>();
+		querys.put("type", "top");
+
+		try {
+			/**
+			 * 重要提示如下: HttpUtils请从
+			 * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/src/main/java/com/aliyun/api/gateway/demo/util/HttpUtils.java
+			 * 下载
+			 *
+			 * 相应的依赖请参照
+			 * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/pom.xml
+			 */
+			 response = HttpUtils.doGet(host, path, method, headers, querys);
+			System.out.println(response.toString());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return response.toString();
+
+	}
+
 	@RequestMapping("/pro/mystudio")
 	public String myStudio(Model model) {
 		Space space = service2.get_Mystudio();
@@ -213,48 +255,52 @@ public class ProStudentController {
 		return "log_in";
 
 	}
- /**
-   *  编辑个人简历信息
-  * @param model
-  * @return
-  */
+
+	/**
+	 * 编辑个人简历信息
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/pro/edit")
 	public String My_edit(Model model) {
 
 		return "my/edit_resume";
 
 	}
+
 	@RequestMapping("/pro/edit_num1")
 	public String My_Num1(Model model) {
 
 		return "my/edit_person";
 
 	}
+
 	/**
 	 * 修改账号信息
+	 * 
 	 * @param model
 	 * @return
 	 */
 	@RequestMapping("/pro/edit_num")
-	public String My_Num(Model model,HttpServletRequest request) {
-		String name=request.getParameter("name");
-		String psw=request.getParameter("password");
-		String psw2=request.getParameter("repassword");
+	public String My_Num(Model model, HttpServletRequest request) {
+		String name = request.getParameter("name");
+		String psw = request.getParameter("password");
+		String psw2 = request.getParameter("repassword");
 		HttpSession session = request.getSession();
-		User user= (User) session.getAttribute(Constants.USER_SESSION);
-		/*System.out.println(psw+psw2);*/
-		if(psw.equals(psw2)) {
+		User user = (User) session.getAttribute(Constants.USER_SESSION);
+		/* System.out.println(psw+psw2); */
+		if (psw.equals(psw2)) {
 			model.addAttribute("msg", "您输入的密码不一致!");
-		}
-		else {
-			//编辑的时候添加昵称
-			service.edit_Mynum(user.getLoginname(),name,psw2);
+		} else {
+			// 编辑的时候添加昵称
+			service.edit_Mynum(user.getLoginname(), name, psw2);
 			return "redirect:my/my_index";
 		}
-   
+
 		return "my/edit_person";
 	}
-	
+
 	@RequestMapping("/pro/Ulog_in")
 	public String login(@RequestParam(value = "username", required = false) String loginname,
 			@RequestParam(value = "password", required = false) String password, HttpSession session, Model mv) {
@@ -268,12 +314,12 @@ public class ProStudentController {
 			System.out.println("user对象" + user.toString());
 			// 将用户保存到Session当中
 			// session 默认时间30分钟
-			
+
 			session.setAttribute(Constants.USER_SESSION, user);
-			if( user.getUsername()!=null)
-			session.setAttribute("name", user.getUsername());
+			if (user.getUsername() != null)
+				session.setAttribute("name", user.getUsername());
 			else
-			session.setAttribute("name", loginname);	
+				session.setAttribute("name", loginname);
 			Student get_Center = service.get_Center(loginname);
 			session.setAttribute("user", get_Center);
 			// 客户端跳转到main页面
