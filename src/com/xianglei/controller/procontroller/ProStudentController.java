@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.util.EntityUtils;
 import org.json.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -185,38 +186,6 @@ public class ProStudentController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("/pro/get_news")
-	@ResponseBody
-	public String get_News(Model model) {
-		String host = "http://toutiao-ali.juheapi.com";
-		String path = "/toutiao/index";
-		String method = "GET";
-		HttpResponse response = null;
-		String appcode = "d0d27a3fd502488bb2e6dddfe86e2b8b";
-		Map<String, String> headers = new HashMap<String, String>();
-		headers.put("Authorization", "APPCODE " + appcode);
-		Map<String, String> querys = new HashMap<String, String>();
-		querys.put("type", "");
-
-		try {
-			/**
-			 * 重要提示如下: HttpUtils请从
-			 * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/src/main/java/com/aliyun/api/gateway/demo/util/HttpUtils.java
-			 * 下载
-			 *
-			 * 相应的依赖请参照
-			 * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/pom.xml
-			 */
-			 response = HttpUtils.doGet(host, path, method, headers, querys);
-			System.out.println(response.toString());
-			
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return response.toString();
-
-	}
 
 	@RequestMapping("/pro/mystudio")
 	public String myStudio(Model model) {
