@@ -18,5 +18,9 @@ public class NewsServiceimpl implements NewsService {
 		// TODO Auto-generated method stub
 		return mapper.get_News();
 	}
+	public List<DBNews> get_News2(int begin, int end) {
+		// TODO Auto-generated method stub
+		return mapper.get_News2(begin,end);
+	}
 
 }

@@ -173,12 +173,7 @@ public class ProStudentController {
 
 	}
 
-	@RequestMapping("/pro/news")
-	public String news(Model model) {
-
-		return "news/news";
-
-	}
+	
 
 	/**
 	 * 获取新闻数据

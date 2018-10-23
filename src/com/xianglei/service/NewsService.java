@@ -8,4 +8,6 @@ public interface NewsService {
 
 	List<DBNews> get_News();
 
+	List<DBNews> get_News2(int begin, int end);
+
 }

@@ -11,8 +11,8 @@
 	   对于栅格布局，额外增加 .col-xs-* 类或替换掉 .col-md-* 和 .col-lg-*。 不要担心，针
 		对超小屏幕设备的栅格系统能够在所有分辨率的环境下展开。-->
 <link href="${ctx}/public/css/bootstrap.min.css" rel="stylesheet">
-<link href="${ctx}/public/css/newslist.css" rel="stylesheet">
 <link rel="stylesheet" href="${ctx}/public/styles/main.css" />
+<link rel="stylesheet" href="${ctx}/public/css/main.css" />
 <link rel="stylesheet" href="${ctx}/public/layui/css/layui.css"
 	media="all">
 
@@ -26,7 +26,7 @@
 				<div id="logo">DataBase</div>
 				<li class="layui-nav-item"><a href="${ctx}/pro/database"><b>首页</b></a></li>
 				<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a></li>
-				<li class="layui-nav-item"><a href="${ctx}/pro/news"><b>今日头条</b></a></li>
+				<li class="layui-nav-item"><a href="${ctx}/pro/get_news"><b>今日头条</b></a></li>
 				<li class="layui-nav-item"><a href="${ctx}/pro/download"><b>资源下载</b></a></li>
 				<li class="layui-nav-item"><a href="${ctx}/pro/join_in"
 					data-hover="加入我们"> <b>加入我们</b>
@@ -52,7 +52,7 @@ ${ sessionScope.name }
 			</ul>
 		</div>
 	</nav>
-	<script type="text/javascript">
+	<!-- 	<script type="text/javascript">
 		function get() {
 			var xmlhttp;
 			if (window.XMLHttpRequest) {
@@ -71,70 +71,95 @@ ${ sessionScope.name }
 					true);
 			xmlhttp.send();
 		}
-	</script>
+	</script> -->
 
 	<!-- 主内容 -->
-	<div class="container">
+	<div class="container" style="margin-top: 150px; width: 70%;">
 		<div class="row">
-			<div class="col-xs-2">
-				<div class="left-nav text-center">
-					<ul class="nav nav-pills nav-stacked">
-						<li role="presentation" class="active"><a
-							href="http://localhost:8080/people/pro/get_news/"><span
-								class="chose">推荐</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">旅行</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">摄影</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">读书</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">手绘</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">电影</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">科普</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">故事</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">诗歌</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">小说</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">产品</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">程序员</span></a></li>
-						<li role="presentation"><a href="#"><span class="list">互联网</span></a></li>
-					</ul>
+			<div class="col-sm-2">
+				<div class="list-group side-bar hidden-xs">
+					<a href="${ctx}/pro/get_news" class="list-group-item active">推荐</a>
+					<a href="#" class="list-group-item">故事</a> <a href="#"
+						class="list-group-item">手绘</a> <a href="#" class="list-group-item">旅行</a>
+					<a href="#" class="list-group-item">电影</a> <a href="#"
+						class="list-group-item">IT</a> <a href="#" class="list-group-item">读书</a>
+					<a href="#" class="list-group-item">程序员</a> <a href="#"
+						class="list-group-item">职场</a> <a href="#" class="list-group-item">创业</a>
+					<a href="#" class="list-group-item">科普</a>
 				</div>
 			</div>
-			<div class="col-xs-6">
-				<div class="news">
-					<table class="table table-striped">
-						<c:forEach items="${requestScope.newlist}" var="news"
-							varStatus="stat">
-							<tr>
-								<td><div class="picture">
+			<div class="col-sm-7">
+				<div class="news-list">
+					<%-- <c:forEach items="${newlist}" var="news"> --%>
+					
+						<div class="news-list-item clearfix" id="LAY_demo1">
+							<%-- <div class="col-xs-5" align="center">
+								<img src="${news.imgCover }"
+									style="height: 160px; width: 240px;">
+							</div>
+							<div class="col-xs-7">
+								<a href="news.html" class="title">${news.title }</a> <span
+									style="padding: 10px;">${news.brief } </span>
+								<div class="info" style="margin-top: 0px;" align="right">
+									<span class="avatar"><img
+										src="${ctx}/public/images/logo.png"></span> <span>${news.readNum/1000 }K阅读</span>•
+								</div>
+							</div> --%>
+						</div>
+					<%-- </c:forEach> --%>
 
-										<a href="#"><img src="${news.imgCover }"></a>
 
-									</div></td>
-								<td>
-									<div class="headline">
-										<a href="#"><br>
-											<p>${newlist.title }</p></a>
-									</div>
-									<div class="userId text-right">阅读量:${news.readNum }/时间:${news.time }</div>
-								</td>
-							</tr>
-						</c:forEach>
-					</table>
+
 				</div>
 			</div>
-			<div class="col-xs-4 newsright">
-				<div class="panel panel-danger" style="height: 350px;">
-
-					<div class="panel-footer">猜你喜欢</div>
-					<div class="panel-body">Panel footer</div>
+			<div class="col-sm-3">
+				<div class="search-bar"></div>
+				<div class="side-bar-card flag clearfix">
+					<div class="col-xs-5">
+						<img src="${ctx}/public/images/1-1.png">
+					</div>
+					<div class="col-xs-7">
+						<div class="text-lg">意见反馈</div>
+						<br> <br>
+						<div>1767925069@qq.com</div>
+					</div>
 				</div>
-				<div class="panel panel-info" style="height: 350px;">
-
-					<div class="panel-footer">大家都在看</div>
-					<div class="panel-body">Panel footer</div>
+				
+				<div class="side-bar-card">
+					<div class="card-title">24小时热闻</div>
+					<div class="card-body">
+						<div class="list">
+							<div class="item">
+								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
+								<div class="desc">15k阅读 1k评论</div>
+							</div>
+							<div class="item">
+								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
+								<div class="desc">15k阅读 1k评论</div>
+							</div>
+							<div class="item">
+								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
+								<div class="desc">15k阅读 1k评论</div>
+							</div>
+							<div class="item">
+								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
+								<div class="desc">15k阅读 1k评论</div>
+							</div>
+							<div class="item">
+								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
+								<div class="desc">15k阅读 1k评论</div>
+							</div>
+							<div class="item">
+								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
+								<div class="desc">15k阅读 1k评论</div>
+							</div>
+						</div>
+					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
+	<div class="footer">Copyright © 2018 | 数据库工作室</div>
 
 	<script src="${ctx}/public/js/jquery-3.2.1.min.js"></script>
 	<script src="${ctx}/public/js/bootstrap.min.js"></script>
@@ -149,6 +174,35 @@ ${ sessionScope.name }
 				//console.log(elem)
 				layer.msg(elem.text());
 			});
+		});
+	</script>
+	<script>
+		layui.use('flow', function() {
+			var flow = layui.flow;
+			 var limit = 10;
+			flow.load({
+				elem : '#LAY_demo1' //流加载容器
+				,
+				scrollElem : '#LAY_demo1' //滚动条所在元素，一般不用填，此处只是演示需要。
+				,
+				done : function(page, next) { //执行下一页的回调
+					//页数
+					//以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+					$.getJSON('http://localhost:8080/people/pro/get_News2/?page=' + page, function(res) {
+						if (res.status != 0) {
+							var lis = [];	
+							//假设你的列表返回在data集合中
+							layui.each(res, function(index, item) {
+								lis.push('<div class="col-xs-5" align="center"><img src="'+item.imgCover+'" style="height: 160px; width: 240px;"></div><div class="col-xs-7"><a href='+"news.html"+' class="title">'+item.title+'</a> <span style="padding: 10px;">'+item.brief +' </span><div class="info" style="margin-top: 0px;" align="right"><span class="avatar"><img src="${ctx}/public/images/logo.png"></span><span>'+item.readNum/1000 +'K阅读</span>•</div></div>');
+							});
+							//执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+							//pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+							next(lis.join(''),  page <= 10);
+						}
+					});
+				}
+			});
+
 		});
 	</script>
 </body>

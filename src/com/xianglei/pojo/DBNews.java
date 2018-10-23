@@ -1,24 +1,34 @@
 package com.xianglei.pojo;
 
 import java.io.Serializable;
-
+/**
+ * 
+		<result property="id " column="id" />
+		<result property="title " column="title" />
+		<result property="time " column="time" />
+		<result property="imgCover " column="imgCover" />
+		<result property="brief " column="brief" />
+		<result property="content " column="content" />
+		<result property="author " column="author" />
+		<result property="type " column="type" />
+		<result property="readNum " column="readNum" />
+		<result property="commentNum " column="commentNum" />
+		<result property="likeNum " column="likeNum" />
+ *
+ */
 public class DBNews  implements Serializable{
-	private Integer  id;
+	private long  id;
 	private String title;
 	private String time;
 	private String imgCover;
 	private String brief;
 	private String content;
 	private String author;
-	// 文章所属模块
 	private int type ;  
 	private int readNum ;  
 	private int commentNum ;  
 	private int likeNum ;  
 	
-	public DBNews() {
-		super();
-	}
 	public String getTitle() {
 		return title;
 	}
@@ -33,6 +43,12 @@ public class DBNews  implements Serializable{
 	}
 	public String getImgCover() {
 		return imgCover;
+	}
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
 	}
 	public void setImgCover(String imgCover) {
 		this.imgCover = imgCover;
@@ -61,12 +77,7 @@ public class DBNews  implements Serializable{
 	public void setType(int type) {
 		this.type = type;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public int getReadNum() {
 		return readNum;
 	}
