@@ -89,7 +89,7 @@ ${ sessionScope.name }
 				</div>
 			</div>
 			<div class="col-sm-7">
-				<div class="news-list">
+				<div class="news-list" >
 					<%-- <c:forEach items="${newlist}" var="news"> --%>
 					
 						<div class="news-list-item clearfix" id="LAY_demo1">
@@ -182,9 +182,7 @@ ${ sessionScope.name }
 			 var limit = 10;
 			flow.load({
 				elem : '#LAY_demo1' //流加载容器
-				,
-				scrollElem : '#LAY_demo1' //滚动条所在元素，一般不用填，此处只是演示需要。
-				,
+				,	
 				done : function(page, next) { //执行下一页的回调
 					//页数
 					//以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
@@ -197,7 +195,7 @@ ${ sessionScope.name }
 							});
 							//执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
 							//pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
-							next(lis.join(''),  page <= 10);
+							next(lis.join(''),  page <= 15);
 						}
 					});
 				}

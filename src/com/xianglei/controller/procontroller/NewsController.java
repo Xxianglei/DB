@@ -42,8 +42,8 @@ public class NewsController {
 		
 		int page=Integer.parseInt(request.getParameter("page"));
 		int limit=10;
-		int before = limit * (page - 1) + 1;
-		int after = limit * page;
+		int before = limit * (page - 1) ;
+		int after = (limit-1) * page;
 		List<DBNews> list =service.get_News2(before,after);		
 		String str = JSON.toJSONString(list);
 		System.out.println(str);
