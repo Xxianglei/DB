@@ -72,7 +72,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		*
 		FROM
 		`article`
+		WHERE TYPE = #{0}
 		ORDER BY readNum
-		WHERE type = #{0}
+	DESC
 	</select>
 </mapper>

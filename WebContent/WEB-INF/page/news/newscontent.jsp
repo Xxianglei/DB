@@ -73,11 +73,11 @@ ${ sessionScope.name }
 						<c:forEach items="${about}" var="hot" step="1">
 							<div class="item clearfix">
 								<div class="col-xs-5 no-padding-h">
-									<img src="${hot.imgCover}">
+									<img src="${hot.imgCover}" style="height:100px;width:160px;">
 								</div>
-								<div class="col-xs-7">
-									<a class="title" href="${ctx}/pro/get_newscontent?id=${hot.id}">${hot.title}</a>
-									<div class="desc">${hot.readNum/1000}K阅读
+								<div class="col-xs-7" >
+									<a  style="margin-top: 10px;" class="title" href="${ctx}/pro/get_newscontent?id=${hot.id}">${hot.title}</a>
+									<div class="desc" style="margin-top: 10px;">${hot.readNum/1000}K阅读
 										|${hot.commentNum/1000} K评论</div>
 								</div>
 							</div>
