@@ -123,14 +123,7 @@ ${ sessionScope.name } 	<dl class="layui-nav-child">
 						</div>
 					</div>
 			</td>
-			<td><span>
-					<div style="margin: 5px width:50%;" align="center">
-						<iframe name="weather_inc"
-							src="http://i.tianqi.com/index.php?c=code&id=82" width="250"
-							height="440" frameborder="0" marginwidth="0" marginheight="0"
-							scrolling="no"></iframe>
-					</div>
-			</span></td>
+			
 		</tr>
 
 	</table>
