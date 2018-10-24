@@ -4,21 +4,75 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xianglei.mapper.NewsServiceMapper">
 
-	<select id="get_News" resultType="com.xianglei.pojo.DBNews">
+	<select id="get_News" resultType="com.xianglei.pojo.DBNews"
+		parameterType="String">
 		SELECT
 		*
 		FROM
 		`article`
-		ORDER BY likeNum DESC
-
+		ORDER BY
+		#{0} DESC
+		limit 0,10
 	</select>
 	<select id="get_News2" resultType="com.xianglei.pojo.DBNews">
 		SELECT
 		*
 		FROM
 		`article`
-		ORDER BY likeNum DESC
+		WHERE TYPE
+		= #{2}
+		ORDER BY
+		likeNum DESC
 		limit #{0},#{1}
 
+	</select>
+	<select id="get_News3" resultType="com.xianglei.pojo.DBNews"
+		parameterType="String">
+		SELECT
+		*
+		FROM
+		`article`
+		WHERE TYPE = #{0}
+		ORDER BY
+		likeNum
+		DESC
+		limit 0,10
+	</select>
+	<select id="get_News4" resultType="com.xianglei.pojo.DBNews">
+		SELECT
+		*
+		FROM
+		`article`
+		ORDER BY
+		likeNum DESC
+		limit #{0},#{1}
+
+	</select>
+
+	<select id="get_Hot" resultType="com.xianglei.pojo.DBNews">
+		SELECT
+		*
+		FROM
+		`article`
+		ORDER BY
+		readNum DESC
+	</select>
+
+	<select id="get_Conetent" parameterType="String"
+		resultType="com.xianglei.pojo.DBNews">
+		SELECT
+		*
+		FROM
+		`article`
+		where id = #{0}
+	</select>
+	<select id="about_Conetent" parameterType="String"
+		resultType="com.xianglei.pojo.DBNews">
+		SELECT
+		*
+		FROM
+		`article`
+		ORDER BY readNum
+		WHERE type = #{0}
 	</select>
 </mapper>

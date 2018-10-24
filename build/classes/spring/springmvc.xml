@@ -72,7 +72,7 @@
 			<mvc:exclude-mapping path="/pro/news"/> 
 			<mvc:exclude-mapping path="/pro/get_news"/> 
 			<mvc:exclude-mapping path="/pro/get_news2"/> 
-			
+			<mvc:exclude-mapping path="/pro/get_newscontent"/> 
 		<!-- 自定义判断用户权限的拦截类 -->
 
 			<bean class="com.xianglei.interceptor.ProAuthorizedInterceptor" />

@@ -34,7 +34,7 @@
 			</li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a>
 			</li>
-			<li class="layui-nav-item"><a href="${ctx}/pro/get_news"><b>今日头条</b></a></li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/get_news?tag=0"><b>今日头条</b></a></li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/download"><b>资源下载</b></a>
 			</li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/join_in"

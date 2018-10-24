@@ -14,13 +14,33 @@ public class NewsServiceimpl implements NewsService {
 
 	@Autowired 
 	NewsServiceMapper mapper;
-	public List<DBNews> get_News() {
+	public List<DBNews> get_News(String string) {
 		// TODO Auto-generated method stub
-		return mapper.get_News();
+		return mapper.get_News(string);
 	}
-	public List<DBNews> get_News2(int begin, int end) {
+	public List<DBNews> get_News2(int begin, int end,String tag) {
 		// TODO Auto-generated method stub
-		return mapper.get_News2(begin,end);
+		return mapper.get_News2(begin,end,tag);
 	}
-
+	public List<DBNews> get_News3(String string) {
+		// TODO Auto-generated method stub
+		return mapper.get_News3(string);
+	}
+	
+	public List<DBNews> get_News4(int begin, int end) {
+		// TODO Auto-generated method stub
+		return mapper.get_News4(begin,end);
+	}
+	public List<DBNews> get_Hot() {
+		// TODO Auto-generated method stub
+		return mapper.get_Hot();
+	}
+	public DBNews get_Conetent(String id) {
+		// TODO Auto-generated method stub
+		return mapper.get_Conetent(id);
+	}
+	public List<DBNews> about_Conetent(String id) {
+		// TODO Auto-generated method stub
+		return mapper.about_Conetent(id);
+	}
 }

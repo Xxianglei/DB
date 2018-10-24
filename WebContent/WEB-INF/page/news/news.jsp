@@ -26,7 +26,7 @@
 				<div id="logo">DataBase</div>
 				<li class="layui-nav-item"><a href="${ctx}/pro/database"><b>首页</b></a></li>
 				<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a></li>
-				<li class="layui-nav-item"><a href="${ctx}/pro/get_news"><b>今日头条</b></a></li>
+				<li class="layui-nav-item"><a href="${ctx}/pro/get_news?tag=0"><b>今日头条</b></a></li>
 				<li class="layui-nav-item"><a href="${ctx}/pro/download"><b>资源下载</b></a></li>
 				<li class="layui-nav-item"><a href="${ctx}/pro/join_in"
 					data-hover="加入我们"> <b>加入我们</b>
@@ -78,25 +78,18 @@ ${ sessionScope.name }
 		<div class="row">
 			<div class="col-sm-2">
 				<div class="list-group side-bar hidden-xs">
-					<a href="${ctx}/pro/get_news" class="list-group-item active">推荐</a>
-					<a href="#" class="list-group-item">故事</a> <a href="#"
-						class="list-group-item">手绘</a> <a href="#" class="list-group-item">旅行</a>
-					<a href="#" class="list-group-item">电影</a> <a href="#"
-						class="list-group-item">IT</a> <a href="#" class="list-group-item">读书</a>
-					<a href="#" class="list-group-item">程序员</a> <a href="#"
-						class="list-group-item">职场</a> <a href="#" class="list-group-item">创业</a>
-					<a href="#" class="list-group-item">科普</a>
+					<a href="${ctx}/pro/get_news?tag=0" class="list-group-item active">推荐</a>
+					<a href="${ctx}/pro/get_news?tag=1" class="list-group-item">故事</a> <a href="${ctx}/pro/get_news?tag=2"
+						class="list-group-item">手绘</a> <a href="${ctx}/pro/get_news?tag=3" class="list-group-item">旅行</a>
+					<a href="${ctx}/pro/get_news?tag=4" class="list-group-item">电影</a> <a href="${ctx}/pro/get_news?tag=5"
+						class="list-group-item">IT</a> <a href="${ctx}/pro/get_news?tag=6" class="list-group-item">读书</a>
+					<a href="${ctx}/pro/get_news?tag=7" class="list-group-item">程序员</a> <a href="${ctx}/pro/get_news?tag=8"
+						class="list-group-item">职场</a> <a href="${ctx}/pro/get_news?tag=9" class="list-group-item">创业</a>
+					<a href="${ctx}/pro/get_news?tag=10" class="list-group-item">科普</a>
 				</div>
 			</div>
 			<div class="col-sm-7">
 				<div class="news-list" id="LAY_demo1"  >
-					<%-- <c:forEach items="${newlist}" var="news"> --%>
-					
-					
-					<%-- </c:forEach> --%>
-
-
-
 				</div>
 			</div>
 			<div class="col-sm-3">
@@ -116,30 +109,12 @@ ${ sessionScope.name }
 					<div class="card-title">24小时热闻</div>
 					<div class="card-body">
 						<div class="list">
+						<c:forEach items="${hotlist}" var="hot" step="1">
 							<div class="item">
-								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-								<div class="desc">15k阅读 1k评论</div>
+								<a class="title" href="${ctx}/pro/get_newscontent?id=${hot.id}">${hot.title}</a>
+								<div class="desc">${hot.readNum/1000} K阅读 |${hot.commentNum/1000} K评论</div>
 							</div>
-							<div class="item">
-								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-								<div class="desc">15k阅读 1k评论</div>
-							</div>
-							<div class="item">
-								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-								<div class="desc">15k阅读 1k评论</div>
-							</div>
-							<div class="item">
-								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-								<div class="desc">15k阅读 1k评论</div>
-							</div>
-							<div class="item">
-								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-								<div class="desc">15k阅读 1k评论</div>
-							</div>
-							<div class="item">
-								<a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-								<div class="desc">15k阅读 1k评论</div>
-							</div>
+						</c:forEach>
 						</div>
 					</div>
 				</div>
@@ -185,7 +160,7 @@ ${ sessionScope.name }
 								<img  align="left" src="'+item.imgCover+'" style="height: 160px; width: 240px;" ></img>\
 								</div>\
 								<div class="col-xs-7">\
-								<a href='+"news.html"+' class="title">'+item.title+'</a>\
+								<a href='+"${ctx}/pro/get_newscontent?id="+item.id+' class="title">'+item.title+'</a>\
 								<span style="padding: 10px;">'+item.brief +' </span>\
 								<div class="info" style="margin-top: 0px;" align="right">\
 								<span class="avatar"><img src="${ctx}/public/images/logo.png"></img></span>\
