@@ -89,23 +89,10 @@ ${ sessionScope.name }
 				</div>
 			</div>
 			<div class="col-sm-7">
-				<div class="news-list" >
+				<div class="news-list" id="LAY_demo1"  >
 					<%-- <c:forEach items="${newlist}" var="news"> --%>
 					
-						<div class="news-list-item clearfix" id="LAY_demo1">
-							<%-- <div class="col-xs-5" align="center">
-								<img src="${news.imgCover }"
-									style="height: 160px; width: 240px;">
-							</div>
-							<div class="col-xs-7">
-								<a href="news.html" class="title">${news.title }</a> <span
-									style="padding: 10px;">${news.brief } </span>
-								<div class="info" style="margin-top: 0px;" align="right">
-									<span class="avatar"><img
-										src="${ctx}/public/images/logo.png"></span> <span>${news.readNum/1000 }K阅读</span>•
-								</div>
-							</div> --%>
-						</div>
+					
 					<%-- </c:forEach> --%>
 
 
@@ -190,12 +177,27 @@ ${ sessionScope.name }
 						if (res.status != 0) {
 							var lis = [];	
 							//假设你的列表返回在data集合中
+						
 							layui.each(res, function(index, item) {
-								lis.push('<div class="col-xs-5" align="center"><img src="'+item.imgCover+'" style="height: 160px; width: 240px;"></div><div class="col-xs-7"><a href='+"news.html"+' class="title">'+item.title+'</a> <span style="padding: 10px;">'+item.brief +' </span><div class="info" style="margin-top: 0px;" align="right"><span class="avatar"><img src="${ctx}/public/images/logo.png"></span><span>'+item.readNum/1000 +'K阅读</span>•</div></div>');
+								
+								lis.push('	<div class="news-list-item clearfix" style="padding: 5px;" >\
+										<div class="col-xs-5" align="center">\
+								<img  align="left" src="'+item.imgCover+'" style="height: 160px; width: 240px;" ></img>\
+								</div>\
+								<div class="col-xs-7">\
+								<a href='+"news.html"+' class="title">'+item.title+'</a>\
+								<span style="padding: 10px;">'+item.brief +' </span>\
+								<div class="info" style="margin-top: 0px;" align="right">\
+								<span class="avatar"><img src="${ctx}/public/images/logo.png"></img></span>\
+								<span>'+item.readNum/1000 +'K阅读</span>•\
+								</div>\
+								</div>\
+								</div>'
+								);
 							});
 							//执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
 							//pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
-							next(lis.join(''),  page <= 15);
+							next(lis.join(''),  page < 100);
 						}
 					});
 				}
@@ -203,5 +205,6 @@ ${ sessionScope.name }
 
 		});
 	</script>
+
 </body>
 </html>

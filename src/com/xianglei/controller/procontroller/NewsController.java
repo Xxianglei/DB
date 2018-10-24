@@ -44,7 +44,13 @@ public class NewsController {
 		int limit=10;
 		int before = limit * (page - 1) ;
 		int after = (limit-1) * page;
-		List<DBNews> list =service.get_News2(before,after);		
+		String bb;
+		List<DBNews> list =service.get_News2(before,after);	
+		for (DBNews dbNews : list) {
+			bb=dbNews.getBrief();
+			String substring = bb.substring(0, 100);
+			dbNews.setBrief(substring);
+		}
 		String str = JSON.toJSONString(list);
 		System.out.println(str);
 		return str;
