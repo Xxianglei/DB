@@ -27,7 +27,7 @@
 				<li class="layui-nav-item"><a href="${ctx}/pro/database"><b>首页</b></a></li>
 				<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a></li>
 				<li class="layui-nav-item"><a href="${ctx}/pro/get_news?tag=0"><b>今日头条</b></a></li>
-				<li class="layui-nav-item"><a href="${ctx}/pro/download"><b>资源下载</b></a></li>
+				
 				<li class="layui-nav-item"><a href="${ctx}/pro/join_in"
 					data-hover="加入我们"> <b>加入我们</b>
 				</a></li>
@@ -45,7 +45,7 @@ ${ sessionScope.name }
 							</dd>
 						</dl>
 					</c:if> <c:if test="${ sessionScope.name==null }">
-						<a href="${ctx}/pro/log_in">登录*注册 </a>
+						<a href="${ctx}/pro/log_in">登录 </a>
 
 
 					</c:if></li>

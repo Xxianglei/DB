@@ -15,7 +15,7 @@ public class Constants {
 			public static final String ULOGIN = "log_in";
 			// 用户的session对象
 			public static final String USER_SESSION = "user_session";
-			
+			public static final String USER_SESSION2 = "prouser_session";
 			// 默认每页4条数据
 			public static int PAGE_DEFAULT_SIZE = 4;
 	

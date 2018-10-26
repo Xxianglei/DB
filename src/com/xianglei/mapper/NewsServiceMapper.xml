@@ -74,6 +74,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		`article`
 		WHERE TYPE = #{0}
 		ORDER BY readNum
-	DESC
+	    DESC
 	</select>
 </mapper>

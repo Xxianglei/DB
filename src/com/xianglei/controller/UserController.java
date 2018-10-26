@@ -27,7 +27,7 @@ public class UserController {
 	@Autowired
 	private UserService Userservice;
 	Integer id = 0;
-	boolean tag=false;
+	boolean tag = false;
 
 	/**
 	 * ssm搭建测试
@@ -35,7 +35,6 @@ public class UserController {
 	 * @param model
 	 * @return
 	 */
-	
 
 	/**
 	 * 超级用户登录
@@ -57,11 +56,19 @@ public class UserController {
 		User user = Userservice.get_login(loginname, password);
 		System.out.println("user对象" + user.toString());
 		if (user != null) {
-			// 将用户保存到Session当中
-			session.setAttribute(Constants.USER_SESSION, user);
-			session.setAttribute("name", loginname);
-			// 客户端跳转到main页面
-			return "index";
+			if (user.getUsername() == "超级管理员") {
+				// 将用户保存到Session当中
+				session.setAttribute(Constants.USER_SESSION, user);
+				session.setAttribute("name", loginname);
+				// 客户端跳转到main页面
+				return "index";
+			} else {
+				// 设置登录失败提示信息
+				System.out.println("设置登录失败提示信息");
+				mv.addAttribute("message", "登录名或密码错误!请重新输入");
+				// 服务器内部跳转到登录页面
+				return "loginForm";
+			}
 
 		} else {
 			// 设置登录失败提示信息
@@ -104,7 +111,7 @@ public class UserController {
 		String username = (String) request.getParameter("username");
 		String password = (String) request.getParameter("password");
 
-		if (loginname != null && loginname != null && loginname != null && tag!=true) {
+		if (loginname != null && loginname != null && loginname != null && tag != true) {
 			Userservice.addUser(loginname, username, password);
 
 			System.out.println("添加人员" + loginname + username + password);
@@ -116,7 +123,7 @@ public class UserController {
 		if (tag) {
 			Userservice.update_user(this.id, loginname, username, password);
 			// 重定向到list
-		
+
 		}
 		return "redirect:/user/list";
 
@@ -159,24 +166,26 @@ public class UserController {
 	public ModelAndView update_user(ModelAndView mv, Integer id) {
 
 		this.id = id;
-		tag=true;
+		tag = true;
 		if (id != null)
 			mv.setViewName("/user/add");
 		return mv;
 	}
 
 	/**
-	  * 退出啊登录
+	 * 退出啊登录
 	 */
 	@RequestMapping(value = "/user/logout", method = RequestMethod.GET)
-	public String logout(Model model,HttpServletRequest request) {
+	public String logout(Model model, HttpServletRequest request) {
 
 		HttpSession session = request.getSession();
+		
 		session.invalidate();
-		System.out.println("session已经关闭"+session.getId());
 		
+		System.out.println("session已经关闭" + session.getId());
+
 		return "loginForm";
-		
+
 	}
-	
+
 }

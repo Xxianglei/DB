@@ -41,7 +41,7 @@
 			<li class="layui-nav-item"><a href="${ctx}/pro/database"><b>首页</b></a></li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a></li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/news"><b>今日头条</b></a></li>
-			<li class="layui-nav-item"><a href="${ctx}/pro/download"><b>资源下载</b></a></li>
+
 			<li class="layui-nav-item"><a href="${ctx}/pro/join_in"
 				data-hover="加入我们"> <b>加入我们</b>
 			</a></li>
@@ -53,7 +53,7 @@ ${ sessionScope.name }
 						<dd>
 							<a href="${ctx}/pro/center">个人中心</a>
 						</dd>
-					
+
 						<dd>
 							<a href="${ctx}/pro/logout">退出登录</a>
 						</dd>
@@ -105,8 +105,8 @@ ${ sessionScope.name }
 							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
 					</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
-						href="${ctx}/pro/edit_num1"><span class="glyphicon glyphicon-picture"
-							aria-hidden="true"></span>账号设置</a></li>
+						href="${ctx}/pro/edit_num1"><span
+							class="glyphicon glyphicon-picture" aria-hidden="true"></span>账号设置</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
 						href="#small-dialog"><span class="glyphicon glyphicon-picture"
 							aria-hidden="true"></span>我的评估</a></li>
@@ -128,390 +128,359 @@ ${ sessionScope.name }
 					</script>
 				</ul>
 			</div>
-			<div class="company" style="margin-top: 0px; position: relative;">
-				<div class="container" style="width: 100%;">
+			<div class="">
+				<div class="" style="width: 100%;">
 					<form class="layui-form" method="POST" id="deptForm"
 						action="${ctx}/pro/join_us">
+						<table class="table table-bordered">
+							<tbody>
+								<tr align="center">
+									<td>姓名:</td>
+									<td>
+										<div class="layui-input-inline">
+											<input type="text" id="name" name="name" required=""
+												lay-verify="required" autocomplete="off"
+												value="${user.name}" class="layui-input">
+										</div>
+									</td>
+									<td>性别:</td>
+									<td>
+										<div class="layui-form-item">
 
-						<div class="layui-form" style="height: 1000px;">
-
-							<table class="layui-table">
-								<colgroup>
-									<col width="10%">
-									<col width="10%">
-									<col width="10%">
-									<col width="10%">
-									<col width="10%">
-									<col width="10%">
-
-									<col width="15%">
-									<col>
-								</colgroup>
-								<thead>
-									<tr>
-										<th></th>
-										<th></th>
-										<th></th>
-										<th></th>
-										<th></th>
-										<th></th>
-										<th></th>
-
-									</tr>
-								</thead>
-								<tbody>
-									<tr align="center">
-										<td>姓名:</td>
-										<td>
 											<div class="layui-input-inline">
-												<input type="text" id="name" name="name" required=""
+												<c:if test="${user.sex=='男'}">
+													<input type="radio" name="sex" value="男" title="男"
+														checked="">
+													<input type="radio" name="sex" value="女" title="女">
+
+												</c:if>
+												<c:if test="${user.sex=='女'}">
+													<input type="radio" name="sex" value="男" title="男">
+													<input type="radio" name="sex" value="女" title="女"
+														checked="">
+												</c:if>
+
+
+											</div>
+										</div>
+									</td>
+									<td width="12%">出生日期:</td>
+									<td>
+										<div class="layui-inline">
+
+											<div class="layui-input-inline">
+												<input type="text" name="birthday" id="date1"
+													autocomplete="off" class="layui-input"
+													value="${user.birthday}">
+											</div>
+										</div>
+									<td rowspan="3"><img class="layui-upload-img" id="demo1">
+										<p id="demoText"></p></td>
+								</tr>
+								<tr align="center">
+									<td>学号:</td>
+									<td>
+										<div class="layui-item">
+
+											<div class="layui-input-inline">
+												<input type="text" id="stu_num" name="stu_num" required=""
 													lay-verify="required" autocomplete="off"
-													value="${user.name}" class="layui-input">
+													class="layui-input" value="${user.stu_num}">
 											</div>
-										</td>
-										<td>性别:</td>
-										<td>
-											<div class="layui-form-item">
 
-												<div class="layui-input-inline">
-													<c:if test="${user.sex=='男'}">
-														<input type="radio" name="sex" value="男" title="男"
-															checked="">
-														<input type="radio" name="sex" value="女" title="女">
+										</div>
+									</td>
+									<td>手机:</td>
+									<td>
+										<div class="layui-item">
 
+											<div class="layui-input-inline">
+												<input type="text" id="phone" name="phone" required=""
+													lay-verify="required" autocomplete="off"
+													class="layui-input" value="${user.phone}">
+											</div>
+										</div>
+									</td>
+									<td>QQ:</td>
+									<td>
+										<div class="layui-item">
+
+											<div class="layui-input-inline">
+												<input type="text" id="QQ" name="QQ" required=""
+													lay-verify="required" autocomplete="off"
+													class="layui-input" value="${user.qq_num}">
+											</div>
+										</div>
+									</td>
+
+								</tr>
+								<tr align="center">
+									<td>专业:</td>
+									<td>
+										<div class="layui-form-item">
+
+											<div class="layui-input-inline">
+												<select name="major" lay-verify="required" lay-search="">
+													<c:if test="${user.major_id eq '计算机科学与技术'}">
+														<option value="计算机科学与技术" checked="">计算机科学与技术</option>
+														<option value="数字媒体与技术">数字媒体与技术</option>
+														<option value="软件工程">软件工程</option>
+														<option value="网络工程">网络工程</option>
+														<option value="计算机科学与技术(人工智能)">计算机科学与技术(人工智能)</option>
 													</c:if>
-													<c:if test="${user.sex=='女'}">
-														<input type="radio" name="sex" value="男" title="男">
-														<input type="radio" name="sex" value="女" title="女"
-															checked="">
+													<c:if test="${user.major_id eq '数字媒体与技术' }">
+														<option value="计算机科学与技术">计算机科学与技术</option>
+														<option value="数字媒体与技术" checked="">数字媒体与技术</option>
+														<option value="软件工程">软件工程</option>
+														<option value="网络工程">网络工程</option>
+														<option value="计算机科学与技术(人工智能)">计算机科学与技术(人工智能)</option>
 													</c:if>
-
-
-												</div>
+													<c:if test="${user.major_id eq '软件工程' }">
+														<option value="计算机科学与技术">计算机科学与技术</option>
+														<option value="数字媒体与技术">数字媒体与技术</option>
+														<option value="软件工程" checked="">软件工程</option>
+														<option value="网络工程">网络工程</option>
+														<option value="计算机科学与技术(人工智能)">计算机科学与技术(人工智能)</option>
+													</c:if>
+													<c:if test="${user.major_id eq '网络工程' }">
+														<option value="计算机科学与技术">计算机科学与技术</option>
+														<option value="数字媒体与技术">数字媒体与技术</option>
+														<option value="软件工程">软件工程</option>
+														<option value="网络工程" checked="">网络工程</option>
+														<option value="计算机科学与技术(人工智能)">计算机科学与技术(人工智能)</option>
+													</c:if>
+													<c:if test="${user.major_id eq '计算机科学与技术(人工智能)' }">
+														<option value="计算机科学与技术">计算机科学与技术</option>
+														<option value="数字媒体与技术">数字媒体与技术</option>
+														<option value="软件工程">软件工程</option>
+														<option value="网络工程">网络工程</option>
+														<option value="计算机科学与技术(人工智能)" checked="">计算机科学与技术(人工智能)</option>
+													</c:if>
+												</select>
 											</div>
-										</td>
-										<td width="12%">出生日期:</td>
-										<td>
-											<div class="layui-inline">
+										</div>
+									</td>
+									<td>方向:</td>
+									<td>
+										<div class="layui-form-item">
 
-												<div class="layui-input-inline">
-													<input type="text" name="birthday" id="date1"
-														autocomplete="off" class="layui-input"
-														value="${user.birthday}">
-												</div>
+											<div class="layui-input-inline">
+												<select name="job" lay-verify="required" lay-search="">
+													<option value="安卓开发">安卓开发</option>
+													<option value="大数据开发">大数据开发</option>
+													<option value="数据挖掘">数据挖掘</option>
+													<option value="JavaWeb开发">JavaWeb开发</option>
+													<option value="Python全栈开发">Python全栈开发</option>
+												</select>
 											</div>
-										<td rowspan="3"><img class="layui-upload-img" id="demo1">
-											<p id="demoText"></p></td>
-									</tr>
-									<tr align="center">
-										<td>学号:</td>
-										<td>
-											<div class="layui-item">
+										</div>
+									</td>
+									<td>工作室:</td>
+									<td>
+										<div class="layui-form-item">
+											<div class="layui-input-inline">
+												<select name="space" lay-verify="required" lay-search="">
+													<option value="数据库工作室">数据库工作室</option>
 
-												<div class="layui-input-inline">
-													<input type="text" id="stu_num" name="stu_num" required=""
-														lay-verify="required" autocomplete="off"
-														class="layui-input" value="${user.stu_num}">
-												</div>
+												</select>
+											</div>
+										</div>
+									</td>
+
+								</tr>
+
+								<tr align="center">
+									<td>学生会:</td>
+									<td>
+										<div class="layui-form-item">
+
+											<div class="layui-input-inline">
+												<c:if test="${user.student_union=='是' }">
+													<input type="radio" name="student_union" value="是"
+														title="是" checked="">
+													<input type="radio" name="student_union" value="否"
+														title="否">
+												</c:if>
+												<c:if test="${user.student_union=='否' }">
+													<input type="radio" name="student_union" value="是"
+														title="是">
+													<input type="radio" name="student_union" value="否"
+														title="否" checked="">
+												</c:if>
+
 
 											</div>
-										</td>
-										<td>手机:</td>
-										<td>
-											<div class="layui-item">
+									</td>
+									<td>班干部:</td>
+									<td>
+										<div class="layui-form-item">
 
-												<div class="layui-input-inline">
-													<input type="text" id="phone" name="phone" required=""
-														lay-verify="required" autocomplete="off"
-														class="layui-input" value="${user.phone}">
-												</div>
+											<div class="layui-input-inline">
+												<c:if test="${user.cadre=='是'}">
+													<input type="radio" name="cadre" value="是" title="是"
+														checked="">
+													<input type="radio" name="cadre" value="否" title="否">
+												</c:if>
+												<c:if test="${user.cadre=='否'}">
+													<input type="radio" name="cadre" value="是" title="是">
+													<input type="radio" name="cadre" value="否" title="否"
+														checked="">
+												</c:if>
+
 											</div>
-										</td>
-										<td>QQ:</td>
-										<td>
-											<div class="layui-item">
+										</div>
+									</td>
+									<td>考研:</td>
+									<td>
+										<div class="layui-form-item">
 
-												<div class="layui-input-inline">
-													<input type="text" id="QQ" name="QQ" required=""
-														lay-verify="required" autocomplete="off"
-														class="layui-input" value="${user.qq_num}">
-												</div>
-											</div>
-										</td>
-
-									</tr>
-									<tr align="center">
-										<td>专业:</td>
-										<td>
-											<div class="layui-form-item">
-
-												<div class="layui-input-inline">
-													<select name="major" lay-verify="required" lay-search="">
-														<c:if test="${user.major_id eq '计算机科学与技术'}">
-															<option value="计算机科学与技术" checked="">计算机科学与技术</option>
-															<option value="数字媒体与技术">数字媒体与技术</option>
-															<option value="软件工程">软件工程</option>
-															<option value="网络工程">网络工程</option>
-															<option value="计算机科学与技术(人工智能)">计算机科学与技术(人工智能)</option>
-														</c:if>
-														<c:if test="${user.major_id eq '数字媒体与技术' }">
-															<option value="计算机科学与技术">计算机科学与技术</option>
-															<option value="数字媒体与技术" checked="">数字媒体与技术</option>
-															<option value="软件工程">软件工程</option>
-															<option value="网络工程">网络工程</option>
-															<option value="计算机科学与技术(人工智能)">计算机科学与技术(人工智能)</option>
-														</c:if>
-														<c:if test="${user.major_id eq '软件工程' }">
-															<option value="计算机科学与技术">计算机科学与技术</option>
-															<option value="数字媒体与技术">数字媒体与技术</option>
-															<option value="软件工程" checked="">软件工程</option>
-															<option value="网络工程">网络工程</option>
-															<option value="计算机科学与技术(人工智能)">计算机科学与技术(人工智能)</option>
-														</c:if>
-														<c:if test="${user.major_id eq '网络工程' }">
-															<option value="计算机科学与技术">计算机科学与技术</option>
-															<option value="数字媒体与技术">数字媒体与技术</option>
-															<option value="软件工程">软件工程</option>
-															<option value="网络工程" checked="">网络工程</option>
-															<option value="计算机科学与技术(人工智能)">计算机科学与技术(人工智能)</option>
-														</c:if>
-														<c:if test="${user.major_id eq '计算机科学与技术(人工智能)' }">
-															<option value="计算机科学与技术">计算机科学与技术</option>
-															<option value="数字媒体与技术">数字媒体与技术</option>
-															<option value="软件工程">软件工程</option>
-															<option value="网络工程">网络工程</option>
-															<option value="计算机科学与技术(人工智能)" checked="">计算机科学与技术(人工智能)</option>
-														</c:if>
-													</select>
-												</div>
-											</div>
-										</td>
-										<td>方向:</td>
-										<td>
-											<div class="layui-form-item">
-
-												<div class="layui-input-inline">
-													<select name="job" lay-verify="required" lay-search="">
-														<option value="安卓开发">安卓开发</option>
-														<option value="大数据开发">大数据开发</option>
-														<option value="数据挖掘">数据挖掘</option>
-														<option value="JavaWeb开发">JavaWeb开发</option>
-														<option value="Python全栈开发">Python全栈开发</option>
-													</select>
-												</div>
-											</div>
-										</td>
-										<td>工作室:</td>
-										<td>
-											<div class="layui-form-item">
-												<div class="layui-input-inline">
-													<select name="space" lay-verify="required" lay-search="">
-														<option value="数据库工作室">数据库工作室</option>
-
-													</select>
-												</div>
-											</div>
-										</td>
-
-									</tr>
-
-									<tr align="center">
-										<td>学生会:</td>
-										<td>
-											<div class="layui-form-item">
-
-												<div class="layui-input-inline">
-													<c:if test="${user.student_union=='是' }">
-														<input type="radio" name="student_union" value="是"
+											<div class="layui-input-inline">
+												<div>
+													<c:if test="${user.graduate_student=='是' }">
+														<input type="radio" name="graduate_student" value="是"
 															title="是" checked="">
-														<input type="radio" name="student_union" value="否"
+														<input type="radio" name="graduate_student" value="否"
 															title="否">
 													</c:if>
-													<c:if test="${user.student_union=='否' }">
-														<input type="radio" name="student_union" value="是"
+													<c:if test="${user.graduate_student=='否' }">
+														<input type="radio" name="graduate_student" value="是"
 															title="是">
-														<input type="radio" name="student_union" value="否"
+														<input type="radio" name="graduate_student" value="否"
 															title="否" checked="">
 													</c:if>
-
-
-												</div>
-										</td>
-										<td>班干部:</td>
-										<td>
-											<div class="layui-form-item">
-
-												<div class="layui-input-inline">
-													<c:if test="${user.cadre=='是'}">
-														<input type="radio" name="cadre" value="是" title="是"
-															checked="">
-														<input type="radio" name="cadre" value="否" title="否">
-													</c:if>
-													<c:if test="${user.cadre=='否'}">
-														<input type="radio" name="cadre" value="是" title="是">
-														<input type="radio" name="cadre" value="否" title="否"
-															checked="">
-													</c:if>
-
 												</div>
 											</div>
-										</td>
-										<td>考研:</td>
-										<td>
-											<div class="layui-form-item">
+										</div>
+										<div />
+									</td>
+									<td>
+										<div class="layui-upload">
+											<button type="button" class="layui-btn" id="test1">上传图片(图片名须为学号)</button>
+											<div class="layui-upload-list"></div>
+										</div>
+									</td>
 
-												<div class="layui-input-inline">
-													<div>
-														<c:if test="${user.graduate_student=='是' }">
-															<input type="radio" name="graduate_student" value="是"
-																title="是" checked="">
-															<input type="radio" name="graduate_student" value="否"
-																title="否">
-														</c:if>
-														<c:if test="${user.graduate_student=='否' }">
-															<input type="radio" name="graduate_student" value="是"
-																title="是">
-															<input type="radio" name="graduate_student" value="否"
-																title="否" checked="">
-														</c:if>
-													</div>
-												</div>
+								</tr>
+								<tr align="center">
+									<td>爱好:</td>
+									<td colspan="6">
+										<div class="layui-form-item">
+
+											<div class="layui-input-block">
+												<input type="checkbox" name="hobby" lay-skin="primary"
+													value="编程" title="编程" checked=""> <input
+													type="checkbox" name="hobby" lay-skin="primary" value="阅读"
+													title="阅读"> <input type="checkbox" name="hobby"
+													lay-skin="primary" value="唱歌" title="唱歌"> <input
+													type="checkbox" name="hobby" lay-skin="primary" value="跳舞"
+													title="跳舞"> <input type="checkbox" name="hobby"
+													lay-skin="primary" value="摄影" title="摄影"> <input
+													type="checkbox" name="hobby" lay-skin="primary" value="旅行"
+													title="旅行"> <input type="checkbox" name="hobby"
+													lay-skin="primary" value="游戏" title="游戏">
 											</div>
-											<div />
-										</td>
-										<td>
-											<div class="layui-upload">
-												<button type="button" class="layui-btn" id="test1">上传图片(图片名须为学号)</button>
-												<div class="layui-upload-list"></div>
+										</div>
+									</td>
+								</tr>
+								<tr align="center">
+									<td>竞赛:</td>
+									<td>
+										<div class="layui-form-item">
+
+											<div class="layui-input-inline">
+												<input type="text" id="race" name="race" required=""
+													autocomplete="off" class="layui-input" value="${user.race}">
 											</div>
-										</td>
+										</div>
+									</td>
+									<td>地址:</td>
+									<td colspan="4">
+										<div class="layui-form-item">
 
-									</tr>
-									<tr align="center">
-										<td>爱好:</td>
-										<td colspan="6">
-											<div class="layui-form-item">
-
-												<div class="layui-input-block">
-													<input type="checkbox" name="hobby" lay-skin="primary"
-														value="编程" title="编程" checked=""> <input
-														type="checkbox" name="hobby" lay-skin="primary" value="阅读"
-														title="阅读"> <input type="checkbox" name="hobby"
-														lay-skin="primary" value="唱歌" title="唱歌"> <input
-														type="checkbox" name="hobby" lay-skin="primary" value="跳舞"
-														title="跳舞"> <input type="checkbox" name="hobby"
-														lay-skin="primary" value="摄影" title="摄影"> <input
-														type="checkbox" name="hobby" lay-skin="primary" value="旅行"
-														title="旅行"> <input type="checkbox" name="hobby"
-														lay-skin="primary" value="游戏" title="游戏">
-												</div>
+											<div class="layui-input-block">
+												<input type="text" id="address" name="address" required=""
+													lay-verify="required" autocomplete="off"
+													class="layui-input" value="${user.address}">
 											</div>
-										</td>
-									</tr>
-									<tr align="center">
-										<td>竞赛:</td>
-										<td>
-											<div class="layui-form-item">
+										</div>
+									</td>
 
-												<div class="layui-input-inline">
-													<input type="text" id="race" name="race" required=""
-														autocomplete="off" class="layui-input"
-														value="${user.race}">
-												</div>
+								</tr>
+								<tr align="center">
+
+									<td width="12%">期望薪资:</td>
+									<td>
+										<div class="layui-form-item">
+
+											<div class="layui-input-inline">
+												<input type="text" id="salary" name="salary" required=""
+													autocomplete="off" class="layui-input"
+													value="${user.salary}">
 											</div>
-										</td>
-										<td>地址:</td>
-										<td colspan="4">
-											<div class="layui-form-item">
+										</div>
+									</td>
+									<td width="12%">申请时间:</td>
+									<td colspan="4">
+										<div class="layui-inline">
 
-												<div class="layui-input-block">
-													<input type="text" id="address" name="address" required=""
-														lay-verify="required" autocomplete="off"
-														class="layui-input" value="${user.address}">
-												</div>
+											<div class="layui-input-inline">
+												<input type="text" name="create_date" id="date"
+													lay-verify="date" placeholder="yyyy-MM-dd"
+													autocomplete="off" class="layui-input"
+													value="${user.create_date}">
 											</div>
-										</td>
+										</div>
+									</td>
 
-									</tr>
-									<tr align="center">
+								</tr>
+								<tr align="center">
+									<td>简述</td>
+									<td colspan="20" rowspan="5">
 
-										<td width="12%">期望薪资:</td>
-										<td>
-											<div class="layui-form-item">
+										<div class="layui-form-item layui-form-text">
 
-												<div class="layui-input-inline">
-													<input type="text" id="salary" name="salary" required=""
-														autocomplete="off" class="layui-input"
-														value="${user.salary}">
-												</div>
-											</div>
-										</td>
-										<td width="12%">申请时间:</td>
-										<td colspan="4">
-											<div class="layui-inline">
-
-												<div class="layui-input-inline">
-													<input type="text" name="create_date" id="date"
-														lay-verify="date" placeholder="yyyy-MM-dd"
-														autocomplete="off" class="layui-input"
-														value="${user.create_date}">
-												</div>
-											</div>
-										</td>
-
-									</tr>
-									<tr align="center">
-										<td>简述</td>
-										<td colspan="20" rowspan="5">
-
-											<div class="layui-form-item layui-form-text">
-
-												<div class="layui-input-block" align="left">
-												<c:if  test="${user.resume!=null}">
-													<textarea rows="15"
-														placeholder="${user.resume} "
-														class="layui-textarea" name="resume"
-														></textarea>
+											<div class="layui-input-block" align="left">
+												<c:if test="${user.resume!=null}">
+													<textarea rows="15" placeholder="${user.resume} "
+														class="layui-textarea" name="resume"></textarea>
 												</c:if>
-												<c:if  test="${user.resume==null}">
+												<c:if test="${user.resume==null}">
 													<textarea rows="15"
 														placeholder="自我评价评述：（包括自我简介、获奖情况、申请理由，以及对以上表格信息的补充）"
-														class="layui-textarea" name="resume"
-														></textarea>
+														class="layui-textarea" name="resume"></textarea>
 												</c:if>
-												</div>
 											</div>
-										</td>
-									</tr>
-									<tr></tr>
-									<tr></tr>
-									<tr></tr>
-									<tr></tr>
-									<tr></tr>
-									<tr></tr>
-									<br />
-									<br />
-									<br />
-									<tr align="center">
-										<td colspan="7"><font color="red">${requestScope.msg}</font>
-										</td>
-									</tr>
-									<tr align="center">
+										</div>
+									</td>
+								</tr>
+								<tr></tr>
+								<tr></tr>
+								<tr></tr>
+								<tr></tr>
+								<tr></tr>
+								<tr></tr>
+								<br />
+								<br />
+								<br />
+								<tr align="center">
+									<td colspan="7"><font color="red">${requestScope.msg}</font>
+									</td>
+								</tr>
+								<tr align="center">
 
-										<td colspan="7" rowspan="5">
-											<div class="layui-form-item">
-												<label for="L_repass" class="layui-form-label"> </label>
-												<button class="layui-btn" lay-submit="" lay-filter="demo2">发送</button>
-											</div>
-										</td>
+									<td colspan="7" rowspan="5">
+										<div class="layui-form-item">
+											<label for="L_repass" class="layui-form-label"> </label>
+											<button class="layui-btn" lay-submit="" lay-filter="demo2">发送</button>
+										</div>
+									</td>
 
-									</tr>
+								</tr>
 
 
-								</tbody>
-							</table>
+							</tbody>
+						</table>
 
-						</div>
 					</form>
 				</div>
 			</div>

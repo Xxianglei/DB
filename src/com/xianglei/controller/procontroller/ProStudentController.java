@@ -253,9 +253,9 @@ public class ProStudentController {
 		String psw = request.getParameter("password");
 		String psw2 = request.getParameter("repassword");
 		HttpSession session = request.getSession();
-		User user = (User) session.getAttribute(Constants.USER_SESSION);
+		User user = (User) session.getAttribute(Constants.USER_SESSION2);
 		/* System.out.println(psw+psw2); */
-		if (psw.equals(psw2)) {
+		if (!psw.equals(psw2)) {
 			model.addAttribute("msg", "您输入的密码不一致!");
 		} else {
 			// 编辑的时候添加昵称
@@ -280,7 +280,7 @@ public class ProStudentController {
 			// 将用户保存到Session当中
 			// session 默认时间30分钟
 
-			session.setAttribute(Constants.USER_SESSION, user);
+			session.setAttribute(Constants.USER_SESSION2, user);
 			if (user.getUsername() != null)
 				session.setAttribute("name", user.getUsername());
 			else
