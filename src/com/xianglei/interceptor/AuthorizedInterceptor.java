@@ -58,7 +58,7 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
 			/** 1.获取session中的用户 */
 			User user = (User) request.getSession().getAttribute(Constants.USER_SESSION);
 			/** 2.判断用户是否已经登录 */
-			if (user == null && user.getUsername() != "超级管理员") {
+			if (user == null) {
 				/** 如果用户没有登录，跳转到登录页面 */
 
 				request.setAttribute("msg", "请先登录再访问网站!");
