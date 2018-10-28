@@ -26,12 +26,12 @@
 				<div id="logo">DataBase</div>
 				<li class="layui-nav-item"><a href="${ctx}/pro/database"><b>首页</b></a></li>
 				<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a></li>
-				<li class="layui-nav-item"><a href="${ctx}/pro/get_news?tag=0"><b>今日头条</b></a></li>
+				<li class="layui-nav-item"><a href="${ctx}/pro/get_news?tag=0"><b>文章</b></a></li>
 				
 				<li class="layui-nav-item"><a href="${ctx}/pro/join_in"
 					data-hover="加入我们"> <b>加入我们</b>
 				</a></li>
-				<li class="layui-nav-item" lay-unselect=""><c:if
+				<%-- <li class="layui-nav-item" lay-unselect=""><c:if
 						test="${ sessionScope.name!=null }">
 						<img src="//t.cn/RCzsdCq" class="layui-nav-img">
 ${ sessionScope.name }
@@ -48,7 +48,7 @@ ${ sessionScope.name }
 						<a href="${ctx}/pro/log_in">登录 </a>
 
 
-					</c:if></li>
+					</c:if></li> --%>
 			</ul>
 		</div>
 	</nav>

@@ -56,7 +56,7 @@ public class UserController {
 		User user = Userservice.get_login(loginname, password);
 		System.out.println("user对象" + user.toString());
 		if (user != null) {
-			if (user.getUsername() == "超级管理员") {
+			if (user.getUsername() .equals("超级管理员") ) {
 				// 将用户保存到Session当中
 				session.setAttribute(Constants.USER_SESSION, user);
 				session.setAttribute("name", loginname);

@@ -59,7 +59,7 @@ public class ProAuthorizedInterceptor  implements HandlerInterceptor {
         /** 拦截请求 */
         if (!flag){
         	/** 1.获取session中的用户  */
-        	User user = (User) request.getSession().getAttribute(Constants.USER_SESSION);
+        	User user = (User) request.getSession().getAttribute(Constants.USER_SESSION2);
         	/** 2.判断用户是否已经登录 */
         	if(user == null){
         		 /** 如果用户没有登录，跳转到登录页面 */

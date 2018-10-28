@@ -40,12 +40,12 @@
 			<div id="logo">DataBase</div>
 			<li class="layui-nav-item"><a href="${ctx}/pro/database"><b>首页</b></a></li>
 			<li class="layui-nav-item"><a href="${ctx}/pro/report"><b>公告</b></a></li>
-			<li class="layui-nav-item"><a href="${ctx}/pro/news"><b>今日头条</b></a></li>
+			<li class="layui-nav-item"><a href="${ctx}/pro/news"><b>文章</b></a></li>
 
 			<li class="layui-nav-item"><a href="${ctx}/pro/join_in"
 				data-hover="加入我们"> <b>加入我们</b>
 			</a></li>
-			<li class="layui-nav-item" lay-unselect=""><c:if
+			<%-- <li class="layui-nav-item" lay-unselect=""><c:if
 					test="${ sessionScope.name!=null }">
 					<img src="//t.cn/RCzsdCq" class="layui-nav-img">
 ${ sessionScope.name } 
@@ -60,11 +60,11 @@ ${ sessionScope.name }
 					</dl>
 				</c:if> <c:if test="${ sessionScope.name==null }">
 					<a href="${ctx}/pro/log_in">登录*注册 </a>
-				</c:if></li>
+				</c:if></li> --%>
 		</ul>
 	</div>
 	<!-- header -->
-	<div class="col-sm-3 col-md-2 sidebar">
+	<div class="col-sm-3 col-md-2 sidebar" style="background: #404040; color:#FFF;" >
 		<div class="sidebar_top">
 			<h1>${user.name}</h1>
 			<img src="//t.cn/RCzsdCq" alt="头像" />
@@ -97,19 +97,15 @@ ${ sessionScope.name }
 		<div class="content">
 			<div class="details_header">
 				<ul>
-					<li><a href="${ctx}/pro/center"><span
-							class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
-					<li><a href="${ctx}/pro/edit"><span
-							class="glyphicon glyphicon-print" aria-hidden="true"></span>编辑简历</a></li>
-					<li><a href="${ctx }/pro/mystudio"><span
-							class="glyphicon glyphicon-envelope" aria-hidden="true"></span>我的工作室
+						<li class="layui-icon"><a href="${ctx}/pro/center">&#xe63c;我的简历</a></li>
+					<li class="layui-icon"><a href="${ctx}/pro/edit">&#xe60a;编辑简历</a></li>
+					<li class="layui-icon"><a href="${ctx }/pro/mystudio">&#xe705;我的工作室
 					</a></li>
-					<li><a class="play-icon popup-with-zoom-anim"
-						href="${ctx}/pro/edit_num1"><span
-							class="glyphicon glyphicon-picture" aria-hidden="true"></span>账号设置</a></li>
-					<li><a class="play-icon popup-with-zoom-anim"
+					<li class="layui-icon"><a class="play-icon popup-with-zoom-anim"
+						href="${ctx}/pro/edit_num1"> &#xe770;账号设置</a></li>
+					<!-- <li><a class="play-icon popup-with-zoom-anim"
 						href="#small-dialog"><span class="glyphicon glyphicon-picture"
-							aria-hidden="true"></span>我的评估</a></li>
+							aria-hidden="true"></span>我的评估</a></li> -->
 					<script>
 						$(document).ready(function() {
 							$('.popup-with-zoom-anim').magnificPopup({

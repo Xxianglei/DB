@@ -32,7 +32,7 @@
 				<li  class="layui-nav-item">
 					<a href="${ctx}/pro/report"><b>公告</b></a>
 				</li>
-				<li class="layui-nav-item"><a href="${ctx}/pro/get_news?tag=0"><b>今日头条</b></a></li>
+				<li class="layui-nav-item"><a href="${ctx}/pro/get_news?tag=0"><b>文章</b></a></li>
 			
 				<li  class="layui-nav-item">
 					<a href="${ctx}/pro/join_in" data-hover="加入我们"> <b>加入我们</b></a>
